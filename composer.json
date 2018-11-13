@@ -1,5 +1,5 @@
 {
-    "name": "deskcrisim-backend",
+    "name": "jorisrietveld/deskcrisim-backend",
     "description": "The backend repository of the Desk CriSim system.",
     "type": "project",
     "license": "proprietary",
