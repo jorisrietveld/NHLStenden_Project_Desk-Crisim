@@ -1,5 +1,7 @@
 # Desk CriSim
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c375becb249a4e36888096e5e78ecb58)](https://www.codacy.com/app/jorisrietveld/WaterUp-Arduino-joris?utm_source=github.com&utm_medium=referral&utm_content=INF1I/WaterUp-Arduino-joris&utm_campaign=badger)  [![Build Status](https://travis-ci.com/jorisrietveld/DeskCrism-Backend.svg?token=8VeUSD3hMgXK4qZXKocS&branch=master)](https://travis-ci.com/jorisrietveld/DeskCrism-Backend) [![Build Status](https://travis-ci.com/jorisrietveld/DeskCrism-Backend.svg?token=8VeUSD3hMgXK4qZXKocS&branch=dev-master)](https://travis-ci.com/jorisrietveld/DeskCrism-Backend)
+[![Build Status](https://travis-ci.com/jorisrietveld/DeskCrism-Backend.svg?token=8VeUSD3hMgXK4qZXKocS&branch=master)](https://travis-ci.com/jorisrietveld/DeskCrism-Backend)
+[![Build Status](https://travis-ci.com/jorisrietveld/DeskCrism-Backend.svg?token=8VeUSD3hMgXK4qZXKocS&branch=dev-master)](https://travis-ci.com/jorisrietveld/DeskCrism-Backend)
+![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
 
 This repository holds the source code of the Desk Crisim system.
 
