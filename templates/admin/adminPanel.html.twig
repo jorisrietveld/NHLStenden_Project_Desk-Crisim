@@ -3,8 +3,9 @@
  # Date: 16-11-2018 16:27
  # Licence: GPLv3 - General Public Licence version 3
  #}
-{% extends  %}
-{% block adminPanel %}
+{% extends '../base.html.twig' %}
+
+{% block body %}
     <div class="row">
         <div class="col s12 m7">
             <div class="card large">
@@ -78,6 +79,7 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9kMASRkOAbPFdzd4u5o_F0JyXKieOSQk&callback=initMap">
     </script>
+    {# TODO remove this inline script#}
     <script>
         // Initialize and add the map
         function initMap() {
@@ -90,4 +92,4 @@
             var marker = new google.maps.Marker({position: uluru, map: map});
         }
     </script>
-{% endblock %} {# adminPanel #}
+{% endblock %} {# body #}
