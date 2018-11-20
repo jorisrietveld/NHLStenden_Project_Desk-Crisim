@@ -4,3 +4,21 @@
  * Licence: GPLv3 - General Public Licence version 3
  * Description: DESCRIPTION
  */
+
+body {
+  background-color: #e8e8e8;
+}
+
+.nav-wrapper img {
+  height:50px;
+}
+
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;  /* The height is 400 pixels */
+  width: 100%;  /* The width is the width of the web page */
+}
+
+.pagination li.active {
+  background-color: orange;
+}

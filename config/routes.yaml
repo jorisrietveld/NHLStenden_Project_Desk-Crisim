@@ -3,7 +3,31 @@
 #    controller: App\Controller\DefaultController::index
 homepage:
   path: /{_locale}
-  controller: App\Controller\WelcomeController::index
+  controller: App\Controller\IndexController::index
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+admin:
+  path: /{_locale}/admin
+  controller: App\Controller\AdminController::index
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher:
+  path: /{_locale}/teacher
+  controller: App\Controller\TeacherController::index
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+student:
+  path: /{_locale}/student
+  controller: App\Controller\StudentController::index
   requirements:
     _locale: '%app.locales%'
   defaults:

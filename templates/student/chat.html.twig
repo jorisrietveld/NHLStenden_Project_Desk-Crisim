@@ -1,0 +1,149 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 20-11-2018 22:15
+ # Licence: GPLv3 - General Public Licence version 3
+ #}
+
+{% extends 'student/index.html.twig' %}
+
+{% block studentBody %}
+
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="row">
+                        <span class="card-title">Berichten uit het veld</span>
+
+                        <ul id="tabs-swipe-demo" class="tabs">
+                            <li class="tab col s2" onclick="scrollDown()"><a classw="active" href="#politieTab">Politie</a></li>
+                            <li class="tab col s2" onclick="scrollDown()"><a href="#brandweerTab">Brandweer</a></li>
+                            <li class="tab col s2" onclick="scrollDown()"><a href="#ambulanceTab">Ambulance</a></li>
+                            <li class="tab col s2" onclick="scrollDown()"><a href="#legerTab">Leger</a></li>
+                            <li class="tab col s2" onclick="scrollDown()"><a href="#burgemeesterTab">Burgemeester</a></li>
+                        </ul>
+                        <!-- politie -->
+                        <div id="politieTab" class="col s12">
+                            <div class="chatCanvas" id="pol">
+                                <?php
+                            actorMessage("Politie", "Dit is een test");
+                            userMessage("Test politie");
+                            actorMessage("Politie", "Bedankt voor de test");
+                            userMessage("Np broski");
+                            actorMessage("Politie", "Top");
+                            userMessage("Dat dacht ik.");
+                            ?>
+                            </div>
+                            {% block printSendSection %}
+                            <div class="col m12 s12" id="sendSection">
+                                <ul class="collection grey lighten-4">
+
+                                    <li class="collection-item grey lighten-4">
+                                        <div class="input-field col s10 m10">
+                                            <input id="typeSection" type="text" class="validate">
+                                            <label for="typeSection">Typ hier..</label>
+                                        </div>
+                                        <br>
+                                        <button class="btn waves-effect orange" type="submit" name="getStats">Versturen
+                                            <i class="material-icons right">send</i>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            {% endblock %}
+                        </div>
+
+                        <!--brandweer -->
+                        <div id="brandweerTab" class="col s12">
+                            <div class="chatCanvas" id="brnd">
+                                <?php
+                            actorMessage("Brandweer", "Dit is een test");
+                            userMessage("Test brandweer");
+                            actorMessage("Brandweer", "Bedankt voor de test");
+                            userMessage("Np broski");
+                            actorMessage("Brandweer", "Top");
+                            userMessage("Dat dacht ik.");
+                            ?>
+                            </div>
+                            <?php
+                        printSendSection();
+                        ?>
+                        </div>
+
+                        <!--Ambulance -->
+                        <div id="ambulanceTab" class="col s12">
+                            <div class="chatCanvas" id="ambu">
+                                <?php
+                            actorMessage("Ambulance", "Dit is een test");
+                            userMessage("Test Ambulance");
+                            actorMessage("Ambulance", "Bedankt voor de test");
+                            userMessage("Np broski");
+                            actorMessage("Ambulance", "Top");
+                            userMessage("Dat dacht ik.");
+
+                            ?>
+                            </div>
+                            <?php
+                        printSendSection();
+                        ?>
+                        </div>
+
+                        <!--Leger -->
+                        <div id="legerTab" class="col s12">
+                            <div class="chatCanvas" id="lgr">
+                                <?php
+                            actorMessage("Leger", "Dit is een test");
+                            userMessage("Test Ambulance");
+                            actorMessage("Leger", "Bedankt voor de test");
+                            userMessage("Np broski");
+                            actorMessage("Leger", "Top");
+                            userMessage("Dat dacht ik.");
+
+                            ?>
+                            </div>
+                            <?php
+                        printSendSection();
+                        ?>
+                        </div>
+
+                        <!--Burgemeester -->
+                        <div id="burgemeesterTab" class="col s12">
+                            <div class="chatCanvas" id="bm">
+                                <?php
+                            actorMessage("Burgemeester", "Dit is een test");
+                            userMessage("Test Burgemeester");
+                            actorMessage("Burgemeester", "Bedankt voor de test");
+                            userMessage("Np Burgemeester");
+                            actorMessage("Burgemeester", "Top");
+                            userMessage("Dat dacht ik.");
+
+                            ?>
+                            </div>
+                            <?php
+                        printSendSection();
+                        ?>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.tabs').tabs();
+        });
+    </script>
+    <script>
+        window.onload = function () {
+            var objDiv = document.getElementById("pol");
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }
+
+        function scrollDown($id) {
+            var objDiv = document.getElementById($id);
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }
+    </script>
+{% endblock %} {# studentBody #}

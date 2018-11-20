@@ -1,16 +1,12 @@
-{#
- # Author: Joris Rietveld <jorisrietveld@gmail.com>
- # Date: 16-11-2018 13:02
- # Licence: GPLv3 - General Public Licence version 3
- #}
-{% extends '../base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
+
     <div class="row">
         <div class="col s12 m6">
             <div class="card large">
                 <div class="card-content">
-                    <span class="card-title">Placeholder</span>
+                    <span class="card-title">Hello {{ controller_name }}</span>
                     <p>Dit is even zodat de footer onderaan blijft staan.</p>
                 </div>
             </div>
@@ -43,5 +39,5 @@
             </div>
         </div>
     </div>
-
-{%  endblock  %} {# endblock body #}
+    {{ dump() }}
+{% endblock %}

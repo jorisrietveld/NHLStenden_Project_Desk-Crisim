@@ -6,15 +6,14 @@
  */
 import $ from 'jquery';
 import 'popper.js'
-import 'tether'
 import 'jquery.easing'
 
 // Import matirialize css.
 import 'materialize-css/dist/js/materialize.min'
-import 'materialize-css/sass/materialize.scss'
+import 'materialize-css/dist/css/materialize.min.css'
 
 // Import the stylesheets that define the sites theme.
-import '../scss/theme/theme.scss'
+import '../scss/theme.scss'
 
 $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();

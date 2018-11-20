@@ -16,7 +16,7 @@
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Meta-Tags -->
             <trans-unit id="base.meta.description.default">
                 <source>base.meta.description.default</source>
-                <target>Wedderheide Paradise</target>
+                <target></target>
             </trans-unit>
 
             <trans-unit id="base.meta.keywords.default">

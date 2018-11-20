@@ -50,9 +50,9 @@
         "webpack-notifier": "^1.6.0"
     },
     "dependencies": {
-        "babel-loader": "^7.1.4",
         "copy-webpack-plugin": "^4.5.2",
         "default-passive-events": "^1.0.10",
+        "encore": "^0.0.30-beta",
         "jquery": "^3.3.1",
         "jquery.easing": "^1.4.1",
         "materialize-css": "^1.0.0",
