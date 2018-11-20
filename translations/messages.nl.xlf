@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<xliff version="1.2"
+       xmlns='urn:oasis:names:tc:xliff:document:1.2'
+       xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
+    <file
+            source-language="nl"
+            target-language="nl"
+            original="index.html"
+            datatype="html"
+            date="2018-11-20T18:00:52Z">
+        <header>
+            <note from="Joris Rietveld">Translation file for the desk CriSim project.</note>
+        </header>
+        <body>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Meta-Tags -->
+            <trans-unit id="base.meta.description.default">
+                <source>base.meta.description.default</source>
+                <target>Wedderheide Paradise</target>
+            </trans-unit>
+
+            <trans-unit id="base.meta.keywords.default">
+                <source>base.meta.keywords.default</source>
+                <target>Welcome!</target>
+            </trans-unit>
+
+            <trans-unit id="base.meta.author.default">
+                <source>base.meta.author.default</source>
+                <target>INF2H - Stenden</target>
+            </trans-unit>
+
+            <trans-unit id="base.meta.title.base">
+                <source>base.meta.title.base</source>
+                <target>Desk Crisim</target>
+            </trans-unit>
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Navigation -->
+            <trans-unit id="base.navigation.tooltip.person">
+                <source>base.navigation.tooltip.person</source>
+                <target>Persoon</target>
+            </trans-unit>
+
+            <trans-unit id="base.navigation.tooltip.timer">
+                <source>base.navigation.tooltip.timer</source>
+                <target>AV Timer</target>
+            </trans-unit>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Footer -->
+            <trans-unit id="base.footer.link.help">
+                <source>base.footer.link.help</source>
+                <target>Help</target>
+            </trans-unit>
+
+            <trans-unit id="base.footer.link.dummy">
+                <source>base.footer.link.dummy</source>
+                <target>Dummy link</target>
+            </trans-unit>
+
+            <trans-unit id="base.footer.copyright">
+                <source>base.footer.copyright</source>
+                <target>Desk CriSim</target>
+            </trans-unit>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - main -->
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  index -->
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -teacher -->
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  admin -->
+        </body>
+    </file>
+</xliff>

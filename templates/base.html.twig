@@ -1,12 +1,93 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="{{ locale }}">
+<head>
+    {# This will store the meta tags for the website.#}
+    {% block metaTaggs %}
+        <meta charset="UTF-8"/>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="{{ 'base.meta.description.default'|trans }}"/>
+        <meta name="keywords" content="{{ 'base.meta.keywords.default'|trans }}"/>
+        <meta name="author" content="{{ 'base.meta.author.default'|trans }}"/>
+        <link rel='shortcut icon' type='image/x-icon' href='./img/fav.png'/>
+    {% endblock %}
+
+    {# This will render the title of the webpage #}
+    <title>{{ 'base.meta.title.base'|trans }}</title>
+
+    {# This block stores all style for the website. #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('theme', 'app') }}
+    {% endblock %}
+</head>
+<body>
+    {# This block is used to render the pages navigaiton menu #}
+    {% block navigation %}
+    <nav class="black" role="navigation">
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <a class="btn tooltipped black" data-position="bottom" data-tooltip="$user">
+                    <i class="material-icons">{{ 'base.navigation.tooltip.person'|trans }}</i>
+                </a>
+                <a class="btn tooltipped black" data-position="bottom" data-tooltip="$currentSession">
+                    <i class="material-icons">{{ 'base.navigation.tooltip.timer'|trans }}</i>
+                </a>
+            </ul>
+            <a href="./index.php">
+                <img class="brand-logo center" alt="logo" src="./img/logo.png" style="margin-top: 0.1vh;"></a>
+            <ul class='right'>
+                $notifyElement
+            </ul>
+        </div>
+    </nav>
+    {% endblock %}
+
+    {# This block will be used to render the page content in #}
+    {% block body %}{% endblock %}
+
+    {# This block will be used to render the footer in #}
+    {% block footer %}
+    <footer class="page-footer black">
+        <div class="container">
+            <div class="row">
+                <div class="col m6 s12">
+                    <h5 class="white-text">
+                        <i class="material-icons left">info_outline</i>{{ 'base.footer.link.help' }}
+                    </h5>
+                    <ul>
+                        <li>
+                            <a class="white-text left" href="#" target="_blank">
+                                <i class="material-icons left">chevron_right</i>{{ 'base.footer.link.dummy' }}
+                            </a>
+                        </li>
+                        <br/>
+                        <br/>
+                        <li>
+                            <a class="white-text left" href="#" target="_blank">
+                                <i class="material-icons left">chevron_right</i>{{ 'base.footer.link.dummy' }}
+                            </a>
+                        </li>
+                        <br/>
+                        <br/>
+                        <li>
+                            <a class="white-text left" href="#" target="_blank">
+                                <i class="material-icons left">chevron_right</i>{{ 'base.footer.link.dummy' }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <a class="orange-text text-lighten-3">{{ 'base.footer.copyright' }} &copy; 2018</a>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+</body>
 </html>
