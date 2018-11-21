@@ -1,14 +1,70 @@
 {
+    "name": "desk-crisim",
+    "version": "0.1.0",
+    "description": "A crisis simulation serieus game",
+    "homepage": "https://github.com/jorisrietveld/DeskCrism-Backend",
+    "license": "GPL-3.0-only",
+    "keywords": [
+        ""
+    ],
+    "bugs": {
+        "url": "https://github.com/jorisrietveld/DeskCrism-Backend/issues"
+    },
+    "contributors": [
+        {
+            "name": "Joris Rietveld",
+            "email": "jorisrietveld@gmail.com",
+            "url": "https://github.com/jorisrietveld"
+        },
+        {
+            "name": "Niek Luttikhof",
+            "email": "niek.luttikhof@student.stenden.com",
+            "url": ""
+        },
+        {
+            "name": "Soner Mulder",
+            "email": "niek.luttikhof@student.stenden.com",
+            "url": ""
+        },
+        {
+            "name": "Sander Paping",
+            "email": "sander.paping@student.stenden.com",
+            "url": ""
+        },
+        {
+            "name": "Lennart Pikijn",
+            "email": "lennart.pikijn@student.stenden.com",
+            "url": ""
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jorisrietveld/DeskCrism-Backend.git"
+    },
     "devDependencies": {
         "@symfony/webpack-encore": "^0.21.0",
+        "autoprefixer": "^9.3.1",
+        "node-sass": "^4.10.0",
+        "postcss-loader": "^3.0.0",
+        "sass-loader": "^7.1.0",
         "webpack-notifier": "^1.6.0"
     },
-    "license": "UNLICENSED",
+    "dependencies": {
+        "copy-webpack-plugin": "^4.5.2",
+        "default-passive-events": "^1.0.10",
+        "encore": "^0.0.30-beta",
+        "jquery": "^3.3.1",
+        "jquery.easing": "^1.4.1",
+        "materialize-css": "^1.0.0",
+        "popper.js": "^1.14.5"
+    },
     "private": true,
     "scripts": {
-        "dev-server": "encore dev-server",
-        "dev": "encore dev",
-        "watch": "encore dev --watch",
-        "build": "encore production --progress"
+        "webpack-run": "yarn run encore dev",
+        "webpack-watch": "yarn run encore dev --watch",
+        "webpack-unwatch": "yarn stop",
+        "start-webserver": "bin/console server:start 0.0.0.0:8000",
+        "stop-webserver": "bin/console server:stop",
+        "open-browser ": "x-www-browser 0.0.0.0:8000"
     }
 }

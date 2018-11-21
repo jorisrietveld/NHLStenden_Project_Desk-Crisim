@@ -1,0 +1,62 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 20-11-2018 23:45
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The teachers show statistics page
+ # ====================================
+ # This shows the teacher the statistics of a participators for an given scenario
+ #}
+{% block TeacherContent %}
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card medium">
+                <div class="card-content">
+                    <span class="card-title">Sessie aanmaken</span>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="sessionName" type="text" class="validate">
+                            <label for="sessionName">Sessie naam</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Wachtwoord</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn waves-effect orange" type="submit" name="action">Aanmaken
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Uitleg</span>
+
+                    <div class="row">
+
+                        <ul class="collection">
+                            <li class="collection-item">Maak een sessienaam aan die de studenten vervolgens kunnen gebruiken om aan de sessie te kunnen deelnemen.</li>
+                            <li class="collection-item">Geef de sessie een wachtwoord zodat alleen de studenten die mee mogen doen deel kunnen nemen aan de sessie</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+{% endblock %} {# TeacherContent #}

@@ -1,0 +1,37 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 21-11-2018 00:02
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The student index page
+ # ======================
+ # This page holds the sceleton of the student accessable panels.
+ #}
+
+{% extends 'Base.html.twig' %}
+
+{% block body %}
+    <div class="container main">
+
+        <div class="row">
+
+            <ul class="pagination center">
+
+                <li class="waves-effect <?php echo $actions; ?>">
+                    <a href="studentpanel.php?page=actions">Acties</a>
+                </li>
+                <li class="waves-effect <?php echo $infofeed; ?>">
+                    <a
+                            href="studentpanel.php?page=infofeed">Info feed
+                    </a>
+                </li>
+                <li class="waves-effect <?php echo $chat; ?>">
+                    <a href="studentpanel.php?page=chat">Chat</a>
+                </li>
+            </ul>
+
+        </div>
+        {% block StudentContent %}
+        {% endblock %}
+    </div>
+{% endblock %}

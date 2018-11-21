@@ -1,0 +1,48 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 20-11-2018 10:45
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The base theme template.
+ # ====================================
+ # This shows the teacher the statistics of a participators for an given scenario
+ #}
+<!DOCTYPE html>
+<html lang="">
+<head>
+    {# This will store the meta tags for the website.#}
+    {% block metaTaggs %}
+        <meta charset="UTF-8"/>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="{{ 'base.meta.description.default'|trans }}"/>
+        <meta name="keywords" content="{{ 'base.meta.keywords.default'|trans }}"/>
+        <meta name="author" content="{{ 'base.meta.author.default'|trans }}"/>
+        <link rel='shortcut icon' type='image/x-icon' href='./img/fav.png'/>
+    {% endblock %}
+
+    {# This will render the title of the webpage #}
+    <title>{{ 'base.meta.title.base'|trans }}</title>
+
+    {# This block stores all style for the website. #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endblock %}
+</head>
+<body>
+    {# Include the template that contains the navigation section of the theme. #}
+    {% include 'Navigation.html.twig' %}
+
+    {# This block will be used to render the page content in #}
+    {% block body %}{% endblock %}
+
+    {# Include the template that contains the footer section of the theme. #}
+    {% include 'Footer.html.twig' %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+</body>
+</html>

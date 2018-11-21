@@ -32,6 +32,27 @@ If you want to build the front-end packages, also run:
 $ yarn install
 ```
 
+## Running
+### Yarn
+I have created several yarn scripts to run webpack and php servers for
+development.
+To run webpack for asset compilation run `webpack-run` from PhpStorm or with
+the commandline:
+```bash
+$ yarn run webpack-run
+```
+To watch files (watch for change) and automatic re compilation run `webpack-watch`
+from PhpStorm or with the commandline:
+```bash
+$ yarn run webpack-watch
+```
+To stop watching the assets run `webpack-watch`
+                            from PhpStorm or with the commandline:
+```bash
+$ webpack-unwatch
+```
+### Composer
+
 ## Requirements
  - \>= PHP 7.2
     - mb-string

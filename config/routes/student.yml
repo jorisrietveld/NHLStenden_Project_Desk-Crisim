@@ -1,0 +1,12 @@
+#
+# Student routes.
+#
+# This file contains all routes to the students accessible pages.
+#
+student_index:
+  path: /{_locale}/student
+  controller: App\Controller\StudentController::index
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'

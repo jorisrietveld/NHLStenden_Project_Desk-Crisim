@@ -1,0 +1,106 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 20-11-2018 23:46
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The teachers create event page
+ # ==============================
+ # This page allows the teacher to create an event for the students.
+ #}
+{% extends 'teacher/Index.html.twig' %}
+
+{% block TeacherContent %}
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Event aanmaken</span>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <select>
+                                <option value="">Kies een event</option>
+                                <option value="1">Event 1</option>
+                                <option value="2">Event 2</option>
+                                <option value="3">Event 3</option>
+                                <option value="4">Event 4</option>
+                                <option value="5">Event 5</option>
+                                <option value="6">Event 6</option>
+                            </select>
+                            <label>Eventnaam</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="text" type="text">
+                            <label for="location">Locatie</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <select>
+                                <option value="">Kies een actor</option>
+                                <option value="1">Brandweer</option>
+                                <option value="2">Ambulance</option>
+                                <option value="3">Burgermeester</option>
+                                <option value="4">ME</option>
+                            </select>
+                            <label>Actor</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="number" type="number">
+                            <label for="time">Maximale tijd in Minuten</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <select>
+                                <option value="">Kies een sessie</option>
+                                <option value="1">Sessie 1</option>
+                                <option value="2">Sessie 2</option>
+                                <option value="3">Sessie 3</option>
+                                <option value="4">Sessie 4</option>
+                            </select>
+                            <label>Sessie</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button class="btn waves-effect orange" type="submit" name="action">Event aanmaken
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Uitleg</span>
+
+                    <div class="row">
+
+                        <ul class="collection">
+                            <li class="collection-item">Maak een event aan.</li>
+                            <li class="collection-item">Kies een event wat je wilt toevoegen aan het scenario.</li>
+                            <li class="collection-item">Geef de locatie aan waar het event zich afspeelt.</li>
+                            <li class="collection-item">Kies de actor waarvoor het event bedoelt is.</li>
+                            <li class="collection-item">Geef de tijdsduur van het event aan.</li>
+                            <li class="collection-item">Geef aan in welke sessie het event moet plaats vinden.</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+{% endblock %} {# TeacherContent #}

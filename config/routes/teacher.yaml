@@ -1,0 +1,76 @@
+#
+# Teacher routes.
+#
+# This file contains all routes to the teacher accessible pages.
+#
+teacher_index:
+  path: /{_locale}/teacher
+  controller: App\Controller\TeacherController::index
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher_participators:
+  path: /{_locale}/participators
+  controller: App\Controller\TeacherController::participators
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher_chatMonitor:
+  path: /{_locale}/chatmonitor
+  controller: App\Controller\TeacherController::chatMonitor
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher_loadEvent:
+  path: /{_locale}/loadEvent
+  controller: App\Controller\TeacherController::loadEvent
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher_createSession:
+  path: /{_locale}/createSession
+  controller: App\Controller\TeacherController::createSession
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher_showStatistics:
+  path: /{_locale}/showStatistics
+  controller: App\Controller\TeacherController::showStatistics
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher_uploadSenario:
+  path: /{_locale}/uploadSenario
+  controller: App\Controller\TeacherController::uploadScenario
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher_assignPoints:
+  path: /{_locale}/assignPoints
+  controller: App\Controller\TeacherController::assignPoints
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+teacher_startSenario:
+  path: /{_locale}/startSenario
+  controller: App\Controller\TeacherController::startScenario
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'

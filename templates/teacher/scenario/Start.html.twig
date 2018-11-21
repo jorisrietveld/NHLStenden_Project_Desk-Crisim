@@ -1,0 +1,97 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 20-11-2018 23:53
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The teacher start scenario page
+ # ==============================
+ # This page allows the teacher to start a scenario for the students.
+ #}
+{% extends 'teacher/Index.html.twig' %}
+
+{% block TeacherContent %}
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">
+                        <p>Deelnemers toevoegen</p>
+                    </div>
+
+                    <div class="row">
+                        <form class="col s12">
+
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <select name="scenario">
+
+                                        <?php
+
+                                    $scenarios = ["Scenario1", "Scenario2", "Scenario3", "Scenario4", "Scenario5"];
+
+                                    foreach ($scenarios as $scenario) {
+                                        $active = "";
+
+                                        if (isset($_GET['scenario'])) {
+
+
+                                            $pageActive = $_GET['scenario'];
+
+                                            if ($pageActive == $actor) {
+                                                $active = "active";
+                                            }
+                                        } else {
+                                            if ($scenario == $scenarios[0]) {
+                                                $active = "active";
+                                            }
+                                        }
+
+                                        echo "<option value=\"$scenario\">$scenario</option>";
+                                                                          }
+
+                                                                          ?>
+
+                                    </select>
+                                    <label>Scenario selecteren</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <button class="btn waves-effect waves-light orange" type="submit" name="action">Start
+                                                                                                                scenario
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card">
+                <div class="card-content">
+
+                    <div class="card-title">
+                        <p>Scenario lijst</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+
+{% endblock %} {# Start #}
