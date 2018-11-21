@@ -1,0 +1,59 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 21-11-2018 00:02
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The teachers index page
+ # =======================
+ # This page holds the sceleton of the teacher accessable panels.
+ #}
+{% extends 'Base.html.twig' %}
+
+{% block body %}
+    <div class="container main">
+
+        <div class="row">
+
+            <ul class="pagination center">
+
+                <li class="waves-effect <?php echo $participators; ?>">
+                    {# TODO repace with path('') #}
+                    <a href="docentpanel.php?page=participators">Deelnemers{# TODO replace with translation #}</a>
+                </li>
+
+                <li class="waves-effect <?php echo $chatmonitor; ?>">
+                    <a href="docentpanel.php?page=chatmonitor">Chatmonitor</a>
+                </li>
+
+                <li class="waves-effect <?php echo $eventload; ?>">
+                    <a href="docentpanel.php?page=eventload">Event Inladen</a>
+                </li>
+
+                <li class="waves-effect <?php echo $sessionload; ?>">
+                    <a href="docentpanel.php?page=createsession">Sessie Aanmaken</a>
+                </li>
+
+                <li class="waves-effect <?php echo $statsload; ?>">
+                    <a href="docentpanel.php?page=loadstats">Statistieken</a>
+                </li>
+
+                <li class="waves-effect <?php echo $scenarioupload; ?>">
+                    <a href="docentpanel.php?page=scenarioupload">Scenario Uploaden</a>
+                </li>
+
+                <li class="waves-effect <?php echo $assignpoints; ?>">
+                    <a href="docentpanel.php?page=assignpoints">Punten Toekennen</a>
+                </li>
+
+                <li class="waves-effect <?php echo $startscenario; ?>">
+                    <a href="docentpanel.php?page=startscenario">Scenario Starten</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        {% block TeacherContent %}{% endblock %}
+
+    </div>
+{% endblock %}

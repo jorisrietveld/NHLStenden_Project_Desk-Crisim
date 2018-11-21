@@ -1,6 +1,11 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+homepage_unlocalized:
+  path: /
+  controller: App\Controller\IndexController::index
+
+
 homepage:
   path: /{_locale}
   controller: App\Controller\IndexController::index
@@ -18,17 +23,9 @@ admin:
     _locale: '%locale%'
 
 teacher:
-  path: /{_locale}/teacher
-  controller: App\Controller\TeacherController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+  resource: 'routes/teacher.yaml'
+
 
 student:
-  path: /{_locale}/student
-  controller: App\Controller\StudentController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+  resource: 'routes/student.yml'
+
