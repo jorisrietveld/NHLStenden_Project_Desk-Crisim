@@ -7,9 +7,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class StudentController extends AbstractController
 {
-    /**
-     * @Route("/student", name="student")
-     */
     public function index()
     {
         return $this->render('student/StudentActions.html.twig', [

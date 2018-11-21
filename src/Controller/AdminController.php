@@ -7,9 +7,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdminController extends AbstractController
 {
-    /**
-     * @Route("/admin", name="admin")
-     */
     public function index()
     {
         return $this->render('Index.html.twig', [

@@ -1,7 +1,9 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
-index:
+#
+# Teacher routes.
+#
+# This file contains all routes to the teacher accessible pages.
+#
+teacher_index:
   path: /{_locale}/teacher
   controller: App\Controller\TeacherController::index
   requirements:

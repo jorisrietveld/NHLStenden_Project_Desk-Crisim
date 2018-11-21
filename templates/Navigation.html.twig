@@ -7,17 +7,31 @@
     <nav class="black" role="navigation">
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <a class="btn tooltipped black" data-position="bottom" data-tooltip="joris">
-                    <i class="material-icons">{{ 'base.navigation.tooltip.person'|trans }}</i>
+                <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ 'navigation.tooltip.home' }}">
+                    <i class="material-icons">home</i>
+                </a>
+                <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ user.name|default('no username') }}">
+                    <i class="material-icons">person</i>
                 </a>
                 <a class="btn tooltipped black" data-position="bottom" data-tooltip="$currentSession">
-                    <i class="material-icons">{{ 'base.navigation.tooltip.timer'|trans }}</i>
+                    <i class="material-icons">av_timer</i>
                 </a>
+                {% if not "unauthenticated" %}{# TODO replace with real authentication check #}
+                    <a class='btn tooltipped black' data-position='bottom' data-tooltip='Uitloggen' href='?logout=true'>
+                        <i class="material-icons">directions_run</i></a>
+                {% endif %}
+
             </ul>
-            <a href="./index.php">
+            <a href="{{ path('homepage') }}">
                 <img class="brand-logo center" alt="Desk CriSim" src="./img/logo.png" style="margin-top: 0.1vh;"></a>
             <ul class='right'>
-                $notifyElement
+                {% if not "received anny notifications?" %}
+                    <li>
+                        <a>
+                            <span class="new badge orange " data-badge-caption="!">$numNotifications</span>
+                        </a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
