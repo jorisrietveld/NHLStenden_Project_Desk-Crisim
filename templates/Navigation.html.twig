@@ -7,7 +7,7 @@
     <nav class="black" role="navigation">
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ 'navigation.tooltip.home' }}">
+                <a href="{{ path('homepage') }}" class="btn tooltipped black" data-position="bottom" data-tooltip="{{ 'navigation.tooltip.home' }}">
                     <i class="material-icons">home</i>
                 </a>
                 <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ user.name|default('no username') }}">

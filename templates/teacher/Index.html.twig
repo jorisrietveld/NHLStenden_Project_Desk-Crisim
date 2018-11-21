@@ -17,36 +17,35 @@
             <ul class="pagination center">
 
                 <li class="waves-effect <?php echo $participators; ?>">
-                    {# TODO repace with path('') #}
-                    <a href="docentpanel.php?page=participators">Deelnemers{# TODO replace with translation #}</a>
+                    <a href="{{ path('teacher_participators'}}">Deelnemers{# TODO replace with translation #}</a>
                 </li>
 
                 <li class="waves-effect <?php echo $chatmonitor; ?>">
-                    <a href="docentpanel.php?page=chatmonitor">Chatmonitor</a>
+                    <a href="{{ path('teacher_chatMonitor') }}">Chatmonitor</a>
                 </li>
 
                 <li class="waves-effect <?php echo $eventload; ?>">
-                    <a href="docentpanel.php?page=eventload">Event Inladen</a>
+                    <a href="{{ path('teacher_loadEvent') }}">Event Inladen</a>
                 </li>
 
                 <li class="waves-effect <?php echo $sessionload; ?>">
-                    <a href="docentpanel.php?page=createsession">Sessie Aanmaken</a>
+                    <a href="{{ path('teacher_createSession') }}">Sessie Aanmaken</a>
                 </li>
 
                 <li class="waves-effect <?php echo $statsload; ?>">
-                    <a href="docentpanel.php?page=loadstats">Statistieken</a>
+                    <a href="{{ path('teacher_showStatistics') }}">Statistieken</a>
                 </li>
 
                 <li class="waves-effect <?php echo $scenarioupload; ?>">
-                    <a href="docentpanel.php?page=scenarioupload">Scenario Uploaden</a>
+                    <a href="{{ path('teacher_uploadSenario') }}">Scenario Uploaden</a>
                 </li>
 
                 <li class="waves-effect <?php echo $assignpoints; ?>">
-                    <a href="docentpanel.php?page=assignpoints">Punten Toekennen</a>
+                    <a href="{{ path('teacher_assignPoints') }}">Punten Toekennen</a>
                 </li>
 
                 <li class="waves-effect <?php echo $startscenario; ?>">
-                    <a href="docentpanel.php?page=startscenario">Scenario Starten</a>
+                    <a href="{{ path('') }}">Scenario Starten</a>
                 </li>
 
             </ul>
