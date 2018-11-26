@@ -1,9 +1,13 @@
 # Desk CriSim
+Master:
 [![Build Status](https://travis-ci.com/jorisrietveld/DeskCrism-Backend.svg?token=8VeUSD3hMgXK4qZXKocS&branch=master)](https://travis-ci.com/jorisrietveld/DeskCrism-Backend)
+Dev-Master:
 [![Build Status](https://travis-ci.com/jorisrietveld/DeskCrism-Backend.svg?token=8VeUSD3hMgXK4qZXKocS&branch=dev-master)](https://travis-ci.com/jorisrietveld/DeskCrism-Backend)
 ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
 
+![Desk Crisim logo](resources/DESK_CRISIM_LOGO_BG.png)
 This repository holds the source code of the Desk Crisim system.
+
 
 ## Installing
 To install the project you should first install the required tools:
