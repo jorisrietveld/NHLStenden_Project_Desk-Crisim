@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
-<xliff version="1.2"
-       xmlns='urn:oasis:names:tc:xliff:document:1.2'
-       xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
+<xliff
+        version="1.2"
+        xmlns='urn:oasis:names:tc:xliff:document:1.2'
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
     <file
             source-language="nl"
             target-language="nl"
             original="index.html"
             datatype="html"
-            date="2018-11-20T18:00:52Z">
+            date="2018-11-26T11:34:47Z">
         <header>
-            <note from="Joris Rietveld">Translation file for the desk CriSim project.</note>
+            <note from="Joris Rietveld">Translation base file for the DeskCrism project.</note>
         </header>
         <body>
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Meta-Tags -->
@@ -49,7 +50,6 @@
                 <source>base.footer.copyright</source>
                 <target>Desk CriSim</target>
             </trans-unit>
-            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - main -->
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  index -->
             <trans-unit id="index.index.container.title">
                 <source>index.index.container.title</source>
@@ -63,35 +63,6 @@
                 <source>index.index.link.student</source>
                 <target>Student Panel</target>
             </trans-unit>
-            <trans-unit id="">
-                <source></source>
-                <target>Test Sessie zetten en gebruikerstype</target>
-            </trans-unit>
-            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -teacher -->
-            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  student -->
-            <trans-unit id="student.index.pagination.actions">
-                <source>student.index.pagination.actions</source>
-                <target>Acties</target>
-            </trans-unit>
-            <trans-unit id="studentn.index.pagination.infofeed">
-                <source>student.index.pagination.infofeed</source>
-                <target>Info feed</target>
-            </trans-unit>
-            <trans-unit id="student.index.pagination.chat">
-                <source>student.index.pagination.chat</source>
-                <target>Chat</target>
-            </trans-unit>
-
-            <trans-unit id="">
-                <source></source>
-                <target></target>
-            </trans-unit>
-            <trans-unit id="">
-                <source></source>
-                <target></target>
-            </trans-unit>
-
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  admin -->
-    </body>
-</file>
-        </xliff>
+        </body>
+    </file>
+</xliff>
