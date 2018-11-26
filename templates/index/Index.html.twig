@@ -18,7 +18,7 @@
                 <div class="card">
                     <div class="card-content">
                         <div class="card-title">
-                            <p>Alle pagina's</p>
+                            <p>{{ 'index.index.container.title' }}</p>
                         </div>
 
                         <ul class="collection">
@@ -27,7 +27,7 @@
                                 <a href='{{ path('teacher_index') }}'>
                                     <i class="material-icons circle">insert_link</i>
                                 </a>
-                                <p>Docent Panel
+                                <p>{{ 'index.index.link.teacher'|trans }}
                                     <a href="{{ path('teacher_index') }}" class="secondary-content">
                                         <i class="material-icons black-text">send</i>
                                     </a>
@@ -38,7 +38,7 @@
                                 <a href='{{ path('student_index' )}}'>
                                     <i class="material-icons circle">insert_link</i>
                                 </a>
-                                <p>Student Panel
+                                <p>{{ 'index.index.link.student'|trans }}
                                     <a href="{{ path('student_index' )}}" class="secondary-content">
                                         <i class="material-icons black-text">send</i>
                                     </a>
@@ -56,7 +56,7 @@
             <div class="col s12 m12">
                 <div class="card large">
                     <div class="card-content">
-                        <span class="card-title">Test Sessie zetten en gebruikerstype</span>
+                        <span class="card-title">{{ 'index.index.' }}</span>
                         <form action="#" method="post">
                             <div class="input-field col s12">
                                 <input id="usertype" type="text" name="usertype">

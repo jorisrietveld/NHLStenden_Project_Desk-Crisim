@@ -16,12 +16,12 @@
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  Meta-Tags -->
             <trans-unit id="base.meta.description.default">
                 <source>base.meta.description.default</source>
-                <target></target>
+                <target>A Crisis simulation serious-game</target>
             </trans-unit>
 
             <trans-unit id="base.meta.keywords.default">
                 <source>base.meta.keywords.default</source>
-                <target>Welcome!</target>
+                <target>Stenden, serious-game, CriSim, Desk-CriSim</target>
             </trans-unit>
 
             <trans-unit id="base.meta.author.default">
@@ -34,16 +34,6 @@
                 <target>Desk Crisim</target>
             </trans-unit>
 
-            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Navigation -->
-            <trans-unit id="base.navigation.tooltip.person">
-                <source>base.navigation.tooltip.person</source>
-                <target>Persoon</target>
-            </trans-unit>
-
-            <trans-unit id="base.navigation.tooltip.timer">
-                <source>base.navigation.tooltip.timer</source>
-                <target>AV Timer</target>
-            </trans-unit>
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Footer -->
             <trans-unit id="base.footer.link.help">
                 <source>base.footer.link.help</source>
@@ -61,8 +51,47 @@
             </trans-unit>
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - main -->
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  index -->
+            <trans-unit id="index.index.container.title">
+                <source>index.index.container.title</source>
+                <target>Alle pagina's</target>
+            </trans-unit>
+            <trans-unit id="index.index.link.teacher">
+                <source>index.index.link.teacher</source>
+                <target>Docent Panel</target>
+            </trans-unit>
+            <trans-unit id="index.index.link.student">
+                <source>index.index.link.student</source>
+                <target>Student Panel</target>
+            </trans-unit>
+            <trans-unit id="">
+                <source></source>
+                <target>Test Sessie zetten en gebruikerstype</target>
+            </trans-unit>
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -teacher -->
-            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  admin -->
-        </body>
-    </file>
-</xliff>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  student -->
+            <trans-unit id="student.index.pagination.actions">
+                <source>student.index.pagination.actions</source>
+                <target>Acties</target>
+            </trans-unit>
+            <trans-unit id="studentn.index.pagination.infofeed">
+                <source>student.index.pagination.infofeed</source>
+                <target>Info feed</target>
+            </trans-unit>
+            <trans-unit id="student.index.pagination.chat">
+                <source>student.index.pagination.chat</source>
+                <target>Chat</target>
+            </trans-unit>
+
+            <trans-unit id="">
+                <source></source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="">
+                <source></source>
+                <target></target>
+            </trans-unit>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  admin -->
+    </body>
+</file>
+        </xliff>
