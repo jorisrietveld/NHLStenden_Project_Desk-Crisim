@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xliff version="1.2"
+       xmlns='urn:oasis:names:tc:xliff:document:1.2'
+       xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
+    <file
+            source-language="nl"
+            target-language="nl"
+            original="index.html"
+            datatype="html"
+            date="2018-11-26T11:04:52Z">
+        <header>
+            <note from="Joris Rietveld">Translation file for the student pages in desk CriSim project.</note>
+        </header>
+        <body>
+            <trans-unit id="student.index.pagination.actions">
+                <source>student.index.pagination.actions</source>
+                <target>Acties</target>
+            </trans-unit>
+            <trans-unit id="studentn.index.pagination.infofeed">
+                <source>student.index.pagination.infofeed</source>
+                <target>Info feed</target>
+            </trans-unit>
+            <trans-unit id="student.index.pagination.chat">
+                <source>student.index.pagination.chat</source>
+                <target>Chat</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
