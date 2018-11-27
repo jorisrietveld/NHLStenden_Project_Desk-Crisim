@@ -24,7 +24,7 @@
         {
             "name": "Soner Mulder",
             "email": "niek.luttikhof@student.stenden.com",
-            "url": ""
+            "url": "https://www.sonermulder.nl"
         },
         {
             "name": "Sander Paping",
@@ -60,14 +60,12 @@
     },
     "private": true,
     "scripts": {
-        "install-all" : "composer insatll && composer update && yarn install",
         "webpack-run": "yarn run encore dev",
         "webpack-watch": "yarn run encore dev --watch",
         "webpack-unwatch": "yarn stop",
-        "start-webserver": "bin/console server:start 127.0.0.1:8000",
+        "start-webserver": "bin/console server:run 0.0.0.0:8000",
+        "start-webserver-windows": "php bin/console server:run 127.0.0.1:8000",
         "stop-webserver": "bin/console server:stop",
-        "open-browser ": "x-www-browser 127.0.0.1:8000",
-        "windows-start-webserver" : "php bin/console server:start",
-        "windows-stop-webserver" : "php bin/console server:stop"
+        "open-browser ": "x-www-browser 0.0.0.0:8000"
     }
 }
