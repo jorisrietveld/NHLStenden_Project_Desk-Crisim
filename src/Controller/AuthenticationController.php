@@ -14,8 +14,6 @@ class AuthenticationController extends AbstractController
 {
     public function index()
     {
-        return $this->render('authentication/Login.html.twig', [
-            'controller_name' => 'AuthenticationController',
-        ]);
+        return $this->render('authentication/Login.html.twig');
     }
 }

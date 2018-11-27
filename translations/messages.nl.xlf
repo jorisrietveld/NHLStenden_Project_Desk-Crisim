@@ -63,6 +63,34 @@
                 <source>index.index.link.student</source>
                 <target>Student Panel</target>
             </trans-unit>
+
+            <trans-unit id="authentication.login.form.title">
+                <source>authentication.login.form.title</source>
+                <target>Aanmelden</target>
+            </trans-unit>
+
+            <trans-unit id="authentication.login.form.label.username">
+                <source>authentication.login.form.label.username</source>
+                <target>Gebruikers Naam</target>
+            </trans-unit>
+            <trans-unit id="authentication.login.form.label.password">
+                <source>authentication.login.form.label.password</source>
+                <target>Wachtwoord</target>
+            </trans-unit>
+            <trans-unit id="authentication.login.form.submit">
+                <source>authentication.login.form.submit</source>
+                <target>Meld me aan</target>
+            </trans-unit>
+
+        <!--    <trans-unit id="authentication.login.form.label.username">
+                <source>authentication.login.form.label.username</source>
+                <target>Gebruikers Naam</target>
+            </trans-unit>
+
+            <trans-unit id="authentication.login.form.label.username">
+                <source>authentication.login.form.label.username</source>
+                <target>Gebruikers Naam</target>
+            </trans-unit>-->
         </body>
     </file>
 </xliff>
