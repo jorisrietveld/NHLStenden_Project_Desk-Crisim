@@ -64,6 +64,7 @@
         "webpack-watch": "yarn run encore dev --watch",
         "webpack-unwatch": "yarn stop",
         "start-webserver": "bin/console server:start 0.0.0.0:8000",
+        "start-webserver-windows": "php bin/console server:run 127.0.0.1:8000",
         "stop-webserver": "bin/console server:stop",
         "open-browser ": "x-www-browser 0.0.0.0:8000"
     }
