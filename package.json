@@ -60,7 +60,7 @@
     },
     "private": true,
     "scripts": {
-        "install-all": "yarn install && composer install && composer update",
+        "install-all": "yarn install && composer install && composer update && yarn run encore dev",
         "webpack-run": "yarn run encore dev",
         "webpack-watch": "yarn run encore dev --watch",
         "webpack-unwatch": "yarn stop",
