@@ -7,6 +7,7 @@
 import $ from 'jquery';
 import 'popper.js'
 import 'jquery.easing'
+import 'chart.js'
 
 // Import matirialize css.
 import 'materialize-css/dist/js/materialize.min'
