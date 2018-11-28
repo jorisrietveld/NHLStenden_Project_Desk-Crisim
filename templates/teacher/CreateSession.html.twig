@@ -10,6 +10,7 @@
 {% extends 'teacher/Index.html.twig' %}
 
 {% block TeacherContent %}
+
     <div class="row">
         <div class="col s12 m6">
             <div class="card medium">
@@ -49,6 +50,10 @@
                             <li class="collection-item">Geef de sessie een wachtwoord zodat alleen de studenten die mee
                                                         mogen doen deel kunnen nemen aan de sessie
                             </li>
+
+                            {% if myTask %}
+                                {{ dump(myTask) }}
+                            {% endif %}
                         </ul>
 
                     </div>
@@ -65,8 +70,14 @@
                     <span class="card-title">Form Test</span>
                     {% block content %}
                         {{ form_start(form) }}
-                        {{ form_widget(form) }}
+
+                        {{ form_row(form.task, {'attr': {'id': 'testLabel'}} ) }}
+                        {{ form_row(form.save, {'attr': {'class': 'btn waves-effect orange'}}) }}
+
+
                         {{ form_end(form) }}
+
+
                     {% endblock %}
                 </div>
             </div>
