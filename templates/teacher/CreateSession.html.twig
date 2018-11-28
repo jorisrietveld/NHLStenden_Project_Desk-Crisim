@@ -65,8 +65,14 @@
                     <span class="card-title">Form Test</span>
                     {% block content %}
                         {{ form_start(form) }}
-                        {{ form_widget(form) }}
+
+                        {{ form_row(form.task, {'attr': {'id': 'testLabel'}} ) }}
+                        {{ form_row(form.save, {'attr': {'class': 'btn waves-effect orange'}}) }}
+
+
                         {{ form_end(form) }}
+
+
                     {% endblock %}
                 </div>
             </div>

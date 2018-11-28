@@ -17,11 +17,9 @@ class CreateSessionController extends AbstractController
     {
         // creates a task and gives it some dummy data for this example
         $task = new Task();
-        $task->setTask('Typ hier beste');
 
         $form = $this->createFormBuilder($task)
             ->add('task', TextType::class)
-
             ->add('save', SubmitType::class, array('label' => 'Send'))
             ->getForm();
 
