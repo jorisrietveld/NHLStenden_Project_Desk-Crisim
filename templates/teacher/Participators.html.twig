@@ -107,16 +107,16 @@
 
 
                         <tbody>
-                        {% set students = [1, 2, 3, 4, 5, 6, 7] %}
 
                         {%  for student in students %}
 
                             <tr>
-                                <td>Student: {{ student }}</td>
-                                <td>Student: {{ student }}</td>
-                                <td>Student: {{ student }}</td>
-                                <td>Student: {{ student }}</td>
-                                <td>Student: {{ student }}</td>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.email }}</td>
+                                <td>{{ student.number }}</td>
+                                <td><i class="material-icons {{ student.online }}">fiber_manual_record</i></td>
+                                <td>{{ student.actor }}</td>
+
                             </tr>
 
                         {% endfor %}

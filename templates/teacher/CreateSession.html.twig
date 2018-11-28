@@ -10,6 +10,7 @@
 {% extends 'teacher/Index.html.twig' %}
 
 {% block TeacherContent %}
+
     <div class="row">
         <div class="col s12 m6">
             <div class="card medium">
@@ -49,6 +50,10 @@
                             <li class="collection-item">Geef de sessie een wachtwoord zodat alleen de studenten die mee
                                                         mogen doen deel kunnen nemen aan de sessie
                             </li>
+
+                            {% if myTask %}
+                                {{ dump(myTask) }}
+                            {% endif %}
                         </ul>
 
                     </div>
