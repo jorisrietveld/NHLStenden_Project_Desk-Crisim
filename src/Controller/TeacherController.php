@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TeacherController extends AbstractController
@@ -45,9 +46,12 @@ class TeacherController extends AbstractController
         return $this->render('teacher/chat/ChatMonitor.html.twig');
     }
 
-    public function createSession()
+    public function createSession(Request $request)
     {
-        return $this->render('teacher/CreateSession.html.twig');
+        return $this->render('teacher/CreateSession.html.twig', [
+            "Something"=>$request
+        ]);
+
     }
 
     public function assignPoints()
