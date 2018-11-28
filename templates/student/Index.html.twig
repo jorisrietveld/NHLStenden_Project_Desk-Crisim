@@ -18,14 +18,14 @@
             <ul class="pagination center">
 
                 <li class="waves-effect <?php echo $actions; ?>">
-                    <a href="studentpanel.php?page=actions">{{ 'student.index.pagination.actions'|trans([],'student') }}</a>
+                    <a href="{{ path('student_actions') }}">{{ 'student.index.pagination.actions'|trans([],'student') }}</a>
                 </li>
                 <li class="waves-effect <?php echo $infofeed; ?>">
-                    <a href="studentpanel.php?page=infofeed">{{ 'student.index.pagination.infofeed'|trans([],'student') }}
+                    <a href="{{ path('student_InfoFeed') }}">{{ 'student.index.pagination.infofeed'|trans([],'student') }}
                     </a>
                 </li>
                 <li class="waves-effect <?php echo $chat; ?>">
-                    <a href="studentpanel.php?page=chat">{{ 'student.index.pagination.chat'|trans([],'student') }}</a>
+                    <a href="{{ path('student_chat') }}">{{ 'student.index.pagination.chat'|trans([],'student') }}</a>
                 </li>
             </ul>
 

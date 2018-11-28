@@ -10,3 +10,27 @@ student_index:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
+
+student_actions:
+  path: /{_locale}/actions
+  controller: App\Controller\StudentController::actions
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+student_InfoFeed:
+  path: /{_locale}/infofeed
+  controller: App\Controller\StudentController::infoFeed
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
+
+student_chat:
+  path: /{_locale}/chat
+  controller: App\Controller\StudentController::chat
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'
