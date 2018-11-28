@@ -37,7 +37,7 @@ teacher_loadEvent:
 
 teacher_createSession:
   path: /{_locale}/createSession
-  controller: App\Controller\TeacherController::createSession
+  controller: App\Controller\CreateSessionController::new
   requirements:
     _locale: '%app.locales%'
   defaults:
