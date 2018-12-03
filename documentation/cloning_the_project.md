@@ -26,7 +26,9 @@ the commits you did so it can be reviewed in one go.
 If you want to setup a production server you should clone the project
 directly from an certain release or the `master` branch. The master
 branch will be less stable then a release because changes from
-`dev-master` are directly merged into it. **Cloning the repository and
+`dev-master` are directly merged into it.
+
+**Cloning the repository and
 checking out a release or branch**
 https://github.com/jorisrietveld/DeskCrism-Backend
 ```bash
@@ -49,9 +51,12 @@ where you can commit and push changes to. To fork the project, open your
 web browser and head on to
 [the Desk CriSim repository](https://github.com/jorisrietveld/DeskCrism-Backend).
 On the right-top corner, just below the main navbar there is a button
-that lets you do that. Press it and it will fork the repository to your
+that lets you do that. 
+![github fork button](resources/github_fork_button.png)
+Press it and it will fork the repository to your
 own account. when its done you can copy the url of your fork by pressing
 on the green "Clone/Download" button on your forks page.
+![github clone repo](resources/github_clone_repo.png)
 
 ### Updating your fork
 Before starting to work on a new feature in your fork, its a good idea
@@ -65,8 +70,15 @@ Usually this remote is called upstream and this is also necessary if you
 want to create pull request to the main project.
 
 ```bash
+# If you want to check if the remote is already added you can run:
+$ git remote -v
 
-$ git add remote <remote_url> upstream
+# Add the new remote if it doesn't exist.
+$ git remote add upstream https://github.com/jorisrietveld/DeskCrism-Backend.git
+
+# Check again?
+$ git remote -v
+
 ```
 
 After you added the upstream repository as an remote it will still not
@@ -74,10 +86,13 @@ update anything when pulling or updating. You need to fetch the commit
 info from the upstream repository first, so type:
 
 ```bash
-$ git fetch --remote upstream
-# Now the new 
-```
+# Fetch from the upstream repo
+git fetch upstream
 
+# Now checkout your dev-master branch locally.
+git checkout dev-master
+```
+<!--git merge upstream/master-->
 ## Committing and pushing
 During the development of an feature or bug-fix its good practice to
 commit it to your local repository so that git can track it, giving you
@@ -87,7 +102,13 @@ unit tested) so you can push it to your fork and check if it is able to
 merge.
 
 ```bash
-$ git push upstream
+# You are in the root directory of the project. You have committed serveral times with:
+$ git commit -m "Added commic-sans to the :root{} and *{} css selector of the site"
+$ git commit -m "Replaced all abstract div elements with giant table in table magic"
+$ git commit -m "Replaced all materialize icons with animated gifs that may trigger Epilepsy"
+
+# Done committing you are ready to push it to your fork on github.
+$ git push
 ```
 
 If its not merge-able see
