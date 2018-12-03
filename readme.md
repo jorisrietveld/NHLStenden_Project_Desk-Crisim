@@ -7,18 +7,20 @@ Dev-Master:
 ![PHP 7.2](https://img.shields.io/badge/PHP-%3E%3D7.2-blue.svg)
 
 ![Desk Crisim logo](resources/DESK_CRISIM_LOGO_BG.png)
-This repository holds the source code of the Desk Crisim system.To install the project on a production server you should check if you have
+This repository holds the source code of the crisis simulation game: Desk Crisim. Desk CriSim is a web application that allows students to simulate
+crisis situations. Teachers can assign students as certain actors in a crisis situation and monitor the choices that the students make on events that
+happen during a crisis.
 
 
 ## Installing
 [**To much text, take me to the quick setup!**](##quick-setup)
 
-The application is platform independent and should run on :heart: Linux :penguin:, Mac OS :apple: and even
- on :trollface: windows. Our production server and automated tests (Unit tests, security tests, continues integration and
+The application is platform independent and should run on Linux :penguin:, Mac OS and even
+ on windows. However our production server and automated tests (Unit tests, security tests, continues integration and
  code quality tests) run on Linux servers [_(specificly: Ubuntu 18.04/18.10)_](https://www.ubuntu.com/#download).
- This means that it is guarantied to work on Linux, because we would catch the builds failing. This is also our initial target setup
- for the production server. It should also work on any unix-like operating system like BSD or Mac OSX but you should validate that
- php is compiled with the same arguments as the version in the ubuntu repositories and that you have the correct php extensions installed.
+ This means that it is guarantied to work on Linux, because we would catch the failing builds. This is also our initial target setup
+ for the production server. It should also work on any unix-like operating system like BSD or Mac OSX but you should validate that your
+ php version is compiled with the same arguments as the version in the ubuntu repositories and that you have the correct php extensions installed.
 
 The main programming language of the project is PHP and Java script, but also builds on: (X)HTML, Twig, Markdown, XML, CSS and SCSS mainly for
 the presentation of the application. For faster development we choose to use the symfony framework instead of rolling our own. This means that
@@ -37,8 +39,8 @@ Because the routes in the application are dynamically matched inside of the appl
 [apache](http://httpd.apache.org/) (with [mod_rewrite](https://httpd.apache.org/docs/2.2/mod/mod_rewrite.html)) including some with [special configuration]() for it to function properly.
 
 ### Read detailed instructions on:
-- [**Cloning & opening the project**]()
-    - [From the commandline]()
+- [**Cloning & opening the project**](documentation/cloning_the_project.md)
+    - [From the commandline](/documentation/cloning_the_project.md#)
     - [From PHPStorm]()
 - [**The structure of the project**]()
     - [The directory structure]()
@@ -129,12 +131,12 @@ $ php bin/console server:stop
 ```
 
 ## Required Dependencies
-- >= PHP 7.2 compiled with the `–with-password-argon2` flag. It is also
+- \>= PHP 7.2 compiled with the `–with-password-argon2` flag. It is also
      possible **(But not recommended)** to run the application with php 7.2
      or even 7.1 without this flag but it requires you to change the password
      hashing configuration in  `./config/bundles/security.yaml`. Replace the
      line `algorithm: argon2` to  `algorithm: bcrypt`. [there are knows issues](#php-segfault)
-   - Required Php modules:
+    - #### Required Php modules:
 
   |             |              |               |                 |               |
   |:------------|:-------------|:--------------|:----------------|:--------------|
@@ -145,30 +147,30 @@ $ php bin/console server:stop
   | php-common  | php-mongodb  | php7.2-cli    | php7.2-mbstring |               |
   | php-curl    | php-pear     | php7.2-common | php7.2-opcache  |               |
   | php-dev     | php-soap     | php7.2-curl   | php7.2-readline |               |
-    - >= Composer
-- >= Yarn package manger
-    - >= Npm
-    - >= NodeJS
-    - >= webpack
-    - >= SCSS
+    - \>= Composer
+- \>= Yarn package manger
+    - \>= Npm
+    - \>= NodeJS
+    - \>= webpack
+    - \>= SCSS
 
 - Webservers:
-    - >= Nginx
-    - >= Apache
-    - >= IIS
+    - \>= Nginx
+    - \>= Apache
+    - \>= IIS
 - Database servers:
-    - >= Mysql 5.7 or MariaDB
-    - >= SQL Server
-    - >= Postgre
-    - >= SQLite
+    - Mysql \>= 5.7 or MariaDB
+    - \>= SQL Server
+    - \>= Postgre
+    - \>= SQLite
 
 ## The Project Team
 
- - **Project lead** Lennart Pikijn [:email:](mailto:lennart.pikijn@student.stenden.com)
+ - **Front-end programmer** Lennart Pikijn [:email:](mailto:lennart.pikijn@student.stenden.com)
  - **secondary lead** Niek Luttikhof [:email:](mailto:niek.luttikhof@student.stenden.com)
  - **secretary** Soner Mulder [:email:](mailto:niek.luttikhof@student.stenden.com)
  - **Planner** Sander Paping [:email:](mailto:sander.paping@student.stenden.com)
- - **Repository Manger** Joris Rietveld [:email:](mailto:joris.rietveld@student.stenden.com)
+ - **Project lead & Repository Manger** Joris Rietveld [:email:](mailto:joris.rietveld@student.stenden.com)
 
 ## Known issues
 _Known issues in the project, please open a issue and if it is confirmed I will add it
