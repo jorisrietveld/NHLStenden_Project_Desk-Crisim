@@ -118,9 +118,26 @@ by opening a pull request from the browser.
 
 ## Creating a pull request
 Go to the upstream repository on github and click on pull-request's in
-the menu below the navbar. Then click on create a pull request and add a
-description containing the reason of the request and what it solves or
-adds.
+the menu below the navbar.
+![github_create_pull_request_tab.png](resources/github_create_pull_request_tab.png)
+Then click on create a pull request
+![github_create_pull_request_create.png](resources/github_create_pull_request_create.png)
+and add a description containing the reason of the request and what it solves or adds to the
+project.
+![github_create_pull_request.png](resources/github_create_pull_request.png)
+After creating the request you will see an Travis CI process running, this is the
+Continues Integration tool we use for automated testing on each commit in `dev-master`
+and `master`. Travis will check your submitted code on smell, security issues,
+documentation, the unit tests, and lots validation for Yaml, XML, XLF, Twig templates,
+package.json, composer.json, composer.lock, webpack.config.js. It will also check
+the projects dependencies for known security bugs online. If the travis CI logo
+turns green your good to go, if it goes red you need to click on the build and
+view the log to find out what you broke. You can still force push to `dev-master`
+and break everybody code but under the tab commits everybody can see your name
+with a big red cross next to it, it will cost you, you have to bring cake.
+If you locate the issue with your you can cancel the previous pull request and
+create a new one, with the issues solved.
+
 
 **todo add a few images with instructions**
 
