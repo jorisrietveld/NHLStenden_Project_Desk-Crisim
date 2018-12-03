@@ -6,18 +6,18 @@ Dev-Master:
 ![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
 ![PHP 7.2](https://img.shields.io/badge/PHP-%3E%3D7.2-blue.svg)
 
-![Desk Crisim logo](resources/DESK_CRISIM_LOGO_BG.png)
-This repository holds the source code of the crisis simulation game: Desk Crisim. Desk CriSim is a web application that allows students to simulate
+![Desk CriSim logo](resources/DESK_CRISIM_LOGO_BG.png)
+This repository holds the source code of the crisis simulation game: Desk CriSim. Desk CriSim is a web application that allows students to simulate
 crisis situations. Teachers can assign students as certain actors in a crisis situation and monitor the choices that the students make on events that
 happen during a crisis.
 
 
 ## Installing
-[**To much text, take me to the quick setup!**](##quick-setup)
+[**To much text, take me to the quick setup!**](#quick-setup)
 
 The application is platform independent and should run on Linux :penguin:, Mac OS and even
  on windows. However our production server and automated tests (Unit tests, security tests, continues integration and
- code quality tests) run on Linux servers [_(specificly: Ubuntu 18.04/18.10)_](https://www.ubuntu.com/#download).
+ code quality tests) run on Linux servers [ _(specifically: Ubuntu 18.04/18.10)_ ](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes).
  This means that it is guarantied to work on Linux, because we would catch the failing builds. This is also our initial target setup
  for the production server. It should also work on any unix-like operating system like BSD or Mac OSX but you should validate that your
  php version is compiled with the same arguments as the version in the ubuntu repositories and that you have the correct php extensions installed.
@@ -27,7 +27,7 @@ the presentation of the application. For faster development we choose to use the
 the project has to install several dependencies in order to run. [Composer](https://getcomposer.org/) is a widely used dependency manager for PHP that can install the
 required dependencies using the configuration in `./composer.json` [see this]() for information about installing composer.
 
-For loading, pre-proccessing and compiling the front-end components we use the [webpack](https://webpack.js.org/)
+For loading, pre-processing and compiling the front-end components we use the [webpack](https://webpack.js.org/)
 and the [yarn package manager](https://yarnpkg.com/en/) based on nodeJS. It is not required to be installed on a production server but it is
 certainly easier to install or update the application later on. Storing data can be done on every database server that is compatible with
 [doctrine ORM]() by configuring your database connection parameters in `.local.env` or by setting them as environment variables. Make sure
@@ -35,13 +35,17 @@ that you don't include them in version control! during development we use [MySQL
 version will do, previous versions are also possible but require you to alter the doctrine settings because 5.7 introduced the json field type
 that is used in the application.
 
-Because the routes in the application are dynamically matched inside of the application, it needs a rewrite capable webserver like: [nginx]() or
+Because the routes in the application are dynamically matched inside of the application, it needs a rewrite capable web server like: [Nginx](https://nginx.org/en/) or
 [apache](http://httpd.apache.org/) (with [mod_rewrite](https://httpd.apache.org/docs/2.2/mod/mod_rewrite.html)) including some with [special configuration]() for it to function properly.
 
 ### Read detailed instructions on:
-- [**Cloning & opening the project**](documentation/cloning_the_project.md)
-    - [From the commandline](/documentation/cloning_the_project.md#)
-    - [From PHPStorm]()
+- [**Working with version controll**](documentation/cloning_the_project.md)
+    - [Cloning, updating, pushing and pulling](/documentation/cloning_the_project.md#cloning-updating-pushing-and-pulling)
+    - [Cloning for production](documentation/cloning_the_project.md#cloning-for-production)
+    - [Forking for development](documentation/cloning_the_project.md#forking-for-development)
+       - [Updating your fork](documentation/cloning_the_project.md#updating-your-fork)
+    - [Committing and pushing](documentation/cloning_the_project.md#committing-and-pushing)
+    - [Creating a pull request](documentation/cloning_the_project.md#creating-a-pull-request)
 - [**The structure of the project**]()
     - [The directory structure]()
     - [Images, stylesheeds, javascript and templates]()
@@ -131,23 +135,28 @@ $ php bin/console server:stop
 ```
 
 ## Required Dependencies
-- \>= PHP 7.2 compiled with the `–with-password-argon2` flag. It is also
-     possible **(But not recommended)** to run the application with php 7.2
-     or even 7.1 without this flag but it requires you to change the password
-     hashing configuration in  `./config/bundles/security.yaml`. Replace the
-     line `algorithm: argon2` to  `algorithm: bcrypt`. [there are knows issues](#php-segfault)
+- PHP >=7.2
+  > compiled with the `–with-password-argon2`, [see this]() for an explanation.
+  >\>[there are knows issues](#php-segfault)
+
     - #### Required Php modules:
 
-  |             |              |               |                 |               |
-  |:------------|:-------------|:--------------|:----------------|:--------------|
-  | php-amqp    | php-fpm      | php-xdebug    | php7.2-dev      | php7.2-soap   |
-  | php-apcu    | php-intl     | php-xml       | php7.2-fpm      | php7.2-xml    |
-  | php-apcu-bc | php-json     | php-xmlrpc    | php7.2-intl     | php7.2-xmlrpc |
-  | php-cli     | php-mbstring | php-zip       | php7.2-json     | php7.2-zip    |
-  | php-common  | php-mongodb  | php7.2-cli    | php7.2-mbstring |               |
-  | php-curl    | php-pear     | php7.2-common | php7.2-opcache  |               |
-  | php-dev     | php-soap     | php7.2-curl   | php7.2-readline |               |
+  <table>
+    <thead>
+      <tr><th align="left" colspan="5">Required Php Modules <b style="color:red;">Needs to be reviewed, not everything is required!</b></th></tr>
+    </thead>
+    <tbody>
+      <tr><td align="left"> php-amqp    </td><td align="left"> php-fpm      </td><td align="left"> php-xdebug    </td><td align="left"> php7.2-dev      </td><td align="left"> php7.2-soap   </td></tr>
+      <tr><td align="left"> php-apcu    </td><td align="left"> php-intl     </td><td align="left"> php-xml       </td><td align="left"> php7.2-fpm      </td><td align="left"> php7.2-xml    </td></tr>
+      <tr><td align="left"> php-apcu-bc </td><td align="left"> php-json     </td><td align="left"> php-xmlrpc    </td><td align="left"> php7.2-intl     </td><td align="left"> php7.2-xmlrpc </td></tr>
+      <tr><td align="left"> php-cli     </td><td align="left"> php-mbstring </td><td align="left"> php-zip       </td><td align="left"> php7.2-json     </td><td align="left"> php7.2-zip    </td></tr>
+      <tr><td align="left"> php-common  </td><td align="left"> php-mongodb  </td><td align="left"> php7.2-cli    </td><td align="left"> php7.2-mbstring </td><td align="left">               </td></tr>
+      <tr><td align="left"> php-curl    </td><td align="left"> php-pear     </td><td align="left"> php7.2-common </td><td align="left"> php7.2-opcache  </td><td align="left">               </td></tr>
+      <tr><td align="left"> php-dev     </td><td align="left"> php-soap     </td><td align="left"> php7.2-curl   </td><td align="left"> php7.2-readline </td><td align="left">               </td></tr>
+    </tbody>
+  </table>
     - \>= Composer
+
 - \>= Yarn package manger
     - \>= Npm
     - \>= NodeJS
@@ -171,6 +180,18 @@ $ php bin/console server:stop
  - **secretary** Soner Mulder [:email:](mailto:niek.luttikhof@student.stenden.com)
  - **Planner** Sander Paping [:email:](mailto:sander.paping@student.stenden.com)
  - **Project lead & Repository Manger** Joris Rietveld [:email:](mailto:joris.rietveld@student.stenden.com)
+
+## A few notes referenced above
+- **Notes about the requirements**
+    - Why use Php 7.2 compiled with the `–with-password-argon2` flag? It is also possible
+        > **(But not recommended)** to run the application without
+        > [argon2](https://wiki.php.net/rfc/argon2_password_hash) and falling
+        > back to the previous php hashing standard BCrypt. Its not unsafe but
+        > argon2 will be the next standard because it [offers better protection
+        > against a few specific attacks.](https://libsodium.gitbook.io/doc/password_hashing/the_argon2i_function),
+        > and was the [winner of a password hashing competition](https://password-hashing.net/).
+        > If you still want to you to change the password hashing configuration change the following in
+        > `./config/bundles/security.yaml` Replace the line `algorithm: argon2` to `algorithm: BCrypt`.
 
 ## Known issues
 _Known issues in the project, please open a issue and if it is confirmed I will add it
@@ -201,3 +222,12 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+<hr>
+This page (the documentation) is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+[![Author Joris Rietveld](https://img.shields.io/badge/Author-Joris%20Rietveld-blue.svg)](https://github.com/jorisrietveld)
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+
