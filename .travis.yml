@@ -16,9 +16,9 @@ language: php
 sudo: false
 
 cache:
-  directories:
-  - $HOME/.composer/cache/files
-  - ./bin/.phpunit
+#directories:
+#- $HOME/.composer/cache/files
+#- ./bin/.phpunit
 
 env:
   global:
