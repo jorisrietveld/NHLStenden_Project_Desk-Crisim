@@ -15,6 +15,7 @@ happen during a crisis.
 The application is platform independent and should run on Linux :penguin:, Mac OS and even
  on windows. However our production server and automated tests (Unit tests, security tests, continues integration and
  code quality tests) run on Linux servers [ _(specifically: Ubuntu 18.04/18.10)_ ](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes).
+
  This means that it is guarantied to work on Linux, because we would catch the failing builds. This is also our initial target setup
  for the production server. It should also work on any unix-like operating system like BSD or Mac OSX but you should validate that your
  php version is compiled with the same arguments as the version in the ubuntu repositories and that you have the correct php extensions installed.
@@ -26,7 +27,9 @@ required dependencies using the configuration in `./composer.json` [see this]() 
 
 For loading, pre-processing and compiling the front-end components we use the [webpack](https://webpack.js.org/)
 and the [yarn package manager](https://yarnpkg.com/en/) based on nodeJS. It is not required to be installed on a production server but it is
-certainly easier to install or update the application later on. Storing data can be done on every database server that is compatible with
+certainly easier to install or update the application later on.
+
+Storing data can be done on every database server that is compatible with
 [doctrine ORM]() by configuring your database connection parameters in `.local.env` or by setting them as environment variables. Make sure
 that you don't include them in version control! during development we use [MySQL 5.7](https://dev.mysql.com/downloads/mysql/) but any later
 version will do, previous versions are also possible but require you to alter the doctrine settings because 5.7 introduced the json field type
