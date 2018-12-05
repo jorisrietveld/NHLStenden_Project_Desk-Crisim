@@ -1,4 +1,17 @@
-# This file contains the Travis-CI configuration.
+#
+#                                The Desk CriSim - Continues Integration Suite
+#---------------------------------------------------------------------------------------------------------------------
+# This file contains the configuration of our continues integration suite used to check new commits, merges and pull
+# requests. When you submit a change to the repository on github it will run the configure scrips, if there are
+# problems with the submitted code. It will notify the user by showing a error message and placing a red cross next to
+# to the commit hash. Usually this check is performed and finished before merging so you can choose if you want to
+# submit code that breaks the CI. Because our master branch is protected and moderated, It won't accept any changes
+# that break testing, as it should!
+#
+# Items that are tested:
+#   - Unit tests defined in
+#
+#
 language: php
 sudo: false
 

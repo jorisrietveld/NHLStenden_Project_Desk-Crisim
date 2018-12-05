@@ -17,30 +17,32 @@
                 <div class="card-content">
                     <span class="card-title">Deelnemende actoren</span>
                     <ul class="pagination center">
-                        <?php
-                        $actors = ["Politie", "Ambulance", "Brandweer", "Leger", "Burgermeester"];
-
-                        foreach ($actors as $actor) {
-                            $active = "";
-
-                            if (isset($_GET['actor'])) {
 
 
-                                $pageActive = $_GET['actor'];
+                        {#<?php#}
+                        {#$actors = ["Politie", "Ambulance", "Brandweer", "Leger", "Burgermeester"];#}
 
-                                if ($pageActive == $actor) {
-                                    $active = "active";
-                                }
-                            } else {
-                                if ($actor == $actors[0]) {
-                                    $active = "active";
-                                }
-                            }
+                        {#foreach ($actors as $actor) {#}
+                        {#$active = "";#}
 
-                            echo "<li class=\"waves-effect $active\"><a href=\"docentpanel.php?page=chatmonitor&actor=$actor\">$actor</a></li>";
-                        }
+                        {#if (isset($_GET['actor'])) {#}
 
-                        ?>
+
+                        {#$pageActive = $_GET['actor'];#}
+
+                        {#if ($pageActive == $actor) {#}
+                        {#$active = "active";#}
+                        {#}#}
+                        {#} else {#}
+                        {#if ($actor == $actors[0]) {#}
+                        {#$active = "active";#}
+                        {#}#}
+                        {#}#}
+
+                        {#echo "<li class=\"waves-effect $active\"><a href=\"docentpanel.php?page=chatmonitor&actor=$actor\">$actor</a></li>";#}
+                        {#}#}
+
+                        {#?>#}
 
                     </ul>
 
@@ -64,63 +66,82 @@
                         <p>Chatberichten</p>
                     </div>
 
-                    <?php
+                    {% for message in messages %}
 
-                    $i = 0;
+                        <div class="row">
+                            <ul class="collection">
+                                <li class="collection-item avatar">
+                                    <img src="{{ asset('build/static/ambulance.png') }}" class="circle">
+                                </li>
+                                <span class="title grey-text">{{ message.actor }}</span>
+                                <p class="black-text">{{ message.text }} <br>
+                                <p class="grey-text">{{ message.time }} <br>
+                                </p>
+                            </ul>
 
-                    $actorToShow = "Politie";
-
-
-                    if (isset($_GET['actor'])) {
-
-
-                        $actorToShow = $_GET['actor'];
-                    }
-
-                    while ($i < 9) {
-
-                        echo "    <ul class=\"collection\">
-
-
-                    <div class=\"row\">
-                        <li class=\"collection-item avatar\">
-
-                        <div class=\"left\">
-
-                            <img src=\"img/police.png\" alt=\"\" class=\"circle\">
-                            <span class=\"title grey-text\">$actorToShow naar Ambulance</span>
-                            <p class=\"grey-text\">19-11-2018 <br>
-                                14:32
-                            </p>
 
                         </div>
 
-                        <div class=\"right\">
-                            <p class=\"black-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do
-                                eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p class=\"black-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                do
-                                eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
+
+                    {% endfor %}
+
+                    {#<?php#}
+
+                    {#$i = 0;#}
+
+                    {#$actorToShow = "Politie";#}
 
 
-                        </li>
-                    </div>
+                    {#if (isset($_GET['actor'])) {#}
 
-                    </ul>";
 
-                    $i++;
+                    {#$actorToShow = $_GET['actor'];#}
+                    {#}#}
 
-                    }
+                    {#while ($i < 9) {#}
 
-                    ?>
+                    {#echo "    <ul class=\"collection\">#}
+
+
+                    {#<div class=\"row\">#}
+                    {#<li class=\"collection-item avatar\">#}
+
+                    {#<div class=\"left\">#}
+
+                    {#<img src=\"img/police.png\" alt=\"\" class=\"circle\">#}
+                    {#<span class=\"title grey-text\">$actorToShow naar Ambulance</span>#}
+                    {#<p class=\"grey-text\">19-11-2018 <br>#}
+                    {#14:32#}
+                    {#</p>#}
+
+                    {#</div>#}
+
+                    {#<div class=\"right\">#}
+                    {#<p class=\"black-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed#}
+                    {#do#}
+                    {#eiusmod tempor#}
+                    {#incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis#}
+                    {#nostrud#}
+                    {#exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>#}
+                    {#<p class=\"black-text\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed#}
+                    {#do#}
+                    {#eiusmod tempor#}
+                    {#incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis#}
+                    {#nostrud#}
+                    {#exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>#}
+                    {#</div>#}
+
+
+                    {#</li>#}
+                    {#</div>#}
+
+                    {#</ul>";#}
+
+                    {#$i++;#}
+
+                    {#}#}
+
+                    {#?>#}
 
 
                 </div>

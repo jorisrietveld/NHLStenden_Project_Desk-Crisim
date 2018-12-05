@@ -107,15 +107,31 @@
 
 
                         <tbody>
-                        {% for student in students %}
-                        <tr>
-                            <td>Student</td>
-                            <td>{{ student.mail }}</td>
-                            <td>{{ student.studentId }}</td>
-                            <td><i class="material-icons green-text">fiber_manual_record</i></td>
-                            <td>{{ student.type }}</td> {# student.type|trans #}
-                        </tr>
+
+                        {%  for student in students %}
+
+                            <tr>
+                                <td>{{ student.name }}</td>
+                                <td>{{ student.email }}</td>
+                                <td>{{ student.number }}</td>
+                                <td><i class="material-icons {{ student.online }}">fiber_manual_record</i></td>
+                                <td>{{ student.actor }}</td>
+
+                            </tr>
+
                         {% endfor %}
+
+
+
+                        {# for student in students #}
+                        <tr>
+                            {#<td>Student</td>#}
+                            {#<td>{{ student.mail }}</td>#}
+                            {#<td>{{ student.studentId }}</td>#}
+                            {#<td><i class="material-icons green-text">fiber_manual_record</i></td>#}
+                            {#<td>{{ student.type }}</td> #}{# student.type|trans #}
+                        </tr>
+                        {# endfor #}
                         </tbody>
                     </table>
                 </div>

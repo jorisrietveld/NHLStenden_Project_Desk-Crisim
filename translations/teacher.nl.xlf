@@ -14,9 +14,9 @@
         </header>
         <body>
             <!--  -->
-            <trans-unit id="index.pagination.infoFeed">
-                <source>index.pagination.infoFeed</source>
-                <target>Info feed</target>
+            <trans-unit id="index.pagination.chatMonitor">
+                <source>index.pagination.chatMonitor</source>
+                <target>Chat Monitor</target>
             </trans-unit>
 
         </body>
