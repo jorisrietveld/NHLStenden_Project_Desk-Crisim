@@ -6,6 +6,7 @@
 # Development inside a Docker container #
 
 ![desk_crisim_plus_docker.png](resources/desk_crisim_plus_docker.png)
+
 [TOC]: # "Table of contents"
 
 ## Table of contents
@@ -13,7 +14,7 @@
     - [So... hire a separate team that builds build scripts?](#so-hire-a-separate-team-that-builds-build-scripts)
 - [Installing Docker](#installing-docker)
     - [Installing Docker on Linux :penguin:](#installing-docker-on-linux)
-        - [Adding apt over HTTPS (requred to talk to there repo)](#adding-apt-over-https-requred-to-talk-to-there-repo)
+        - [Adding apt over HTTPS (required to talk to there repo)](#adding-apt-over-https-required-to-talk-to-there-repo)
         - [Add and verify the official GBG key](#add-and-verify-the-official-gbg-key)
         - [Add the repository and install Docker CE](#add-the-repository-and-install-docker-ce)
         - [Verify our hard work](#verify-our-hard-work)
@@ -24,7 +25,7 @@
     - [Installing Docker on Windows](#installing-docker-on-windows)
         - [Running the desktop app](#running-the-desktop-app)
     - [Installing Docker Compose](#installing-docker-compose)
-- [Getting a develop envirorment](#getting-a-develop-envirorment)
+- [Getting a develop environment](#getting-a-develop-environment)
 
 
 
@@ -53,7 +54,7 @@ compared with installing a platform specific JVM on your system and then running
 platform independent [java-byte code](https://en.wikipedia.org/wiki/Java_bytecode) in it.
 
 ## Installing Docker ##
-The installation of docker is a little bit diffrent on each host operating system
+The installation of docker is a little bit different on each host operating system
 so I will split the operating system specific parts in its own paragraph.
 
 ### Installing Docker on Linux :penguin: ###
@@ -68,7 +69,7 @@ This will remove it if present, or tell you that no packages are installed. Now
 we are ready to install docker by adding the official repository to your machine
 _(If you don't like adding third-party repositories [see installing it manually](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-from-a-package))_.
 
-#### Adding apt over HTTPS (requred to talk to there repo) ####
+#### Adding apt over HTTPS (required to talk to there repo) ####
 Fetch the latest data from the software repositories and install the required
 packages with the following command:
 ```bash
@@ -87,7 +88,7 @@ $ sudo apt-key fingerprint 0EBFCD88
 ```
 
 #### Add the repository and install Docker CE ####
-Finaly ready to prepare to install docker, add dockers [official repository](https://download.docker.com/linux/ubuntu/)
+Finally ready to prepare to install docker, add dockers [official repository](https://download.docker.com/linux/ubuntu/)
 with the add-apt-repository utility like this:
 ```bash
 $ sudo add-apt-repository \
@@ -163,7 +164,7 @@ running hello-world to check if everything works:
 ```bash
 $ docker run helo-world
 ```
-If you get an greating from docker, your ready to start developing Desk Crisim in
+If you get an greeting from docker, your ready to start developing Desk CriSim in
 it. If not [check there official documentation](https://docs.docker.com/docker-for-mac/)
 to solve the problem.
 
@@ -176,7 +177,7 @@ Optionally you can also install [the desktop app](https://download.docker.com/wi
 which will make managing containers and therefore your live easier.
 
 #### Running the desktop app ####
-If docker didn't start automaticly after the installation _(Look inside the system tray)_, open the start menu
+If docker didn't start automatically after the installation _(Look inside the system tray)_, open the start menu
 and search for `Docker for Windows` and start it. To validate that it worked check the system tray again, there
 should be a swimming wale shouting steady when hovering over it, its normal and you are good to go. If you haven't
 already login with your docker id to start using it from the commandline/powershell.
@@ -186,7 +187,7 @@ If you are running Docker on Mac or Windows you are lucky because, Docker compos
 comes bundled with the previously installed applications. When you run into trouble
 [visit the official documentsion, on there website](https://docs.docker.com/compose/install/#install-compose)
 
-## Getting a develop envirorment ##
+## Getting a develop environment ##
 
 <hr>
 
