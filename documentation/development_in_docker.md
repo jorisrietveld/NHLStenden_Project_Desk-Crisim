@@ -20,9 +20,11 @@
         - [_(Optionally)_ Post-installation steps for Linux](#optionally-post-installation-steps-for-linux)
         - [_(Optionally)_ Configure Docker to start on boot](#optionally-configure-docker-to-start-on-boot)
     - [Installing Docker on MacOS](#installing-docker-on-macos)
+        - [Running on MacOS](#running-on-macos)
     - [Installing Docker on Windows](#installing-docker-on-windows)
         - [Running the desktop app](#running-the-desktop-app)
     - [Installing Docker Compose](#installing-docker-compose)
+- [Getting a develop envirorment](#getting-a-develop-envirorment)
 
 
 
@@ -31,7 +33,6 @@ When you are developing software it usually `runs on my machine` so `ship it!`.
 For some reason, when developing with other people it breaks on there machine
 and if you lucky it breaks with a multitude of distinct, seemingly unrelated,
 hard to debug error messages. So... it is because they are :black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:(removed by admin)
-
 
 Okey, that's not fair its very difficult to create a shared development environment even
 while using the same operating system and tools on the exact same version number,
@@ -141,9 +142,30 @@ module by typing:
 ```bash
 $ sudo systemctl enable docker
 ```
- 
 
 ### Installing Docker on MacOS ###
+First we need to install `Docker for Mac` which is the free Community Edition
+of `Docker for MacOS`, if you own a licence you can also use the non CE
+edition. [Download](https://store.docker.com/editions/community/docker-ce-desktop-mac) and install docker
+by double clicking on the installer package `Docker.dmg`, then drag the docker logo
+to the applications folder. Double-click Docker.app in the Applications folder to start
+docker. Docker will ask you to authenticate yourself because it needs privileged access to
+install the networking components. The whale icon in the top status bar indicates
+that docker is running an ready to go! there are [more detailed instructions on
+there site](https://docs.docker.com/docker-for-mac/install/) if you get stuck.
+
+#### Running on MacOS ####
+After the installation finishes, a pop-up will show up that asks you to login
+into your docker account. If you don't have one, [create a docker account](https://store.docker.com/signup?next=%2Feditions%2Fcommunity%2Fdocker-ce-desktop-windows%3Fref%3Dlogin)
+and enter the credentials in the pop-up or by pressing on the docker icon in the
+status bar. Once logged in you can start using it from the terminal try
+running hello-world to check if everything works:
+```bash
+$ docker run helo-world
+```
+If you get an greating from docker, your ready to start developing Desk Crisim in
+it. If not [check there official documentation](https://docs.docker.com/docker-for-mac/)
+to solve the problem.
 
 ### Installing Docker on Windows ###
 First we need to install `Docker for windows` which is the free Community Edition
@@ -163,6 +185,8 @@ already login with your docker id to start using it from the commandline/powersh
 If you are running Docker on Mac or Windows you are lucky because, Docker compose
 comes bundled with the previously installed applications. When you run into trouble
 [visit the official documentsion, on there website](https://docs.docker.com/compose/install/#install-compose)
+
+## Getting a develop envirorment ##
 
 <hr>
 
