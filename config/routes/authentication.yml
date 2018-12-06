@@ -11,8 +11,6 @@ authentication_login:
   defaults:
     _locale: '%locale%'
 
-
-
 authentication_login_unlocalized:
   path: /login
   controller: App\Controller\AuthenticationController::index
