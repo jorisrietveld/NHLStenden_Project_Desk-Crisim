@@ -8,9 +8,9 @@ services:
     # I chose mysql >= 5.7 because they added the json field type in this version.
     image: mysql:5.7
     container_name: desk-crisim-mysql
-    working_dir: /
+    working_dir: /application
     volumes:
-      - .:/
+      - .:/application
     environment:
       - MYSQL_ROOT_PASSWORD=toor
       - MYSQL_DATABASE=DeskCriSim
@@ -23,9 +23,9 @@ services:
   webserver:
     image: nginx:alpine
     container_name: desk-crisim-webserver
-    working_dir: /
+    working_dir: /application
     volumes:
-      - .:/
+      - .:/application
       - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - "8080:80"
@@ -34,8 +34,8 @@ services:
   php-fpm:
     build: phpdocker/php-fpm
     container_name: desk-crisim-php-fpm
-    working_dir: /
+    working_dir: /application
     volumes:
-      - .:/
+      - .:/application
       - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.2/fpm/conf.d/99-overrides.ini
 

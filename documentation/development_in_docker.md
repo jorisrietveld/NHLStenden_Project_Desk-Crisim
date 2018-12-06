@@ -18,18 +18,16 @@
         - [Add and verify the official GBG key](#add-and-verify-the-official-gbg-key)
         - [Add the repository and install Docker CE](#add-the-repository-and-install-docker-ce)
         - [Verify our hard work](#verify-our-hard-work)
-        - [_(Optionally)_ Post-installation steps for Linux](#optionally-post-installation-steps-for-linux)
+        - [_(Optionally but recommended)_ Post-installation steps for Linux](#optionally-but-recommended-post-installation-steps-for-linux)
         - [_(Optionally)_ Configure Docker to start on boot](#optionally-configure-docker-to-start-on-boot)
     - [Installing Docker on MacOS](#installing-docker-on-macos)
-        - [Running on MacOS](#running-on-macos)
+        - [Running docker on MacOS](#running-docker-on-macos)
     - [Installing Docker on Windows](#installing-docker-on-windows)
         - [Running the desktop app](#running-the-desktop-app)
     - [Installing Docker Compose](#installing-docker-compose)
-- [Getting a develop environment](#getting-a-develop-environment)
-
-
-
-
+        - [Running docker on Windows](#running-docker-on-windows)
+- [Running the Desk CriSim container](#running-the-desk-crisim-container)
+- [Known Issues](#known-issues)
 
 ## The problem with every other developer ##
 When you are developing software it usually `runs on my machine` so `ship it!`.
@@ -59,6 +57,9 @@ platform independent [java-byte code](https://en.wikipedia.org/wiki/Java_bytecod
 The installation of docker is a little bit different on each host operating system
 so I will split the operating system specific parts in its own paragraph.
 
+[:arrow_down:Installing on Windows](#installing-docker-on-windows)<br>
+:arrow_down:[Installing on MacOS](#installing-docker-on-macos)
+
 ### Installing Docker on Linux :penguin: ###
 For simplicity I assume that you are running ubuntu, [otherwise refere to the
 official documentation](https://docs.docker.com/install/#supported-platforms)
@@ -75,7 +76,7 @@ _(If you don't like adding third-party repositories [see installing it manually]
 Fetch the latest data from the software repositories and install the required
 packages with the following command:
 ```bash
-$ sudo apt update && apt install apt-transport-https ca-certificates curl software-properties-common
+$ sudo apt update && sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 #### Add and verify the official GBG key ####
 Now add Dockers official GPG key to your trusted repositories and verify its
@@ -111,10 +112,13 @@ $ sudo docker run hello-world
 ```
 Be patient, it could take some time to download the image, so go grab your self
  some :coffee: and stare at the terminal pretending to investigate complicated
- terminal stuff. When docker says hello you are done investigating and can move
- on with the project.
+ terminal stuff. When docker says `hello` your installation is ready :clap:, if
+ not create an [create a issue](https://github.com/jorisrietveld/DeskCriSim-Backend/issues/new?title=Error%20while%20installing%20docker)
+The following steps are optional but certainly recommended, otherwise you will
+have to run everything prefixed with `sudo`, and a <span style="background:black;color:green;">&nbsp;L33d D3V3L0P3r&nbsp;</span> does his permissions right.
+[:arrow_double_down: Skip and go to Running](#running-the-desk-crisim-container)
 
-#### _(Optionally)_ Post-installation steps for Linux ####
+#### _(Optionally but recommended)_ Post-installation steps for Linux ####
 If your "oke" by running `sudo` before the `docker` command, then there isn't
 much to do. If you want to "run it properly" and with more convenience, you should
 tweak the permissions and add a new user and group: `docker:docker`.
@@ -131,7 +135,7 @@ logging out and back in again, or restarting the system.
 # Re-Authenticate
 $ exit
 # Login with you user account and test the command:
-$ docker run helo-world
+$ docker run hello-world
 
 # If if fails, or if you just want to restart type:
 $ reboot
@@ -139,12 +143,17 @@ $ reboot
 # to run the docker run command:
 $ docker run hello-world
 ```
+[:arrow_double_down: Skip and go to Running](#running-the-desk-crisim-container)
+
 #### _(Optionally)_ Configure Docker to start on boot ####
 When you want the docker daemon to start with the system, enable the systemD 
 module by typing:
 ```bash
 $ sudo systemctl enable docker
 ```
+Thats it systemD will auto start docker on each reboot, so you don't have to
+worry about it.<br>
+[:arrow_down: Go to running the Desk CriSim container](#running-the-desk-crisim-container)
 
 ### Installing Docker on MacOS ###
 First we need to install `Docker for Mac` which is the free Community Edition
@@ -157,17 +166,17 @@ install the networking components. The whale icon in the top status bar indicate
 that docker is running an ready to go! there are [more detailed instructions on
 there site](https://docs.docker.com/docker-for-mac/install/) if you get stuck.
 
-#### Running on MacOS ####
+#### Running docker on MacOS ####
 After the installation finishes, a pop-up will show up that asks you to login
 into your docker account. If you don't have one, [create a docker account](https://store.docker.com/signup?next=%2Feditions%2Fcommunity%2Fdocker-ce-desktop-windows%3Fref%3Dlogin)
 and enter the credentials in the pop-up or by pressing on the docker icon in the
 status bar. Once logged in you can start using it from the terminal try
 running hello-world to check if everything works:
 ```bash
-$ docker run helo-world
+$ docker run hello-world
 ```
-If you get an greeting from docker, your ready to start developing Desk CriSim in
-it. If not [check there official documentation](https://docs.docker.com/docker-for-mac/)
+If you get an greeting from docker, your ready to [start developing Desk CriSim](#running-the-desk-crisim-container)
+in it. If not [check there official documentation](https://docs.docker.com/docker-for-mac/)
 to solve the problem.
 
 ### Installing Docker on Windows ###
@@ -187,9 +196,38 @@ already login with your docker id to start using it from the commandline/powersh
 ### Installing Docker Compose ###
 If you are running Docker on Mac or Windows you are lucky because, Docker compose
 comes bundled with the previously installed applications. When you run into trouble
-[visit the official documentsion, on there website](https://docs.docker.com/compose/install/#install-compose)
+[visit the official documentation, on there website](https://docs.docker.com/compose/install/#install-compose)
 
-## Getting a develop environment ##
+#### Running docker on Windows ####
+After the installation finishes, a pop-up will show up that asks you to login
+into your docker account. If you don't have one, [create a docker account](https://store.docker.com/signup?next=%2Feditions%2Fcommunity%2Fdocker-ce-desktop-windows%3Fref%3Dlogin)
+and enter the credentials in the pop-up or by pressing on the docker icon in the
+status bar. Once logged in you can start using it from the command-line/Powershell try
+running hello-world to check if everything works:
+```bash
+$ docker run hello-world
+```
+If you get an greeting from docker, your ready to start developing Desk CriSim in
+it. If not [check there official documentation](https://docs.docker.com/docker-for-windows/)
+to solve the problem.
+
+## Running the Desk CriSim container ##
+
+
+## Known Issues ##
+If you get an error message: `command not found: docker-compose` when your
+trying to run:
+```bash
+$ docker-compose up
+```
+Its probably because docker is installed in a directory that is not part of your
+`$PATH` environment variable. A solution would be creating a simlink from
+the install directory to a directory that is included in `$PATH`, you can do
+this by typing:
+```bash
+$ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+That should do it! if not, [create a issue](https://github.com/jorisrietveld/DeskCriSim-Backend/issues/new?title=Error%20while%20installing%20docker).
 
 <hr>
 
