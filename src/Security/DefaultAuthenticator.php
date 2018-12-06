@@ -6,6 +6,7 @@
  */
 namespace App\Security;
 
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
@@ -73,6 +74,11 @@ class DefaultAuthenticator extends AbstractGuardAuthenticator
         if( !$this->$this->csrfTokenManager->isTokenValid($token) ) {
             throw new InvalidCsrfTokenException(); // TODO remove empty exception.
         }
+
+        // Get the user repository and search for the username submitted.
+        $user = $this->entityManager->getRepository(User::class)
+            ->findOneBy(['username' => $credentials['username']]);
+
     }
 
     public function checkCredentials($credentials, UserInterface $user)
