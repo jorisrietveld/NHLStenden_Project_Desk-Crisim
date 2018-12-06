@@ -61,18 +61,11 @@ class UploadScenarioController extends AbstractController
         // uniqid(), which is based on timestamps
         return md5(uniqid());
     }
-
-
-
-
-
-    /////////////////////
+    
     public function index()
     {
         return $this->render('teacher/scenario/Start.html.twig', [
             'controller_name' => 'UploadScenarioController',
         ]);
-
-        //https://symfony.com/doc/current/controller/upload_file.html
     }
 }
