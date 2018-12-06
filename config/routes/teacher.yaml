@@ -52,8 +52,8 @@ teacher_showStatistics:
     _locale: '%locale%'
 
 teacher_uploadSenario:
-  path: /{_locale}/uploadSenario
-  controller: App\Controller\TeacherController::uploadScenario
+  path: /{_locale}/uploadScenario
+  controller: App\Controller\UploadScenarioController::new
   requirements:
     _locale: '%app.locales%'
   defaults:
