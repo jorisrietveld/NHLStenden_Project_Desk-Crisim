@@ -3,15 +3,41 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/jorisrietveld/deskcrisim-backend/badge)](https://www.codefactor.io/repository/github/jorisrietveld/deskcrisim-backend)
 [![Depfu](https://badges.depfu.com/badges/76bb5f76bf177bf75052ab34d4157bb9/status.svg)](https://depfu.com)
 [![Depfu](https://badges.depfu.com/badges/76bb5f76bf177bf75052ab34d4157bb9/overview.svg)](https://depfu.com/repos/jorisrietveld/DeskCriSim-Backend?project_id=6433)
-
-![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)
-![PHP 7.2](https://img.shields.io/badge/PHP-%3E%3D7.2-blue.svg)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENCE)
+[![PHP 7.2](https://img.shields.io/badge/PHP-%3E%3D7.2-blue.svg)](http://php.net/manual/en/migration70.new-features.php)
 
 ![Desk CriSim logo](resources/DESK_CRISIM_LOGO_BG.png)
 This repository holds the source code of the crisis simulation game: Desk CriSim. Desk CriSim is a web application that allows students to simulate
 crisis situations. Teachers can assign students as certain actors in a crisis situation and monitor the choices that the students make on events that
 happen during a crisis.
 
+[TOC]: # "Table of contents"
+
+## Table of contents
+- [Setup a docker container](#setup-a-docker-container)
+- [Installing](#installing)
+    - [Read detailed instructions on:](#read-detailed-instructions-on)
+- [Quick setup](#quick-setup)
+    - [Step 1](#step-1)
+    - [Step 2](#step-2)
+    - [Step 3](#step-3)
+    - [Step 4](#step-4)
+- [Running](#running)
+    - [Yarn](#yarn)
+    - [Php webserver from the commandline:](#php-webserver-from-the-commandline)
+- [Required Dependencies](#required-dependencies)
+    - [Required Php modules:](#required-php-modules)
+- [The Project Team](#the-project-team)
+- [:heart: Proudly build with open-source technology:](#proudly-build-with-open-source-technology)
+- [A few notes referenced above](#a-few-notes-referenced-above)
+- [Known issues](#known-issues)
+- [Licencing](#licencing)
+
+## Setup a docker container ##
+You could run everything in [a Docker Container](https://www.docker.com/)
+this way you don't have to install everything by hand and are guaranteed to have
+everything setup properly. See [our instructions](documentation/development_in_docker.md)
+for more information about installing Docker.
 
 ## Installing
 [**To much text, take me to the quick setup!**](#quick-setup)
@@ -176,7 +202,11 @@ $ bin/console server:stop
 $ php bin/console server:stop
 ```
 
-## Required Dependencies
+## Required Dependencies ##
+You could also run everything in [a Docker Container](https://www.docker.com/)
+this way you don't have to install everything by hand and are guaranteed to have
+everything setup properly. See [our instructions](documentation/development_in_docker.md)
+on how to install and configure Docker.
 - PHP >=7.2
   > compiled with the `–with-password-argon2`, [see this]() for an explanation.
   >\>[there are knows issues](#php-segfault)
@@ -197,20 +227,16 @@ $ php bin/console server:stop
       <tr><td align="left"> php-dev     </td><td align="left"> php-soap     </td><td align="left"> php7.2-curl   </td><td align="left"> php7.2-readline </td><td align="left">               </td></tr>
     </tbody>
   </table>
-    - \>= Composer
-
-- \>= Yarn package manger
-    - \>= Npm
-    - \>= NodeJS
-    - \>= webpack
-    - \>= SCSS
-
+ - [Composer](https://getcomposer.org/) - A PHP Dependency manager.
+ - [NodeJS](https://nodejs.org/en/) - A port of the V8 javascript engine to run JS applications natively.
+ - [NPM](https://www.npmjs.com/)
+ - [Yarn](https://yarnpkg.com/en/)
 - Webservers:
-    - \>= Nginx
-    - \>= Apache
-    - \>= IIS
+    - [Nginx](https://nginx.org/)
+    - [Apache](https://httpd.apache.org/)
+    - [IIS](https://www.iis.net/) :bangbang: currently not supported, will require intermediate knowledge.
 - Database servers:
-    - Mysql \>= 5.7 or MariaDB
+    - [Mysql](https://www.mysql.com/) \>= 5.7 or [MariaDB](https://mariadb.org/)
     - \>= SQL Server
     - \>= Postgre
     - \>= SQLite
@@ -222,6 +248,23 @@ $ php bin/console server:stop
  - **secretary** Soner Mulder [:email:](mailto:niek.luttikhof@student.stenden.com)
  - **Planner** Sander Paping [:email:](mailto:sander.paping@student.stenden.com)
  - **Project lead & Repository Manger** Joris Rietveld [:email:](mailto:joris.rietveld@student.stenden.com)
+
+## :heart: Proudly build with open-source technology: ##
+- [Linux](https://www.linux.com/)
+- [Ubuntu](https://www.ubuntu.com/)
+- [PHP](https://secure.php.net/)
+- [Nginx](https://nginx.org/)
+- [Composer](https://getcomposer.org/)
+- [NodeJS](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
+- [Symfony Framework](https://symfony.com/)
+- [Doctrine](https://www.doctrine-project.org/)
+- [Docker](https://www.docker.com/)
+- [Webpack](https://webpack.js.org/)
+- [Sass](http://sass-lang.com/)
+- [Travis Ci](https://travis-ci.org/)
+- [Yarn](https://yarnpkg.com/en/)
+
 
 ## A few notes referenced above
 - **Notes about the requirements**
