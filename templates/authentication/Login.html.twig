@@ -10,10 +10,6 @@
 
 {% extends 'Base.html.twig' %}
 
-{% block stylesheets %}
-    {{ parent() }}
-{% endblock %}
-
 {% block body %}
     <div class="container main">
         <div class="row">
@@ -31,8 +27,8 @@
                             <br>
                            {# log in input field#}
                             <div class="input-field col s12">
-                                <input id="username" type="text" class="validate" name="username" value="{{ last_username }}">
-                                <label for="username">{{ 'authentication.login.form.label.username' }}</label>
+                                <input id="username" type="text" class="validate" name="username" value="{{ last_username|default }}">
+                                <label for="username">{{ 'authentication.login.form.label.username'|trans }}</label>
                                 <span class="helper-text" data-error="Dit is geen correct emailadres" data-success=""></span>
                             </div>
 
@@ -52,13 +48,13 @@
                                 </label>
                             </div>
                             {# TODO END #}
-                            <!--                submit button-->
+                            <!-- submit button-->
                             <button class="btn waves-effect waves-light orange" type="submit" name="action">
                                 {{ 'authentication.login.form.submit'|trans }}
                                 <i class="material-icons right">send</i>
                             </button>
 
-                            {% if error %}
+                            {% if error is defined %}
                                 {{ dump(error.messageKey)|trans(error.messageData, 'security') }}
                             {% endif %}
                         </form>

@@ -46,6 +46,11 @@
                 <target>Dummy link</target>
             </trans-unit>
 
+            <trans-unit id="base.footer.link.sourcecode">
+                <source>base.footer.link.sourcecode</source>
+                <target>Bekijk de broncode</target>
+            </trans-unit>
+
             <trans-unit id="base.footer.copyright">
                 <source>base.footer.copyright</source>
                 <target>Desk CriSim</target>
@@ -73,6 +78,7 @@
                 <source>authentication.login.form.label.username</source>
                 <target>Gebruikers Naam</target>
             </trans-unit>
+
             <trans-unit id="authentication.login.form.label.password">
                 <source>authentication.login.form.label.password</source>
                 <target>Wachtwoord</target>

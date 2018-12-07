@@ -2,7 +2,7 @@
     "name": "jorisrietveld/deskcrisim-backend",
     "description": "The backend repository of the Desk CriSim system.",
     "type": "project",
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-only",
     "require": {
         "php": "^7.1.3",
         "ext-ctype": "*",

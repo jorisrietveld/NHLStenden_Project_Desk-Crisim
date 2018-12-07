@@ -1,4 +1,4 @@
-# Desk CriSim
+# Desk Crisim #
 [![Build Status](https://travis-ci.com/jorisrietveld/DeskCrism-Backend.svg?token=8VeUSD3hMgXK4qZXKocS&branch=master&label=Master)](https://travis-ci.com/jorisrietveld/DeskCrism-Backend)
 [![CodeFactor](https://www.codefactor.io/repository/github/jorisrietveld/deskcrisim-backend/badge)](https://www.codefactor.io/repository/github/jorisrietveld/deskcrisim-backend)
 [![Depfu](https://badges.depfu.com/badges/76bb5f76bf177bf75052ab34d4157bb9/status.svg)](https://depfu.com)
@@ -14,6 +14,7 @@ happen during a crisis.
 [TOC]: # "Table of contents"
 
 ## Table of contents
+- [The Development Team](#the-development-team)
 - [Setup a docker container](#setup-a-docker-container)
 - [Installing](#installing)
     - [Read detailed instructions on:](#read-detailed-instructions-on)
@@ -27,11 +28,21 @@ happen during a crisis.
     - [Php webserver from the commandline:](#php-webserver-from-the-commandline)
 - [Required Dependencies](#required-dependencies)
     - [Required Php modules:](#required-php-modules)
-- [The Project Team](#the-project-team)
 - [:heart: Proudly build with open-source technology:](#proudly-build-with-open-source-technology)
 - [A few notes referenced above](#a-few-notes-referenced-above)
 - [Known issues](#known-issues)
 - [Licencing](#licencing)
+
+
+## The Development Team ##
+- **Back-end:**
+  - **Planner** Lennart Pikijn [:email:](mailto:lennart.pikijn@student.stenden.com)
+  - **secondary lead** Niek Luttikhof [:email:](mailto:niek.luttikhof@student.stenden.com)
+  - **Repository Manger** Joris Rietveld [:email:](mailto:jorisrietveld@gmail.com)
+- **Front-end**:
+  - **secretary** Soner Mulder [:email:](mailto:niek.luttikhof@student.stenden.com)
+  - **Project Lead** Sander Paping [:email:](mailto:sander.paping@student.stenden.com)
+
 
 ## Setup a docker container ##
 You could run everything in [a Docker Container](https://www.docker.com/)
@@ -133,26 +144,16 @@ Because the routes in the application are dynamically matched inside of the appl
         - [Checking the code quality]()
 
 ## Quick setup ##
-One liner on linux:
-```bash
-#For installing the server:
-apt install php7.2-{soap,dev,fpm,xml,intl,xmlrpc,json,cli,common,curl,mbstring,opcache,readline} mysql-server nginx
 
-# Installing the package managers.
-todo
-
-# For installing the project
-composer install && composer update && yarn install && yarn run encore --dev
-```
 ### Step 1
 First clone the repository from github:
 ```bash
-$ git clone https://github.com/jorisrietveld/DeskCrism-Backend.git
+$ git clone https://github.com/jorisrietveld/Desk-Crisim.git
 ```
 ### Step 2
 After that change the directory to the project root:
 ```bash
-$ cd DeskCrisim-Backend
+$ cd Desk-Crisim
 ```
 ### Step 3
 Now install the required composer dependencies:
@@ -229,10 +230,10 @@ on how to install and configure Docker.
   </table>
  - [Composer](https://getcomposer.org/) - A PHP Dependency manager.
  - [NodeJS](https://nodejs.org/en/) - A port of the V8 javascript engine to run JS applications natively.
- - [NPM](https://www.npmjs.com/)
- - [Yarn](https://yarnpkg.com/en/)
+ - [NPM](https://www.npmjs.com/) - The default nodeJS package manager.
+ - [Yarn](https://yarnpkg.com/en/) - A much faster and cached version of NPM.
 - Webservers:
-    - [Nginx](https://nginx.org/)
+    - [Nginx](https://nginx.org/) - A powerful
     - [Apache](https://httpd.apache.org/)
     - [IIS](https://www.iis.net/) :bangbang: currently not supported, will require intermediate knowledge.
 - Database servers:
@@ -240,14 +241,6 @@ on how to install and configure Docker.
     - \>= SQL Server
     - \>= Postgre
     - \>= SQLite
-
-## The Project Team
-
- - **Front-end programmer** Lennart Pikijn [:email:](mailto:lennart.pikijn@student.stenden.com)
- - **secondary lead** Niek Luttikhof [:email:](mailto:niek.luttikhof@student.stenden.com)
- - **secretary** Soner Mulder [:email:](mailto:niek.luttikhof@student.stenden.com)
- - **Planner** Sander Paping [:email:](mailto:sander.paping@student.stenden.com)
- - **Project lead & Repository Manger** Joris Rietveld [:email:](mailto:joris.rietveld@student.stenden.com)
 
 ## :heart: Proudly build with open-source technology: ##
 - [Linux](https://www.linux.com/)
@@ -282,7 +275,7 @@ on how to install and configure Docker.
 _Known issues in the project, please open a issue and if it is confirmed I will add it
 in this list, so I can investigate and patch it_
 ##### PHP segfault
-- [ ] The `bin/console server:run` command or the php deamon crashes when when a webpage is
+- [ ] The `bin/console server:run` command or the php daemon crashes when when a web page is
 served to the client.
     > If you don't change the `algorithm: argon2` line to `algorithm: bcrypt`
     when running a Php version that is compiled without the `-with-password-argon2`
@@ -307,7 +300,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 
 
 <hr>
