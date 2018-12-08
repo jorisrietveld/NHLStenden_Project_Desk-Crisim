@@ -25,7 +25,12 @@
 
 
 ## Where is index.php? ##
-Why have 1 accessible script instead of a script per page?
+If you are unfamiliar with using Symfony, Composer, Object Oriented PHP or
+any [MVC]() _(or MVC-like)_ system architecture, the project can look like a
+complicated labyrinth. When I first started using Symfony I didn't get why you
+would want to create 1 php script that includes some cryptic stuff about
+autoloading and starting a kernel? Then you have these `controller` things that
+do you php stuff but where do I place the HTML in it?
 
 ### Front Controller and url rewriting ###
 Wat is MVC?

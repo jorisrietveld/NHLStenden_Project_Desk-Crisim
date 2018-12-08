@@ -223,7 +223,7 @@ on how to install and configure Docker.
       <tr><td align="left"> php-apcu    </td><td align="left"> php-intl     </td><td align="left"> php-xml       </td><td align="left"> php7.2-fpm      </td><td align="left"> php7.2-xml    </td></tr>
       <tr><td align="left"> php-apcu-bc </td><td align="left"> php-json     </td><td align="left"> php-xmlrpc    </td><td align="left"> php7.2-intl     </td><td align="left"> php7.2-xmlrpc </td></tr>
       <tr><td align="left"> php-cli     </td><td align="left"> php-mbstring </td><td align="left"> php-zip       </td><td align="left"> php7.2-json     </td><td align="left"> php7.2-zip    </td></tr>
-      <tr><td align="left"> php-common  </td><td align="left"> php-mongodb  </td><td align="left"> php7.2-cli    </td><td align="left"> php7.2-mbstring </td><td align="left">               </td></tr>
+      <tr><td align="left"> php-common  </td><td align="left"> php-mongodb  </td><td align="left"> php7.2-cli    </td><td align="left"> php7.2-mbstring </td><td align="left">php7.2-mysql   </td></tr>
       <tr><td align="left"> php-curl    </td><td align="left"> php-pear     </td><td align="left"> php7.2-common </td><td align="left"> php7.2-opcache  </td><td align="left">               </td></tr>
       <tr><td align="left"> php-dev     </td><td align="left"> php-soap     </td><td align="left"> php7.2-curl   </td><td align="left"> php7.2-readline </td><td align="left">               </td></tr>
     </tbody>
