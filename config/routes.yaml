@@ -23,7 +23,7 @@ homepage:
 #
 # All administrator related routes.
 #
-admin:
+admin_index:
   path: /{_locale}/admin
   controller: App\Controller\AdminController::index
   requirements:

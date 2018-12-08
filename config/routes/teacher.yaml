@@ -74,3 +74,18 @@ teacher_startSenario:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
+
+#
+# Logger (Teacher) routes.
+#
+# This file contains all routes to the Logger accessible pages. The logger
+# is a teacher that walks around during a game session and can add additional
+# information to the students behaviour during the game.
+#
+logger_index:
+  path: /{_locale}/logger
+  controller: App\Controller\AdminController::index
+  requirements:
+    _locale: '%app.locales%'
+  defaults:
+    _locale: '%locale%'

@@ -5,17 +5,27 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller;
+namespace App\Controller\Authentication;
 
 
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
+    public function index(AuthenticationUtils $authenticationUtils)
+    {
+        $error = $authenticationUtils->getLastAuthenticationError();
+        $lastUserName = $authenticationUtils->getLastUsername();
+
+        return $this->render('authentication/Login.html.twig', [
+            'last_username' => $lastUserName,
+            'error' => $error
+        ]);
+    }
+
     private function fetchUser( string $userName) : UserInterface
     {
         $user = $this->getDoctrine()
@@ -30,15 +40,6 @@ class LoginController extends AbstractController
 
     }
 
-    public  function  login(AuthenticationUtils $authenticationUtils)
-    {
-        $error = $authenticationUtils->getLastAuthenticationError();
-        $lastUserName = $authenticationUtils->getLastUsername();
 
-        return $this->render('authentication/Login.html.twig',[
-            'last_username' => $lastUserName,
-            'error' => $error
-        ]);
-    }
 
 }

@@ -54,8 +54,8 @@
                                 <i class="material-icons right">send</i>
                             </button>
 
-                            {% if error is defined %}
-                                {{ dump(error.messageKey)|trans(error.messageData, 'security') }}
+                            {% if error is defined and error is not null %}
+                                {{ dump(error) }}
                             {% endif %}
                         </form>
                     </div>

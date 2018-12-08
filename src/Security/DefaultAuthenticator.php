@@ -49,6 +49,12 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
     private $csrfTokenManager;
 
     /**
+     * This provides functions to load users on each request from cookies, the session etc.
+     * @var UserProviderInterface
+     */
+    private $userProvider;
+
+    /**
      * The password encoder is used to hash and validate the users passwords in the database. (Using argon2 or BCrypt)
      * @var UserPasswordEncoderInterface
      */
@@ -69,6 +75,7 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
         $this->router = $router;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        $this->userProvider = $userProvider;
     }
 
     /**
@@ -150,11 +157,8 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
      */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
-        // The user could not be authenticated so redirect them back to the login form.
-        return new RedirectResponse(
-            $this->getLoginUrl(),
-            401
-        );
+        $request->getSession()->set(Security::AUTHENTICATION_ERROR, $exception);
+        return new RedirectResponse($this->getLoginUrl());
     }
 
     /**
@@ -171,6 +175,24 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
             return new RedirectResponse($targetPath);
         }
 
+        // Determine the user roles to redirect them to the correct route.
+        $userRoles = $token->getRoles();
+
+        if (\in_array('ROLE_ADMIN', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('admin_index'));
+        }
+        if (\in_array('ROLE_LOGGER', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('logger_index'));
+        }
+        if (\in_array('ROLE_TEACHER', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('teacher_index'));
+        }
+        if (\in_array('ROLE_SPECTATOR', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('admin_index'));
+        }
+        if (\in_array('ROLE_STUDENT', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('admin_index'));
+        }
         // For example : return new RedirectResponse($this->router->generate('some_route'));
         throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
     }
