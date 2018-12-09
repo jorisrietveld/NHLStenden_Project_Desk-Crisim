@@ -2,17 +2,17 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Scenario;
 use App\Form\ScenarioType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 class UploadScenarioController extends AbstractController
 {
     /**
-     * @Route("/upload/scenario", name="upload_scenario")
+     * @Route("/upload/Game", name="upload_scenario")
      *
      */
     public function new(Request $request)
@@ -47,7 +47,7 @@ class UploadScenarioController extends AbstractController
             return $this->redirect($this->generateUrl('app_product_list'));
         }
 
-        return $this->render('teacher/scenario/Upload.html.twig', array(
+        return $this->render('Teacher/scenario/UploadScenario.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -61,10 +61,10 @@ class UploadScenarioController extends AbstractController
         // uniqid(), which is based on timestamps
         return md5(uniqid());
     }
-    
+
     public function index()
     {
-        return $this->render('teacher/scenario/Start.html.twig', [
+        return $this->render('Teacher/scenario/StartNew.html.twig', [
             'controller_name' => 'UploadScenarioController',
         ]);
     }

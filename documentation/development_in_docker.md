@@ -27,13 +27,15 @@
     - [Installing Docker Compose](#installing-docker-compose)
         - [Running docker on Windows](#running-docker-on-windows)
 - [Running the Desk CriSim container](#running-the-desk-crisim-container)
+    - [(re)Building the docker image](#rebuilding-the-docker-image)
+    - [Running the container](#running-the-container)
 - [Known Issues](#known-issues)
 
 ## The problem with every other developer ##
 When you are developing software it usually `runs on my machine` so `ship it!`.
 For some reason, when developing with other people it breaks on there machine
 and if you lucky it breaks with a multitude of distinct, seemingly unrelated,
-hard to debug error messages. So... it is because they are :black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:(removed by admin)
+hard to debug error messages. So... it is because they are :black_large_square::black_large_square::black_large_square::black_large_square::black_large_square:(removed by Administrator)
 
 Okey, that's not fair its very difficult to create a shared development environment even
 while using the same operating system and tools on the exact same version number,
@@ -116,6 +118,7 @@ Be patient, it could take some time to download the image, so go grab your self
  not create an [create a issue](https://github.com/jorisrietveld/DeskCriSim-Backend/issues/new?title=Error%20while%20installing%20docker)
 The following steps are optional but certainly recommended, otherwise you will
 have to run everything prefixed with `sudo`, and a <span style="background:black;color:green;">&nbsp;L33d D3V3L0P3r&nbsp;</span> does his permissions right.
+
 [:arrow_double_down: Skip and go to Running](#running-the-desk-crisim-container)
 
 #### _(Optionally but recommended)_ Post-installation steps for Linux ####
@@ -212,7 +215,32 @@ it. If not [check there official documentation](https://docs.docker.com/docker-f
 to solve the problem.
 
 ## Running the Desk CriSim container ##
+Everything installed correctly? Then its time to run the container, open a
+`terminal` or `cmd`/`Power-Shell` on windows. If its the first time you try to run
+the Desk Crisim container and every time you change something in the
+`Docker-compose.yaml` or any file in the `phpdocker` directory, you have to
+(re)build the containers image.
 
+### (re)Building the docker image ###
+You can think of the `image` as a class in your
+favorite programming language, and a container as a Object instantiated from the
+class. To create a image run:
+```bash
+$ docker-compose build
+```
+This will generate a image including all services defined in `docker-compose.yml`
+and install the items configured in the `phpdocker/php-fpm/Dockerfile`.
+
+### Running the container ###
+When the image is created you can start it by executing:
+```bash
+$ docker-compose up
+```
+You will see all the services starting up in the terminals output. By default
+the container is configured to bind the containers `port 80` to the hosts
+`port 8080`. This means that you can visit 127.0.0.1:8080 inside of your browser
+and this will bind to the Desk Crisim containers web server on port 80, like
+you would configure it in production.
 
 ## Known Issues ##
 If you get an error message: `command not found: docker-compose` when your

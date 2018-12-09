@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <xliff version="1.2"
-        xmlns='urn:oasis:names:tc:xliff:document:1.2'
-        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-        xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
+       xmlns='urn:oasis:names:tc:xliff:document:1.2'
+       xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2'>
     <file
             source-language="nl"
             target-language="nl"
@@ -13,12 +13,14 @@
             <note from="Joris Rietveld">Translation file for teacher pages in the DeskCrism project.</note>
         </header>
         <body>
-            <!--  -->
             <trans-unit id="index.pagination.chatMonitor">
                 <source>index.pagination.chatMonitor</source>
                 <target>Chat Monitor</target>
             </trans-unit>
-
+            <trans-unit id="index.pagination.participators">
+                <source>index.pagination.participators</source>
+                <target>Deelnemers</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

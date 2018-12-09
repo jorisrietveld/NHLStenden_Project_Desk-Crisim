@@ -2,7 +2,7 @@
     "name": "jorisrietveld/deskcrisim-backend",
     "description": "The backend repository of the Desk CriSim system.",
     "type": "project",
-    "license": "proprietary",
+  "license": "GPL-3.0-only",
     "require": {
         "php": "^7.1.3",
         "ext-ctype": "*",
@@ -15,7 +15,7 @@
         "symfony/console": "4.1.*",
         "symfony/expression-language": "4.1.*",
         "symfony/flex": "^1.1",
-        "symfony/form": "4.1.*",
+      "symfony/form": "4.1.*",
         "symfony/framework-bundle": "4.1.*",
         "symfony/monolog-bundle": "^3.1",
         "symfony/orm-pack": "1.0.*",
@@ -82,7 +82,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "4.1.*"
+          "require": "4.3.*"
         }
     }
 }

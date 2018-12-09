@@ -13,16 +13,16 @@
             <note from="Joris Rietveld">Translation file for the student pages in desk CriSim project.</note>
         </header>
         <body>
-            <trans-unit id="student.index.pagination.actions">
-                <source>student.index.pagination.actions</source>
+            <trans-unit id="index.pagination.actions">
+                <source>index.pagination.actions</source>
                 <target>Acties</target>
             </trans-unit>
-            <trans-unit id="studentn.index.pagination.infofeed">
-                <source>student.index.pagination.infofeed</source>
+            <trans-unit id="index.pagination.infofeed">
+                <source>index.pagination.infofeed</source>
                 <target>Info feed</target>
             </trans-unit>
-            <trans-unit id="student.index.pagination.chat">
-                <source>student.index.pagination.chat</source>
+            <trans-unit id="index.pagination.chat">
+                <source>index.pagination.chat</source>
                 <target>Chat</target>
             </trans-unit>
         </body>

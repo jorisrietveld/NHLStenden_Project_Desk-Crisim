@@ -1,0 +1,60 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 20-11-2018 23:48
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The Teacher upload Game page
+ # ==============================
+ # This page allows the Teacher to upload a new playable Game.
+ #}
+{% extends 'Teacher/ImpersonateRole.html.twig' %}
+
+{# Set the translation domain for this template, you can place the text on this page in ./translations/teacher #}
+{% trans_default_domain 'teacher' %}
+
+{% block TeacherContent %}
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card medium">
+                <div class="card-content">
+                    <span class="card-title">Scenario uploaden</span>
+                    <form action="#">
+                        <div class="row">
+
+                            <form action="{{ path('teacher_uploadSenario') }}" method="post">
+                                {{ form_start(form) }}
+                                {{ form_row(form.scenario) }}
+                                {{ form_end(form) }}
+                            </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">Uitleg</span>
+
+                    <div class="row">
+
+                        <ul class="collection">
+                            <li class="collection-item">Upload scenario</li>
+                            <li class="collection-item">Kies een bestand dat u wilt uploaden om als scenario te gebruiken.</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
+{% endblock %} {# TeacherContent #}

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns='urn:oasis:names:tc:xliff:document:1.2' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
+    <file source-language="nl" target-language="nl" original="index.html" datatype="html" date="2018-12-08T21:29:46Z">
+        <header>
+            <note from="Joris Rietveld">Translation file for the desk-crisim project.</note>
+        </header>
+        <body>
+            <trans-unit id="meta.description.default">
+                <source>meta.description.default</source>
+                <target>A Crisis simulation serious-game</target>
+            </trans-unit>
+            <trans-unit id="meta.keywords.default">
+                <source>meta.keywords.default</source>
+                <target>Stenden, serious-game, CriSim, Desk-CriSim</target>
+            </trans-unit>
+            <trans-unit id="meta.author.default">
+                <source>meta.author.default</source>
+                <target>INF2H - Stenden</target>
+            </trans-unit>
+            <trans-unit id="meta.title.base">
+                <source>meta.title.base</source>
+                <target>Desk Crisim</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

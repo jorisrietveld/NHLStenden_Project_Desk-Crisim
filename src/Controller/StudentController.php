@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 
 class StudentController extends AbstractController
 {
@@ -24,6 +23,6 @@ class StudentController extends AbstractController
 
     public function chat()
     {
-        return $this->render('student/chat/Chat.html.twig');
+        return $this->render('student/Chat/ChatPanel.html.twig');
     }
 }

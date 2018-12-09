@@ -4,17 +4,18 @@
  * Licence: GPLv3 - General Public Licence version 3
  * Description: $
  */
+// Import Jquery and Jquery dependent libraries.
 import $ from 'jquery';
 import 'popper.js'
 import 'jquery.easing'
 import 'chart.js'
-
 // Import matirialize css.
 import 'materialize-css/dist/js/materialize.min'
 import 'materialize-css/dist/css/materialize.min.css'
-
 // Import the stylesheets that define the sites theme.
 import '../scss/theme.scss'
+
+// Import Maritialize Icons.
 
 $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();

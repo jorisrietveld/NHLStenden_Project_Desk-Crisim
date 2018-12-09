@@ -5,15 +5,13 @@
 #
 authentication_login:
   path: /{_locale}/login
-  controller: App\Controller\AuthenticationController::index
+  controller: App\Controller\Authentication\LoginController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
-
-
 authentication_login_unlocalized:
   path: /login
-  controller: App\Controller\AuthenticationController::index
+  controller: App\Controller\Authentication\LoginController::index
 

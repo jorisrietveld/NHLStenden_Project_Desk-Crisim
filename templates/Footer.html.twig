@@ -3,32 +3,36 @@
  # Date: 20-11-2018 22:25
  # Licence: GPLv3 - General Public Licence version 3
  #}
+
+{# Set the translation domain for this template, you can place the text on this page in ./translations/Authentication #}
+{% trans_default_domain 'footer' %}
+
 {% block footer %}
     <footer class="page-footer black">
         <div class="container">
             <div class="row">
                 <div class="col m6 s12">
                     <h5 class="white-text">
-                        <i class="material-icons left">info_outline</i>{{ 'base.footer.link.help' }}
+                        <i class="material-icons left">info_outline</i>{{ 'link.help'|trans }}
                     </h5>
                     <ul>
                         <li>
-                            <a class="white-text left" href="#" target="_blank">
-                                <i class="material-icons left">chevron_right</i>{{ 'base.footer.link.dummy' }}
+                            <a class="white-text left" href="https://github.com/jorisrietveld/DeskCriSim-Backend" target="_blank">
+                                <i class="material-icons left">chevron_right</i>{{ 'link.sourcecode'|trans }}
                             </a>
                         </li>
                         <br/>
                         <br/>
                         <li>
                             <a class="white-text left" href="#" target="_blank">
-                                <i class="material-icons left">chevron_right</i>{{ 'base.footer.link.dummy' }}
+                                <i class="material-icons left">chevron_right</i>{{ 'link.dummy'|trans }}
                             </a>
                         </li>
                         <br/>
                         <br/>
                         <li>
                             <a class="white-text left" href="#" target="_blank">
-                                <i class="material-icons left">chevron_right</i>{{ 'base.footer.link.dummy' }}
+                                <i class="material-icons left">chevron_right</i>{{ 'link.dummy'|trans }}
                             </a>
                         </li>
                     </ul>
@@ -37,7 +41,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <a class="orange-text text-lighten-3">{{ 'base.footer.copyright' }} &copy; 2018</a>
+                <a class="orange-text text-lighten-3">{{ 'copyright.notification'|trans }} &copy; 2018</a>
             </div>
         </div>
     </footer>
