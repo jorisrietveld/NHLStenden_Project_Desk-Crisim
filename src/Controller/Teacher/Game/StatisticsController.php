@@ -5,7 +5,9 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Teacher;
+namespace App\Controller\Teacher\Game;
+
+use App\Controller\Teacher\TeacherController;
 
 /**
  * Class StatisticsController
@@ -13,5 +15,8 @@ namespace App\Controller\Teacher;
  */
 class StatisticsController extends TeacherController
 {
-
+    public function index()
+    {
+        return $this->render('Teacher/Game/ShowStatistics.html.twig');
+    }
 }

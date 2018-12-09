@@ -16,5 +16,8 @@ use App\Controller\Teacher\TeacherController;
  */
 class UploadGameScenarioController extends TeacherController
 {
-
+    public function index()
+    {
+        return $this->render('Teacher/Game/UploadScenario.html.twig');
+    }
 }

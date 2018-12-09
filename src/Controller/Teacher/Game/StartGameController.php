@@ -15,5 +15,8 @@ use App\Controller\Teacher\TeacherController;
  */
 class StartGameController extends TeacherController
 {
-
+    public function index()
+    {
+        return $this->render('Teacher/Game/StartNew.html.twig');
+    }
 }

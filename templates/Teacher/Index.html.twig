@@ -3,11 +3,12 @@
  # Date: 09-12-2018 03:23
  # Licence: GPLv3 - General Public Licence version 3
  #}
-{% extends 'TeacherBase.html.twig' %}
+{% extends 'Teacher/TeacherBase.html.twig' %}
 
 {# Set the translation domain for this template, you can place the text on this page in ./translations/teacher #}
 {% trans_default_domain 'teacher' %}
 
 {% block TeacherContent %}
-
+    <h1>Hello, Teacher</h1>
+    {{ dump() }}
 {% endblock %} {# TeacherBase #}
