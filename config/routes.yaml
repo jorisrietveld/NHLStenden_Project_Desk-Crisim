@@ -10,11 +10,11 @@
 #
 homepage_unlocalized:
   path: /
-  controller: App\Controller\IndexController::index
+  controller: App\Controller\Welcome\WelcomeController::index
 
 homepage:
   path: /{_locale}
-  controller: App\Controller\IndexController::index
+  controller: App\Controller\Welcome\WelcomeController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
@@ -23,28 +23,29 @@ homepage:
 #
 # All administrator related routes.
 #
-admin:
-  path: /{_locale}/admin
-  controller: App\Controller\AdminController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+admin_index:
+  resource: 'routes/administrator.yaml'
 
 #
-# All teacher related routes.
+# All Spectator related routes.
+#
+spectator:
+  resource: 'routes/spectator.yaml'
+
+#
+# All Teacher related routes.
 #
 teacher:
   resource: 'routes/teacher.yaml'
 
 #
-# All student related routes.
+# All Student related routes.
 #
 student:
   resource: 'routes/student.yml'
 
 #
-# All routs related to authentication and authorization.
+# All routs related to Authentication and authorization.
 #
 authentication:
   resource: 'routes/authentication.yml'

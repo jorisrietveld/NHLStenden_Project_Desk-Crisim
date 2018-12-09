@@ -42,11 +42,17 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
     private $router;
 
     /**
-     * The Cross Site Request Forgery token manager is used to inject tokens into the authentication forms, protecting
+     * The Cross Site Request Forgery token manager is used to inject tokens into the Authentication forms, protecting
      * them from those attacks.
      * @var CsrfTokenManagerInterface
      */
     private $csrfTokenManager;
+
+    /**
+     * This provides functions to load users on each request from cookies, the session etc.
+     * @var UserProviderInterface
+     */
+    private $userProvider;
 
     /**
      * The password encoder is used to hash and validate the users passwords in the database. (Using argon2 or BCrypt)
@@ -69,6 +75,7 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
         $this->router = $router;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        $this->userProvider = $userProvider;
     }
 
     /**
@@ -150,11 +157,8 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
      */
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
-        // The user could not be authenticated so redirect them back to the login form.
-        return new RedirectResponse(
-            $this->getLoginUrl(),
-            401
-        );
+        $request->getSession()->set(Security::AUTHENTICATION_ERROR, $exception);
+        return new RedirectResponse($this->getLoginUrl());
     }
 
     /**
@@ -165,12 +169,30 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
      * @return RedirectResponse|\Symfony\Component\HttpFoundation\Response|null
      * @throws \Exception
      */
-    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey): RedirectResponse
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
         }
 
+        // Determine the user roles to redirect them to the correct route.
+        $userRoles = $token->getRoles();
+
+        if (\in_array('ROLE_ADMIN', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('admin_index'));
+        }
+        if (\in_array('ROLE_LOGGER', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('logger_index'));
+        }
+        if (\in_array('ROLE_TEACHER', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('teacher_index'));
+        }
+        if (\in_array('ROLE_SPECTATOR', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('spectator_index'));
+        }
+        if (\in_array('ROLE_STUDENT', $userRoles, true)) {
+            return new RedirectResponse($this->router->generate('student_index'));
+        }
         // For example : return new RedirectResponse($this->router->generate('some_route'));
         throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
     }
@@ -188,7 +210,7 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
     }
 
     /**
-     * Returns if the authentication login supports a remember me functionality.
+     * Returns if the Authentication login supports a remember me functionality.
      * @return bool|void
      */
     public function supportsRememberMe()

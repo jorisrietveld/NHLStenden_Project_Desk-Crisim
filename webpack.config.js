@@ -41,7 +41,7 @@ ba     * Each entry will result in one JavaScript file (e.g. app.js)
     // Enable webpack copy plugin to optimize image imports.
     .addPlugin(new CopyWebpackPlugin([
             // Copies images
-            {from: './assets/img', to: 'static'}
+        {from: './assets/img', to: 'static'},
         ])
     )
 

@@ -7,7 +7,7 @@
 [![PHP 7.2](https://img.shields.io/badge/PHP-%3E%3D7.2-blue.svg)](http://php.net/manual/en/migration70.new-features.php)
 
 ![Desk CriSim logo](resources/DESK_CRISIM_LOGO_BG.png)
-This repository holds the source code of the crisis simulation game: Desk CriSim. Desk CriSim is a web application that allows students to simulate
+This repository holds the source code of the crisis simulation Game: Desk CriSim. Desk CriSim is a web application that allows students to simulate
 crisis situations. Teachers can assign students as certain actors in a crisis situation and monitor the choices that the students make on events that
 happen during a crisis.
 
@@ -223,7 +223,7 @@ on how to install and configure Docker.
       <tr><td align="left"> php-apcu    </td><td align="left"> php-intl     </td><td align="left"> php-xml       </td><td align="left"> php7.2-fpm      </td><td align="left"> php7.2-xml    </td></tr>
       <tr><td align="left"> php-apcu-bc </td><td align="left"> php-json     </td><td align="left"> php-xmlrpc    </td><td align="left"> php7.2-intl     </td><td align="left"> php7.2-xmlrpc </td></tr>
       <tr><td align="left"> php-cli     </td><td align="left"> php-mbstring </td><td align="left"> php-zip       </td><td align="left"> php7.2-json     </td><td align="left"> php7.2-zip    </td></tr>
-      <tr><td align="left"> php-common  </td><td align="left"> php-mongodb  </td><td align="left"> php7.2-cli    </td><td align="left"> php7.2-mbstring </td><td align="left">               </td></tr>
+      <tr><td align="left"> php-common  </td><td align="left"> php-mongodb  </td><td align="left"> php7.2-cli    </td><td align="left"> php7.2-mbstring </td><td align="left">php7.2-mysql   </td></tr>
       <tr><td align="left"> php-curl    </td><td align="left"> php-pear     </td><td align="left"> php7.2-common </td><td align="left"> php7.2-opcache  </td><td align="left">               </td></tr>
       <tr><td align="left"> php-dev     </td><td align="left"> php-soap     </td><td align="left"> php7.2-curl   </td><td align="left"> php7.2-readline </td><td align="left">               </td></tr>
     </tbody>
@@ -285,7 +285,7 @@ served to the client.
       _Still figuring out what causes this, it should not be possible_).
 
 ## Licencing
-Desk CriSim - A crisis simulation game.
+Desk CriSim - A crisis simulation Game.
 Copyright (C) 2018 Members of the INF2H project group
 
 This program is free software: you can redistribute it and/or modify
