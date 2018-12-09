@@ -7,7 +7,7 @@
  # ====================================
  # This page allows the Teacher to create a Game session for the students.
  #}
-{% extends 'Teacher/ImpersonateRole.html.twig' %}
+{% extends 'Teacher/TeacherBase.html.twig' %}
 
 {# Set the translation domain for this template, you can place the text on this page in ./translations/teacher #}
 {% trans_default_domain 'teacher' %}
@@ -54,7 +54,7 @@
                                                         mogen doen deel kunnen nemen aan de sessie
                             </li>
 
-                            {% if myTask %}
+                            {% if myTask is defined %}
                                 {{ dump(myTask) }}
                             {% endif %}
                         </ul>
