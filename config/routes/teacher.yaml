@@ -13,7 +13,7 @@ teacher_index:
 
 teacher_participators:
   path: /{_locale}/teacher/participators
-  controller: App\Controller\TeacherController::participators
+  controller: App\Controller\Teacher\Game\AddParticipatorsController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
@@ -21,55 +21,55 @@ teacher_participators:
 
 teacher_chatMonitor:
   path: /{_locale}/teacher/chatmonitor
-  controller: App\Controller\TeacherController::chatMonitor
+  controller: App\Controller\Teacher\Chat\ChatMonitorController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
-teacher_loadEvent:
-  path: /{_locale}/teacher/loadEvent
-  controller: App\Controller\TeacherController::loadEvent
+teacher_create_event:
+  path: /{_locale}/teacher/create-event
+  controller: App\Controller\Teacher\Game\CreateEventController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
-teacher_createSession:
-  path: /{_locale}/teacher/createSession
-  controller: App\Controller\CreateSessionController::new
+teacher_create_session:
+  path: /{_locale}/teacher/create-session
+  controller: App\Controller\Teacher\Game\CreateSessionController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
-teacher_showStatistics:
+teacher_show_statistics:
   path: /{_locale}/teacher/showStatistics
-  controller: App\Controller\TeacherController::showStatistics
+  controller: App\Controller\Teacher\Game\ShowStatisticsController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
-teacher_uploadSenario:
-  path: /{_locale}/teacher/uploadScenario
-  controller: App\Controller\UploadScenarioController::new
+teacher_upload_scenario:
+  path: /{_locale}/teacher/upload-scenario
+  controller: App\Controller\Teacher\Game\UploadGameScenarioController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
-teacher_assignPoints:
-  path: /{_locale}/teacher/assignPoints
-  controller: App\Controller\TeacherController::assignPoints
+teacher_assign_points:
+  path: /{_locale}/teacher/assign-points
+  controller: App\Controller\Teacher\Game\AssignPointsController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
-teacher_startSenario:
-  path: /{_locale}/teacher/startSenario
-  controller: App\Controller\TeacherController::startScenario
+teacher_start_scenario:
+  path: /{_locale}/teacher/start-scenario
+  controller: App\Controller\Teacher\Game\StartGameController::index
   requirements:
     _locale: '%app.locales%'
   defaults:

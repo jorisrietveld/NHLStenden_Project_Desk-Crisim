@@ -9,12 +9,16 @@ namespace App\Controller\Teacher\Game;
 
 
 use App\Controller\Teacher\TeacherController;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class CreateGameEventController
  * @package App\Controller\Teacher\Game
  */
-class CreateGameEventController extends TeacherController
+final class CreateEventController extends TeacherController
 {
-
+    public function index(): Response
+    {
+        return $this->render('Teacher/Game/CreateEvent.html.twig');
+    }
 }

@@ -15,5 +15,8 @@ use App\Controller\Teacher\TeacherController;
  */
 class ChatMonitorController extends TeacherController
 {
-
+    public function index()
+    {
+        return $this->render('Teacher/Chat/ChatMonitor.html.twig');
+    }
 }

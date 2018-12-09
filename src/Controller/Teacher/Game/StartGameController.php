@@ -8,14 +8,15 @@
 namespace App\Controller\Teacher\Game;
 
 use App\Controller\Teacher\TeacherController;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class StartGameController
  * @package App\Controller\Teacher\Game\
  */
-class StartGameController extends TeacherController
+final class StartGameController extends TeacherController
 {
-    public function index()
+    public function index(): Response
     {
         return $this->render('Teacher/Game/StartNew.html.twig');
     }
