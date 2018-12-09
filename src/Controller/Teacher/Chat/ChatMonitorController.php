@@ -8,15 +8,27 @@
 namespace App\Controller\Teacher\Chat;
 
 use App\Controller\Teacher\TeacherController;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class ChatMonitorController
  * @package App\Controller\Teacher\Chat
  */
-class ChatMonitorController extends TeacherController
+final class ChatMonitorController extends TeacherController
 {
-    public function index()
+    private const DUMMY_CHAT_MESSAGES = [
+        'message' => [
+            'actor' => 'police',
+            'text' => 'Hey!',
+            'image' => 'police.png',
+            'time' => '',
+        ],
+    ];
+
+    public function index(): Response
     {
-        return $this->render('Teacher/Chat/ChatMonitor.html.twig');
+        return $this->render('Teacher/Chat/ChatMonitor.html.twig', [
+            'messages' => self::DUMMY_CHAT_MESSAGES
+        ]);
     }
 }

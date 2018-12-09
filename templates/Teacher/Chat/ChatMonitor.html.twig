@@ -7,7 +7,7 @@
  # ==============================
  # This page allows the Teacher to view the Chat messages from students.
  #}
-{% extends 'Teacher/ImpersonateRole.html.twig' %}
+{% extends 'Teacher/TeacherBase.html.twig' %}
 
 {# Set the translation domain for this template, you can place the text on this page in ./translations/teacher #}
 {% trans_default_domain 'teacher' %}
@@ -70,19 +70,16 @@
                     </div>
 
                     {% for message in messages %}
-
                         <div class="row">
                             <ul class="collection">
                                 <li class="collection-item avatar">
-                                    <img src="{{ asset('build/static/ambulance.png') }}" class="circle">
+                                    <img src="{{ asset('build/static/'~message.image) }}" class="circle">
                                 </li>
                                 <span class="title grey-text">{{ message.actor }}</span>
                                 <p class="black-text">{{ message.text }} <br>
                                 <p class="grey-text">{{ message.time }} <br>
                                 </p>
                             </ul>
-
-
                         </div>
 
 
