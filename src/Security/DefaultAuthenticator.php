@@ -42,7 +42,7 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
     private $router;
 
     /**
-     * The Cross Site Request Forgery token manager is used to inject tokens into the authentication forms, protecting
+     * The Cross Site Request Forgery token manager is used to inject tokens into the Authentication forms, protecting
      * them from those attacks.
      * @var CsrfTokenManagerInterface
      */
@@ -169,7 +169,7 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
      * @return RedirectResponse|\Symfony\Component\HttpFoundation\Response|null
      * @throws \Exception
      */
-    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey): RedirectResponse
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
@@ -188,10 +188,10 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
             return new RedirectResponse($this->router->generate('teacher_index'));
         }
         if (\in_array('ROLE_SPECTATOR', $userRoles, true)) {
-            return new RedirectResponse($this->router->generate('admin_index'));
+            return new RedirectResponse($this->router->generate('spectator_index'));
         }
         if (\in_array('ROLE_STUDENT', $userRoles, true)) {
-            return new RedirectResponse($this->router->generate('admin_index'));
+            return new RedirectResponse($this->router->generate('student_index'));
         }
         // For example : return new RedirectResponse($this->router->generate('some_route'));
         throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
@@ -210,7 +210,7 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
     }
 
     /**
-     * Returns if the authentication login supports a remember me functionality.
+     * Returns if the Authentication login supports a remember me functionality.
      * @return bool|void
      */
     public function supportsRememberMe()

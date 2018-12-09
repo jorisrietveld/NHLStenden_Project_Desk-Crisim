@@ -7,7 +7,7 @@
 [![PHP 7.2](https://img.shields.io/badge/PHP-%3E%3D7.2-blue.svg)](http://php.net/manual/en/migration70.new-features.php)
 
 ![Desk CriSim logo](resources/DESK_CRISIM_LOGO_BG.png)
-This repository holds the source code of the crisis simulation game: Desk CriSim. Desk CriSim is a web application that allows students to simulate
+This repository holds the source code of the crisis simulation Game: Desk CriSim. Desk CriSim is a web application that allows students to simulate
 crisis situations. Teachers can assign students as certain actors in a crisis situation and monitor the choices that the students make on events that
 happen during a crisis.
 
@@ -285,7 +285,7 @@ served to the client.
       _Still figuring out what causes this, it should not be possible_).
 
 ## Licencing
-Desk CriSim - A crisis simulation game.
+Desk CriSim - A crisis simulation Game.
 Copyright (C) 2018 Members of the INF2H project group
 
 This program is free software: you can redistribute it and/or modify

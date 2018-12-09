@@ -5,31 +5,31 @@
 #
 student_index:
   path: /{_locale}/student
-  controller: App\Controller\StudentController::index
+  controller: App\Controller\Student\Game\ActionController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
 student_actions:
-  path: /{_locale}/actions
-  controller: App\Controller\StudentController::actions
+  path: /{_locale}/student/actions
+  controller: App\Controller\Student\Game\ActionController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
 student_InfoFeed:
-  path: /{_locale}/infofeed
-  controller: App\Controller\StudentController::infoFeed
+  path: /{_locale}/student/infofeed
+  controller: App\Controller\Student\Game\InfoFeedController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
 student_chat:
-  path: /{_locale}/chat
-  controller: App\Controller\StudentController::chat
+  path: /{_locale}/student/Chat
+  controller: App\Controller\Student\Chat\ChatController::index
   requirements:
     _locale: '%app.locales%'
   defaults:

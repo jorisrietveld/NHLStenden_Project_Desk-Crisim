@@ -3,13 +3,12 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 
 class IndexController extends AbstractController
 {
     public function index()
     {
-        return $this->render('index/Index.html.twig', [
+        return $this->render('ImpersonateRole.html.twig', [
             'controller_name' => 'IndexController',
         ]);
     }

@@ -23,6 +23,6 @@ class StudentController extends AbstractController
 
     public function chat()
     {
-        return $this->render('student/chat/Chat.html.twig');
+        return $this->render('student/Chat/ChatPanel.html.twig');
     }
 }

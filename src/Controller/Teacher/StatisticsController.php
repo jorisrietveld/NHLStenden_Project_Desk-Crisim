@@ -7,8 +7,11 @@
 
 namespace App\Controller\Teacher;
 
-
-class StatisticsController
+/**
+ * Class StatisticsController
+ * @package App\Controller\Teacher
+ */
+class StatisticsController extends TeacherController
 {
 
 }

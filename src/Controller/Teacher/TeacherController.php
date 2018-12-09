@@ -11,7 +11,7 @@ namespace App\Controller\Teacher;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * This is the base teacher controller from which each teacher controller inherits. Use this to define generic teacher
+ * This is the base Teacher controller from which each Teacher controller inherits. Use this to define generic Teacher
  * utility methods.
  *
  * Class TeacherController

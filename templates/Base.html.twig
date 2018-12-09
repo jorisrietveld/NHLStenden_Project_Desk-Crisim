@@ -5,8 +5,10 @@
  #
  # The base theme template.
  # ====================================
- # This shows the teacher the statistics of a participators for an given scenario
+ # This shows the Teacher the statistics of a participators for an given Game
  #}
+{# Set the translation domain for this template, you can place the text on this page in ./translations/base #}
+{% trans_default_domain 'base' %}
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -15,19 +17,20 @@
         <meta charset="UTF-8"/>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="{{ 'base.meta.description.default'|trans }}"/>
-        <meta name="keywords" content="{{ 'base.meta.keywords.default'|trans }}"/>
-        <meta name="author" content="{{ 'base.meta.author.default'|trans }}"/>
+        <meta name="description" content="{{ 'meta.description.default'|trans }}"/>
+        <meta name="keywords" content="{{ 'meta.keywords.default'|trans }}"/>
+        <meta name="author" content="{{ 'meta.author.default'|trans }}"/>
         <link rel='shortcut icon' type='image/x-icon' href='./img/fav.png'/>
     {% endblock %}
 
     {# This will render the title of the webpage #}
-    <title>{{ 'base.meta.title.base'|trans }}</title>
+    <title>{{ 'meta.title.base'|trans }}</title>
 
     {# This block stores all style for the website. #}
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {# Replace Materialize icons with yarn #}
+        {#<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">#}
     {% endblock %}
 </head>
 <body>

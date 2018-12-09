@@ -1,18 +1,18 @@
 #
 # Teacher routes.
 #
-# This file contains all routes to the teacher accessible pages.
+# This file contains all routes to the Teacher accessible pages.
 #
 teacher_index:
   path: /{_locale}/teacher
-  controller: App\Controller\TeacherController::index
+  controller: App\Controller\Teacher\Controller::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
 teacher_participators:
-  path: /{_locale}/participators
+  path: /{_locale}/teacher/participators
   controller: App\Controller\TeacherController::participators
   requirements:
     _locale: '%app.locales%'
@@ -20,7 +20,7 @@ teacher_participators:
     _locale: '%locale%'
 
 teacher_chatMonitor:
-  path: /{_locale}/chatmonitor
+  path: /{_locale}/teacher/chatmonitor
   controller: App\Controller\TeacherController::chatMonitor
   requirements:
     _locale: '%app.locales%'
@@ -28,7 +28,7 @@ teacher_chatMonitor:
     _locale: '%locale%'
 
 teacher_loadEvent:
-  path: /{_locale}/loadEvent
+  path: /{_locale}/teacher/loadEvent
   controller: App\Controller\TeacherController::loadEvent
   requirements:
     _locale: '%app.locales%'
@@ -36,7 +36,7 @@ teacher_loadEvent:
     _locale: '%locale%'
 
 teacher_createSession:
-  path: /{_locale}/createSession
+  path: /{_locale}/teacher/createSession
   controller: App\Controller\CreateSessionController::new
   requirements:
     _locale: '%app.locales%'
@@ -44,7 +44,7 @@ teacher_createSession:
     _locale: '%locale%'
 
 teacher_showStatistics:
-  path: /{_locale}/showStatistics
+  path: /{_locale}/teacher/showStatistics
   controller: App\Controller\TeacherController::showStatistics
   requirements:
     _locale: '%app.locales%'
@@ -52,7 +52,7 @@ teacher_showStatistics:
     _locale: '%locale%'
 
 teacher_uploadSenario:
-  path: /{_locale}/uploadScenario
+  path: /{_locale}/teacher/uploadScenario
   controller: App\Controller\UploadScenarioController::new
   requirements:
     _locale: '%app.locales%'
@@ -60,7 +60,7 @@ teacher_uploadSenario:
     _locale: '%locale%'
 
 teacher_assignPoints:
-  path: /{_locale}/assignPoints
+  path: /{_locale}/teacher/assignPoints
   controller: App\Controller\TeacherController::assignPoints
   requirements:
     _locale: '%app.locales%'
@@ -68,7 +68,7 @@ teacher_assignPoints:
     _locale: '%locale%'
 
 teacher_startSenario:
-  path: /{_locale}/startSenario
+  path: /{_locale}/teacher/startSenario
   controller: App\Controller\TeacherController::startScenario
   requirements:
     _locale: '%app.locales%'
@@ -76,11 +76,11 @@ teacher_startSenario:
     _locale: '%locale%'
 
 #
-# Logger (Teacher) routes.
+# Observer (Teacher) routes.
 #
-# This file contains all routes to the Logger accessible pages. The logger
-# is a teacher that walks around during a game session and can add additional
-# information to the students behaviour during the game.
+# This file contains all routes to the Observer accessible pages. The logger
+# is a Teacher that walks around during a Game session and can add additional
+# information to the students behaviour during the Game.
 #
 logger_index:
   path: /{_locale}/logger

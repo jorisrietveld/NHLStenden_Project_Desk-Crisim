@@ -1,0 +1,72 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 20-11-2018 22:14
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The info feed page
+ # ==================
+ # This shows the Student his info feed.
+ #}
+
+{% extends 'Student/Index.html.twig' %}
+
+{# Set the translation domain for this template, you can place the text on this page in ./translations/Student #}
+{% trans_default_domain 'student' %}
+
+{% block StudentContent %}
+    <div class="row">
+
+        {# Create the news station message blocks. #}
+        {# TODO: make sure that there is an data structure injected into the view component.
+        #}
+        {% for newsStation in newsStations %}
+
+            <div class="col s12 m4">
+                <div class="card large">
+                    <div class="card-content">
+                        <span class="card-title">{{ newsStation.name }}</span>
+                        <ul class="collection">
+
+                            {# Add the news messages to the blocks #}
+                            {% for message in newsStation.messages %}
+                                <li class="collection-item avatar">
+                                    <img
+                                            src="{{ newsMessage.imageUrl|default('') }}"
+                                            alt="{{ newsMessage.imageUrl|default('') }}"
+                                            class="circle"/>
+                                    <span class="title">{{ newsMessage.title }}</span>
+                                    <p>{{ newsMessage.thridLine }} <br>
+                                       {{ newsMessage.secondLine }}
+                                    </p>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    {# TODO remove this if it is not requered#}
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card large">
+                <div class="card-content">
+                    <span class="card-title">Placeholder</span>
+                    <p>Dit is even zodat de footer onderaan blijft staan.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card large">
+                <div class="card-content">
+                    <span class="card-title">Placeholder</span>
+                    <p>Dit is even zodat de footer onderaan blijft staan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %} {# StudentContent #}

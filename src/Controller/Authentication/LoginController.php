@@ -20,7 +20,7 @@ class LoginController extends AbstractController
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUserName = $authenticationUtils->getLastUsername();
 
-        return $this->render('authentication/Login.html.twig', [
+        return $this->render('Authentication/Login.html.twig', [
             'last_username' => $lastUserName,
             'error' => $error
         ]);
@@ -37,9 +37,5 @@ class LoginController extends AbstractController
                 'No user found with the username:' . $userName
             );
         }
-
     }
-
-
-
 }

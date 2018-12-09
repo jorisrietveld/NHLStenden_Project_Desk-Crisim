@@ -17,11 +17,11 @@ security:
         #     memory:
         #         # Define in-memory users for testing during development.
         #         users:
-        #             student:  { password: '%env(STUDENT_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_STUDENT' ] }
+        #             Student:  { password: '%env(STUDENT_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_STUDENT' ] }
         #             spectator:  { password: '%env(SPECTATOR_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_SPECTATOR' ] }
-        #             teacher:  { password: '%env(TEACHER_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_TEACHER' ] }
+        #             Teacher:  { password: '%env(TEACHER_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_TEACHER' ] }
         #             logger:  { password: '%env(LOGGER_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_LOGGER' ] }
-        #             admin: { password: '%env(ADMIN_PASSWORD)%', roles: [ 'ROLE_ADMIN' ] }
+        #             Administrator: { password: '%env(ADMIN_PASSWORD)%', roles: [ 'ROLE_ADMIN' ] }
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -45,5 +45,5 @@ security:
     access_control:
     #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
     #- { path: ^/_locale/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+    # - { path: ^/Administrator, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

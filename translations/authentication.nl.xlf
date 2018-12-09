@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns='urn:oasis:names:tc:xliff:document:1.2' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
+    <file source-language="nl" target-language="nl" original="index.html" datatype="html" date="2018-12-08T16:47:46Z">
+        <header>
+            <note from="Joris Rietveld">Translation file for the desk-crisim project.</note>
+        </header>
+        <body>
+            <trans-unit id="login.form.title">
+                <source>login.form.title</source>
+                <target>Aanmelden</target>
+            </trans-unit>
+            <trans-unit id="login.form.label.username">
+                <source>login.form.label.username</source>
+                <target>Gebruikers Naam</target>
+            </trans-unit>
+            <trans-unit id="login.form.label.password">
+                <source>login.form.label.password</source>
+                <target>Wachtwoord</target>
+            </trans-unit>
+            <trans-unit id="login.form.submit">
+                <source>login.form.submit</source>
+                <target>Meld me aan</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

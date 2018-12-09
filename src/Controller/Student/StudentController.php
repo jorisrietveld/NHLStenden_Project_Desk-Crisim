@@ -10,11 +10,11 @@ namespace App\Controller\Student;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * This is the base student controller from which each student controller inherits. Use this to define generic student
+ * This is the base Student controller from which each Student controller inherits. Use this to define generic Student
  * utility methods.
  *
  * Class StudentController
- * @package App\Controller\student
+ * @package App\Controller\Student
  */
 class StudentController extends AbstractController
 {
