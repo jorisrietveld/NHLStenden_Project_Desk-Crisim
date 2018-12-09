@@ -1,61 +1,13 @@
 {#
  # Author: Joris Rietveld <jorisrietveld@gmail.com>
- # Date: 21-11-2018 00:02
+ # Date: 09-12-2018 03:23
  # Licence: GPLv3 - General Public Licence version 3
- #
- # The teachers index page
- # =======================
- # This page holds the sceleton of the Teacher accessable panels.
  #}
-{% extends 'Base.html.twig' %}
+{% extends 'TeacherBase.html.twig' %}
 
 {# Set the translation domain for this template, you can place the text on this page in ./translations/teacher #}
 {% trans_default_domain 'teacher' %}
 
-{% block body %}
-    <div class="container main">
+{% block TeacherContent %}
 
-        <div class="row">
-
-            <ul class="pagination center">
-
-                <li class="waves-effect <?php echo $participators; ?>">
-                    <a href="{{ path('teacher_participators') }}">{{ index.pagination.participators|trans }}</a>
-                </li>
-
-                <li class="waves-effect <?php echo $chatmonitor; ?>">
-                    <a href="{{ path('teacher_chatMonitor') }}">{{ 'index.pagination.chatMonitor'|trans }}</a>
-                </li>
-
-                <li class="waves-effect <?php echo $eventload; ?>">
-                    <a href="{{ path('teacher_loadEvent') }}">Event Inladen</a>
-                </li>
-
-                <li class="waves-effect <?php echo $sessionload; ?>">
-                    <a href="{{ path('teacher_createSession') }}">Sessie Aanmaken</a>
-                </li>
-
-                <li class="waves-effect <?php echo $statsload; ?>">
-                    <a href="{{ path('teacher_showStatistics') }}">Statistieken</a>
-                </li>
-
-                <li class="waves-effect <?php echo $scenarioupload; ?>">
-                    <a href="{{ path('teacher_uploadSenario') }}">Scenario Uploaden</a>
-                </li>
-
-                <li class="waves-effect <?php echo $assignpoints; ?>">
-                    <a href="{{ path('teacher_assignPoints') }}">Punten Toekennen</a>
-                </li>
-
-                <li class="waves-effect <?php echo $startscenario; ?>">
-                    <a href="{{ path('teacher_startSenario') }}">Scenario Starten</a>
-                </li>
-
-            </ul>
-
-        </div>
-
-        {% block TeacherContent %}{% endblock %}
-
-    </div>
-{% endblock %}
+{% endblock %} {# TeacherBase #}

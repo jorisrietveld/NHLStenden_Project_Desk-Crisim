@@ -1,39 +1,14 @@
 {#
  # Author: Joris Rietveld <jorisrietveld@gmail.com>
- # Date: 21-11-2018 00:02
+ # Date: 09-12-2018 03:21
  # Licence: GPLv3 - General Public Licence version 3
- #
- # The Student index page
- # ======================
- # This page holds the sceleton of the Student accessable panels.
  #}
 
-{% extends 'Base.html.twig' %}
+{% extends 'Student/StudentBase.html.twig' %}
 
 {# Set the translation domain for this template, you can place the text on this page in ./translations/Student #}
 {% trans_default_domain 'student' %}
 
-{% block body %}
-    <div class="container main">
-
-        <div class="row">
-
-            <ul class="pagination center">
-
-                <li class="waves-effect <?php echo $actions; ?>">
-                    <a href="{{ path('student_actions') }}">{{ 'index.pagination.actions'|trans }}</a>
-                </li>
-                <li class="waves-effect <?php echo $infofeed; ?>">
-                    <a href="{{ path('student_InfoFeed') }}">{{ 'index.pagination.infofeed'|trans }}
-                    </a>
-                </li>
-                <li class="waves-effect <?php echo $chat; ?>">
-                    <a href="{{ path('student_chat') }}">{{ 'index.pagination.chat'|trans }}</a>
-                </li>
-            </ul>
-
-        </div>
-        {% block StudentContent %}
-        {% endblock %}
-    </div>
-{% endblock %}
+ {% block StudentContent %}
+     <h1>Welcome, Student</h1>
+ {% endblock %}

@@ -5,7 +5,7 @@
 #
 teacher_index:
   path: /{_locale}/teacher
-  controller: App\Controller\Teacher\Controller::index
+  controller: App\Controller\Teacher\HomeController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
