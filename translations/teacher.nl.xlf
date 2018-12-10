@@ -31,5 +31,96 @@
                 <target>Deelnemers</target>
             </segment>
         </unit>
+        <unit id="j3V5zNS" name="teacher_chatMonitor">
+            <segment>
+                <source>teacher_chatMonitor</source>
+                <target>Chat Monitor</target>
+            </segment>
+        </unit>
+        <unit id="LAYoNQh" name="teacher_create_event">
+            <segment>
+                <source>teacher_create_event</source>
+                <target>Nieuw Event Aanmaken</target>
+            </segment>
+        </unit>
+        <unit id="BDhN6eL" name="teacher_create_session">
+            <segment>
+                <source>teacher_create_session</source>
+                <target>Nieuwe Sessie Aanmaken
+                </target>
+            </segment>
+        </unit>
+        <unit id="TFmQTI." name="teacher_show_statistics">
+            <segment>
+                <source>teacher_show_statistics</source>
+                <target>Statistieken</target>
+            </segment>
+        </unit>
+        <unit id="hGf8UwL" name="upload_scenario">
+            <segment>
+                <source>upload_scenario</source>
+                <target>Scenario Uploaden</target>
+            </segment>
+        </unit>
+        <unit id="6bTJQR7" name="teacher_assign_points">
+            <segment>
+                <source>teacher_assign_points</source>
+                <target>Punten Toekennen</target>
+            </segment>
+        </unit>
+        <unit id="uji18Sg" name="teacher_start_scenario">
+            <segment>
+                <source>teacher_start_scenario</source>
+                <target>Start Scenario</target>
+            </segment>
+        </unit>
+        <unit id="csOxb_t" name="base.pagination.teacher_participators">
+            <segment>
+                <source>base.pagination.teacher_participators</source>
+                <target>Deelnemers Toevoegen</target>
+            </segment>
+        </unit>
+        <unit id="Sfe4l84" name="base.pagination.teacher_chatMonitor">
+            <segment>
+                <source>base.pagination.teacher_chatMonitor</source>
+                <target>Chat Monitor</target>
+            </segment>
+        </unit>
+        <unit id="JIDj7l9" name="base.pagination.teacher_create_event">
+            <segment>
+                <source>base.pagination.teacher_create_event</source>
+                <target>Event Aanmaken</target>
+            </segment>
+        </unit>
+        <unit id="YEUnnyN" name="base.pagination.teacher_create_session">
+            <segment>
+                <source>base.pagination.teacher_create_session</source>
+                <target>Sessie aanmaken</target>
+            </segment>
+        </unit>
+        <unit id="gbLiyTo" name="base.pagination.teacher_show_statistics">
+            <segment>
+                <source>base.pagination.teacher_show_statistics</source>
+                <target>Statistieken</target>
+            </segment>
+        </unit>
+        <unit id="iyrCtxJ" name="base.pagination.upload_scenario">
+            <segment>
+                <source>base.pagination.upload_scenario</source>
+                <target>Scenario Uploaden</target>
+            </segment>
+        </unit>
+        <unit id="eP3ba2M" name="base.pagination.teacher_assign_points">
+            <segment>
+                <source>base.pagination.teacher_assign_points</source>
+                <target>Punten toekennen</target>
+            </segment>
+        </unit>
+        <unit id="O0Osu6o" name="base.pagination.teacher_start_scenario">
+            <segment>
+                <source>base.pagination.teacher_start_scenario</source>
+                <target>Scenario Starten</target>
+            </segment>
+        </unit>
     </file>
 </xliff>

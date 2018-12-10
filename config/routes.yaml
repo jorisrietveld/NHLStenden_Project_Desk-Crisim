@@ -20,6 +20,14 @@ homepage:
   defaults:
     _locale: '%locale%'
 
+homepage_nl:
+  path: /nl
+  controller: App\Controller\Welcome\WelcomeController::index
+
+homepage_fy:
+  path: /fy
+  controller: App\Controller\Welcome\WelcomeController::index
+
 #
 # All administrator related routes.
 #

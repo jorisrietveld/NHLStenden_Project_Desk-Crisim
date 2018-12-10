@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="fy">
+    <file id="welcome.fy">
+        <unit id="levIQSL" name="index.page.title">
+            <segment>
+                <source>index.page.title</source>
+                <target>Publike wolkom side + Desk Crisim - In krisis simulaasje spiel</target>
+            </segment>
+        </unit>
+        <unit id="jqOQafq" name="index.link.student">
+            <segment>
+                <source>index.link.student</source>
+                <target>Gean nei it studintepaniel</target>
+            </segment>
+        </unit>
+        <unit id="4t.eQJO" name="index.link.fries">
+            <segment>
+                <source>index.link.fries</source>
+                <target>Bekijk de website in het nederlands</target>
+            </segment>
+        </unit>
+        <unit id="o2D7dIa" name="index.link.teacher">
+            <segment>
+                <source>index.link.teacher</source>
+                <target>Gean nei it learplakpaniel</target>
+            </segment>
+        </unit>
+        <unit id="02AnMbn" name="index.link.login">
+            <segment>
+                <source>index.link.login</source>
+                <target>Gean nei de login side</target>
+            </segment>
+        </unit>
+    </file>
+</xliff>

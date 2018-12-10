@@ -29,51 +29,17 @@
 
 {% block body %}
     <div class="container main">
-
         <div class="row">
-
             <ul class="pagination center">
-
                 {# Create a link for each teacher route. #}
                 {% for teacherRoute in teacherRoutes %}
+                    {% set translationLinkKey = 'base.pagination.'~teacherRoute %}
                     <li class="waves-effect {{ teacherRoute in route ? 'active' }}">
-                        <a href="{{ path( teacherRoute ) }}">{{ 'base.pagination.'~teacherRoute|trans }}</a>
+                        <a href="{{ path( teacherRoute ) }}">{{ translationLinkKey|trans }}</a>
                     </li>
                 {% endfor %}
-
-                {#
-                                <li class="waves-effect <?php echo $chatmonitor; ?>">
-                                    <a href="{{ path('teacher_chatMonitor') }}">{{ 'index.pagination.chatMonitor'|trans }}</a>
-                                </li>
-
-                                <li class="waves-effect <?php echo $eventload; ?>">
-                                    <a href="{{ path('teacher_create_event') }}">Event Inladen</a>
-                                </li>
-
-                                <li class="waves-effect <?php echo $sessionload; ?>">
-                                    <a href="{{ path('teacher_create_session') }}">Sessie Aanmaken</a>
-                                </li>
-
-                                <li class="waves-effect <?php echo $statsload; ?>">
-                                    <a href="{{ path('teacher_show_statistics') }}">Statistieken</a>
-                                </li>
-
-                                <li class="waves-effect <?php echo $scenarioupload; ?>">
-                                    <a href="{{ path('upload_scenario') }}">Scenario Uploaden</a>
-                                </li>
-
-                                <li class="waves-effect <?php echo $assignpoints; ?>">
-                                    <a href="{{ path('teacher_assign_points') }}">Punten Toekennen</a>
-                                </li>
-
-                                <li class="waves-effect <?php echo $startscenario; ?>">
-                                    <a href="{{ path('teacher_start_scenario') }}">Scenario Starten</a>
-                                </li>#}
-
             </ul>
-
         </div>
-
         {% block TeacherContent %}{% endblock %}
 
     </div>

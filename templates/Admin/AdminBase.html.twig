@@ -1,0 +1,34 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 10-12-2018 18:59
+ # Licence: GPLv3 - General Public Licence version 3
+ #}
+{% extends 'Base.html.twig' %}
+
+{# Get the current requested route #}
+{% set route = app.request.get('_route') %}
+
+{# This are all routes from 'config/route/teacher.yaml' #}
+{% set adminRoutes = [
+
+] %}
+
+{# Set the translation domain for this template, you can place the text on this page in ./translations/admin #}
+{% trans_default_domain 'admin' %}
+
+{% block body %}
+    <div class="container main">
+        <div class="row">
+            <ul class="pagination center">
+                {# Create a link for each teacher route. #}
+                {% for adminRoute in adminRoutes %}
+                    <li class="waves-effect {{ adminRoute in route ? 'active' }}">
+                        <a href="{{ path( adminRoute ) }}">{{ 'base.pagination.'~adminRoute|trans }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% block AdminContent %}{% endblock %}
+
+    </div>
+{% endblock %}

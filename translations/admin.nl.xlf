@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
+    <file id="admin.nl">
+        <unit id="levIQSL" name="index.page.title">
+            <segment>
+                <source>index.page.title</source>
+                <target>Welcome on the Admin panel!</target>
+            </segment>
+        </unit>
+        <unit id="Dn3.AvF" name="index.link.translation_interface">
+            <segment>
+                <source>index.link.translation_interface</source>
+                <target>Open de Translation Editor.</target>
+            </segment>
+        </unit>
+        <unit id="M4dvegL" name="authentication_login">
+            <segment>
+                <source>authentication_login</source>
+                <target>Ga naar de login pagina.</target>
+            </segment>
+        </unit>
+        <unit id="066Q6bm" name="teacher_index">
+            <segment>
+                <source>teacher_index</source>
+                <target>Gaan naar de docent pagina.</target>
+            </segment>
+        </unit>
+        <unit id="p2XlKW." name="student_index">
+            <segment>
+                <source>student_index</source>
+                <target>Ga naar de student pagina.</target>
+            </segment>
+        </unit>
+    </file>
+</xliff>

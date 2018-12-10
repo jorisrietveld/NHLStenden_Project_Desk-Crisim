@@ -18,6 +18,6 @@ class AdministratorController extends AbstractController
 {
     public function index()
     {
-
+        return $this->render( 'Admin/Index.html.twig' );
     }
 }
