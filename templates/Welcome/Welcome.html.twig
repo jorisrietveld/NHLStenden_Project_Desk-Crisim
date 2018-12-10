@@ -20,31 +20,22 @@
                             <p>{{ 'index.page.title'|trans }}</p>
                         </div>
                         <ul class="collection">
+
                             <li class="collection-item avatar">
                                 <a href="{{ path('authentication_login' ) }}">
                                     <i class="material-icons circle">insert_link</i>
                                 </a>
-                                <p>Login Pagina
+                                <p>{{ 'index.link.login'|trans }}
                                     <a href="{{ path('authentication_login' ) }}" class="secondary-content">
                                         <i class="material-icons black-text">send</i>
                                     </a>
                                 </p>
                             </li>
-                        </ul>
-                    </div>
-
-                    <div class="card-content">
-                        <div class="card-title">
-                            <p>{{ 'index.container.title'|trans }}</p>
-                        </div>
-
-                        <ul class="collection">
-
                             <li class="collection-item avatar">
                                 <a href='{{ path('teacher_index') }}'>
                                     <i class="material-icons circle">insert_link</i>
                                 </a>
-                                <p>{{ 'index.link.Teacher'|trans }}
+                                <p>{{ 'index.link.teacher'|trans }}
                                     <a href="{{ path('teacher_index') }}" class="secondary-content">
                                         <i class="material-icons black-text">send</i>
                                     </a>
@@ -55,13 +46,12 @@
                                 <a href='{{ path('student_index' ) }}'>
                                     <i class="material-icons circle">insert_link</i>
                                 </a>
-                                <p>{{ 'index.link.Student'|trans }}
+                                <p>{{ 'index.link.student'|trans }}
                                     <a href="{{ path('student_index' ) }}" class="secondary-content">
                                         <i class="material-icons black-text">send</i>
                                     </a>
                                 </p>
                             </li>
-
                         </ul>
                     </div>
                 </div>

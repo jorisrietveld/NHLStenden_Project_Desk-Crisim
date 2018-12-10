@@ -8,6 +8,7 @@
 namespace App\Security;
 
 use App\Entity\User;
+use App\Service\MessageDomain;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,6 +25,7 @@ use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use Symfony\Component\Translation\TranslatorInterface;
 
 final class DefaultAuthenticator extends AbstractGuardAuthenticator
 {
@@ -61,21 +63,42 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
     private $passwordEncoder;
 
     /**
+     * Translator to get localized messages to notify the user about the authentication.
+     * @var Translator
+     */
+    private $translator;
+
+    /**
      * This class is used to authenticate users to determine there authorization level.
      * DefaultAuthenticator constructor.
-     * @param EntityManagerInterface $entityManager
-     * @param RouterInterface $router
-     * @param CsrfTokenManagerInterface $csrfTokenManager
-     * @param UserProviderInterface $userProvider
+     *
+     * @param EntityManagerInterface       $entityManager
+     * @param RouterInterface              $router
+     * @param CsrfTokenManagerInterface    $csrfTokenManager
+     * @param UserProviderInterface        $userProvider
      * @param UserPasswordEncoderInterface $passwordEncoder
+     * @param TranslatorInterface          $translator
      */
-    public function __construct(EntityManagerInterface $entityManager, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, UserProviderInterface $userProvider, UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(
+        EntityManagerInterface $entityManager,
+        RouterInterface $router,
+        CsrfTokenManagerInterface $csrfTokenManager,
+        UserProviderInterface $userProvider,
+        UserPasswordEncoderInterface $passwordEncoder,
+        TranslatorInterface $translator
+    )
     {
         $this->entityManager = $entityManager;
         $this->router = $router;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
         $this->userProvider = $userProvider;
+        $this->translator = $translator;
+    }
+
+    private function getMessage( string $messageKey )
+    {
+        return $this->translator->trans( $messageKey, [], MessageDomain::AUTHENTICATION );
     }
 
     /**
@@ -122,7 +145,8 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
         // Validate the csrf-token submitted with the request.
         $token = new CsrfToken('authenticate', $credentials['csrf_token']);
         if (!$this->csrfTokenManager->isTokenValid($token)) {
-            throw new InvalidCsrfTokenException('Invalid CSRF token!'); // TODO remove empty exception.
+
+            throw new InvalidCsrfTokenException( $this->getMessage( 'login.feedback.error.csrf' ) );
         }
 
         // Get the user repository and search for the username submitted.
@@ -131,7 +155,7 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
 
         if (!$user) {
             // Could not find the user in the database.
-            throw new CustomUserMessageAuthenticationException('Email could not be found.');
+            throw new CustomUserMessageAuthenticationException( $this->getMessage( 'login.feedback.error.not_found' ) );
             // Todo replace the error message with the Translation component.
         }
 

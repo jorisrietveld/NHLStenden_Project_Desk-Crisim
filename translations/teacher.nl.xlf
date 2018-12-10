@@ -1,34 +1,35 @@
-<?xml version="1.0"?>
-<xliff version="1.2"
-       xmlns='urn:oasis:names:tc:xliff:document:1.2'
-       xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2'>
-    <file
-            source-language="nl"
-            target-language="nl"
-            original="index.html"
-            datatype="html"
-            date="2018-11-26T11:33:04Z">
-        <header>
-            <note from="Joris Rietveld">Translation file for teacher pages in the DeskCrism project.</note>
-        </header>
-        <body>
-            <trans-unit id="index.pagination.chatMonitor">
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
+    <file id="teacher.nl">
+        <unit id="W9k.JD." name="index.pagination.chatMonitor">
+            <segment>
                 <source>index.pagination.chatMonitor</source>
                 <target>Chat Monitor</target>
-            </trans-unit>
-            <trans-unit id="index.pagination.participators">
+            </segment>
+        </unit>
+        <unit id="dMZg3As" name="index.pagination.participators">
+            <segment>
                 <source>index.pagination.participators</source>
                 <target>Deelnemers</target>
-            </trans-unit>
-            <trans-unit id="game.scenario.upload.form.name">
+            </segment>
+        </unit>
+        <unit id="CJY9wHl" name="game.scenario.upload.form.name">
+            <segment>
                 <source>game.scenario.upload.form.name</source>
                 <target>Scenario Naam</target>
-            </trans-unit>
-            <trans-unit id="scenario.upload.form.success">
+            </segment>
+        </unit>
+        <unit id="2xGEx2q" name="scenario.upload.form.success">
+            <segment>
                 <source>scenario.upload.form.success</source>
                 <target>Het scenario is successvol toegevoegd.</target>
-            </trans-unit>
-        </body>
+            </segment>
+        </unit>
+        <unit id="prvrllM" name="teacher_participators">
+            <segment>
+                <source>teacher_participators</source>
+                <target>Deelnemers</target>
+            </segment>
+        </unit>
     </file>
 </xliff>
