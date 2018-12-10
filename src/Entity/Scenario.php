@@ -25,7 +25,7 @@ class Scenario
      * @Assert\NotBlank
      * @Assert\Length(
      *     min=3,
-     *     max="100"
+     *     max="100",
      *     minMessage = "entity.scenario.name.length.min",
      *     maxMessage = "entity.scenario.name.length.max"
      * )
