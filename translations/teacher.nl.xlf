@@ -21,6 +21,14 @@
                 <source>index.pagination.participators</source>
                 <target>Deelnemers</target>
             </trans-unit>
+            <trans-unit id="game.scenario.upload.form.name">
+                <source>game.scenario.upload.form.name</source>
+                <target>Scenario Naam</target>
+            </trans-unit>
+            <trans-unit id="scenario.upload.form.success">
+                <source>scenario.upload.form.success</source>
+                <target>Het scenario is successvol toegevoegd.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

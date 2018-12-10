@@ -11,17 +11,23 @@ teacher_index:
   defaults:
     _locale: '%locale%'
 
-teacher_participators:
-  path: /{_locale}/teacher/participators
-  controller: App\Controller\Teacher\Game\AddParticipatorsController::index
+#
+# Teacher::chat routes.
+#
+teacher_chatMonitor:
+  path: /{_locale}/teacher/chatmonitor
+  controller: App\Controller\Teacher\Chat\ChatMonitorController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
     _locale: '%locale%'
 
-teacher_chatMonitor:
-  path: /{_locale}/teacher/chatmonitor
-  controller: App\Controller\Teacher\Chat\ChatMonitorController::index
+#
+# Teacher::game routes.
+#
+teacher_participators:
+  path: /{_locale}/teacher/participators
+  controller: App\Controller\Teacher\Game\AddParticipatorsController::index
   requirements:
     _locale: '%app.locales%'
   defaults:
@@ -51,7 +57,10 @@ teacher_show_statistics:
   defaults:
     _locale: '%locale%'
 
-teacher_upload_scenario:
+#
+# Teacher::game - Scenario routes.
+#
+upload_scenario:
   path: /{_locale}/teacher/upload-scenario
   controller: App\Controller\Teacher\Game\UploadGameScenarioController::index
   requirements:

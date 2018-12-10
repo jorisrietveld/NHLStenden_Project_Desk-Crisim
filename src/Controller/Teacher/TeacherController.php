@@ -17,7 +17,30 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * Class TeacherController
  * @package App\Controller\Teacher
  */
-class TeacherController extends AbstractController
+abstract class TeacherController extends AbstractController
 {
+    private const TRANS_DOMAIN = 'teacher';
+    private const TRANS_ERROR_DOMAIN = 'error_message';
+
+    /**
+     * @var object|\Symfony\Component\Translation\DataCollectorTranslator|\Symfony\Component\Translation\IdentityTranslator
+     */
+    protected $teacherTranslator;
+
+    /**
+     * TeacherController constructor.
+     */
+    public function __construct()
+    {
+        $this->teacherTranslator = $this->get( 'translator' );
+    }
+
+    protected function getMessage( string $translationKey, string $domain = null ): string
+    {
+        return $this->teacherTranslator->trans( $translationKey, [],
+            $domain ? self::TRANS_DOMAIN : $domain
+        );
+    }
+
 
 }

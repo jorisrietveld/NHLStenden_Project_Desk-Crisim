@@ -17,7 +17,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @UniqueEntity(fields="username", message="Email already taken")
  * @UniqueEntity(fields="username", message="Username already taken")
  */
-class User implements UserInterface
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -47,6 +47,27 @@ class User implements UserInterface
      * @ORM\Column(type="datetime")
      */
     private $addedOn;
+
+    /**
+     * @Assert\NotBlank
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword( $password )
+    {
+        $this->plainPassword = $password;
+    }
+
+    public function __construct()
+    {
+        $this->roles = [ 'ROLE_USER' ];
+    }
 
     public function getId(): ?int
     {
@@ -124,6 +145,24 @@ class User implements UserInterface
      */
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
+        // Nothing to remove.
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serialize(): string
+    {
+        // add $this->salt too if you don't use Bcrypt or Argon2i
+        return serialize( [ $this->id, $this->username, $this->password ] );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function unserialize( $serialized ): void
+    {
+        // add $this->salt too if you don't use Bcrypt or Argon2i
+        [ $this->id, $this->username, $this->password ] = unserialize( $serialized, [ 'allowed_classes' => false ] );
     }
 }

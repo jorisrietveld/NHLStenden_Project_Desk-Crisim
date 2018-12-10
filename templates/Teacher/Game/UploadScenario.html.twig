@@ -20,12 +20,9 @@
                     <span class="card-title">Scenario uploaden</span>
                     <form action="#">
                         <div class="row">
-
-                            <form action="{{ path('teacher_upload_scenario') }}" method="post">
-                                {{ form_start(form) }}
-                                {{ form_row(form.scenario) }}
-                                {{ form_end(form) }}
-                            </form>
+                            {{ form_start(post_form) }}
+                            {{ form_row(form.scenario) }}
+                            {{ form_end(form) }}
                         </div>
                     </form>
                 </div>

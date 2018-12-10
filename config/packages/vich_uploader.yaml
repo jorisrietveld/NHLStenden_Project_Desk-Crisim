@@ -2,10 +2,13 @@ vich_uploader:
   db_driver: orm
 
   mappings:
-    game_scenario:
+    game_scenario_file:
       upload_destination: '%kernel.project_dir%/public/uploads/scenario'
       namer: Vich\UploaderBundle\Naming\OrignameNamer
-  #mappings:
-  #    products:
-  #        uri_prefix: /images/products
-  #        upload_destination: '%kernel.project_dir%/public/images/products'
+      # Inject the file into the entity when its being loaded from the database? This is slow when fetching large
+      # quantity of files at once because it needs to get each file from disk storage.
+      inject_on_load: false
+      # When the file is updated in the database should it overwrite the file on disk storage.
+      delete_on_update: true
+      # When the scenario file is deleted in the database, also remove it on disk.
+      delete_on_remove: true
