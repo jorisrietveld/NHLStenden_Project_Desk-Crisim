@@ -28,7 +28,6 @@ class User implements UserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\NotBlank()
      */
     private $username;
 
@@ -54,21 +53,33 @@ class User implements UserInterface, \Serializable
      */
     private $plainPassword;
 
+    /**
+     * @return mixed
+     */
     public function getPlainPassword()
     {
         return $this->plainPassword;
     }
 
-    public function setPlainPassword( $password )
+    /**
+     * @param $password
+     */
+    public function setPlainPassword($password)
     {
         $this->plainPassword = $password;
     }
 
+    /**
+     * User constructor.
+     */
     public function __construct()
     {
         $this->roles = [ 'ROLE_USER' ];
     }
 
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
@@ -84,6 +95,10 @@ class User implements UserInterface, \Serializable
         return (string) $this->username;
     }
 
+    /**
+     * @param string $username
+     * @return User
+     */
     public function setUsername(string $username): self
     {
         $this->username = $username;
@@ -103,6 +118,10 @@ class User implements UserInterface, \Serializable
         return array_unique($roles);
     }
 
+    /**
+     * @param array $roles
+     * @return User
+     */
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
@@ -118,6 +137,10 @@ class User implements UserInterface, \Serializable
         return (string) $this->password;
     }
 
+    /**
+     * @param string $password
+     * @return User
+     */
     public function setPassword(string $password): self
     {
         $this->password = $password;
