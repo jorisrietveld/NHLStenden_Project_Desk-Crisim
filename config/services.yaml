@@ -4,8 +4,9 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'nl'
-    app.locales: nl|fy
+    locale           : 'nl'
+    app.locales      : nl|fy
+    env(DATABASE_URL): 'mysql://crisim-app:crisim-app-password@localhost:3306/DeskCriSim'
 
 services:
     # default configuration for services in *this* file

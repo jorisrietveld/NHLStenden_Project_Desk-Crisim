@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+DOCKER_PHP="docker-compose exec php-fpm php "
+docker-compose up -d
+export DATABASE_URL="mysql://crisim-app:crisim-app-password@localhost:3306/DeskCriSim";
+echo ${DATABASE_URL}
+${DOCKER_PHP} bin/console doctrine:database:create -vvv
+${DOCKER_PHP} bin/console make:migration
+${DOCKER_PHP} bin/console doctrine:migrations:migrate
+
+

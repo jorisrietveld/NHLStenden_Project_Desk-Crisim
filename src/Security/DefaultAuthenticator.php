@@ -8,7 +8,7 @@
 namespace App\Security;
 
 use App\Entity\User;
-use App\Service\MessageDomain;
+use App\Utils\MessageDomain;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;

@@ -1,31 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
   <file id="welcome.nl">
-    <unit id="jqOQafq" name="index.link.fries">
+      <unit id="4t.eQJO" name="index.link.fries">
+          <notes>
+              <note category="state" priority="1">obsolete</note>
+          </notes>
       <segment>
         <source>index.link.fries</source>
         <target>Besjoch de webside yn 'e frieze</target>
       </segment>
     </unit>
     <unit id="levIQSL" name="index.page.title">
+        <notes>
+            <note category="file-source" priority="1">templates/Welcome/Welcome.html.twig:20</note>
+        </notes>
       <segment>
         <source>index.page.title</source>
         <target>Publieke Welkoms Pagina</target>
       </segment>
     </unit>
     <unit id="jqOQafq" name="index.link.student">
+        <notes>
+            <note category="file-source" priority="1">templates/Welcome/Welcome.html.twig:49</note>
+        </notes>
       <segment>
         <source>index.link.student</source>
         <target>Ga naar het studenten paneel.</target>
       </segment>
     </unit>
     <unit id="o2D7dIa" name="index.link.teacher">
+        <notes>
+            <note category="file-source" priority="1">templates/Welcome/Welcome.html.twig:38</note>
+        </notes>
       <segment>
         <source>index.link.teacher</source>
         <target>Ga naar het docenten paneel.</target>
       </segment>
     </unit>
     <unit id="02AnMbn" name="index.link.login">
+        <notes>
+            <note category="file-source" priority="1">templates/Welcome/Welcome.html.twig:28</note>
+        </notes>
       <segment>
         <source>index.link.login</source>
         <target>Ga naar de login pagina.</target>

@@ -2,21 +2,12 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
   <file id="validators.nl">
     <unit id="2.vmibH" name="entity.scenario.name.length.min">
+      <notes>
+        <note category="state" priority="1">obsolete</note>
+      </notes>
       <segment>
         <source>entity.scenario.name.length.min</source>
         <target>Een game scenario moet een naam hebben van minstens 3 karakters.</target>
-      </segment>
-    </unit>
-    <unit id="0jZev.6" name="entity.scenario.name.length.max">
-      <segment>
-        <source>entity.scenario.name.length.max</source>
-        <target></target>
-      </segment>
-    </unit>
-    <unit id="47DEQpj" name="">
-      <segment>
-        <source></source>
-        <target></target>
       </segment>
     </unit>
   </file>

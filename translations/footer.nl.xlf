@@ -2,24 +2,37 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
   <file id="footer.nl">
     <unit id="NLn7ink" name="link.help">
+        <notes>
+            <note category="file-source" priority="1">templates/Footer.html.twig:16</note>
+        </notes>
       <segment>
         <source>link.help</source>
         <target>Help</target>
       </segment>
     </unit>
     <unit id="5PReC9h" name="link.dummy">
+        <notes>
+            <note category="file-source" priority="1">templates/Footer.html.twig:28</note>
+            <note category="file-source" priority="1">templates/Footer.html.twig:35</note>
+        </notes>
       <segment>
         <source>link.dummy</source>
         <target>Dummy link</target>
       </segment>
     </unit>
     <unit id="hG1UarO" name="link.sourcecode">
+        <notes>
+            <note category="file-source" priority="1">templates/Footer.html.twig:21</note>
+        </notes>
       <segment>
         <source>link.sourcecode</source>
         <target>Bekijk de broncode</target>
       </segment>
     </unit>
     <unit id="8IepFh9" name="copyright.notification">
+        <notes>
+            <note category="file-source" priority="1">templates/Footer.html.twig:44</note>
+        </notes>
       <segment>
         <source>copyright.notification</source>
         <target>Desk CriSim</target>
