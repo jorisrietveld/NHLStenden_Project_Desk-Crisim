@@ -15,7 +15,7 @@ homepage:
         fy: /thús
     options:
         utf8: true
-  controller: App\Controller\Welcome\WelcomeController::index
+    controller: App\Controller\Welcome\WelcomeController::index
 
 #
 # All administrator related routes.
