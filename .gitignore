@@ -38,3 +38,13 @@ node_modules
 config.gypi
 *.orig
 package-lock.json
+
+docs/_build/
+docs/warnings.log
+docs/xml/
+docs/html/
+
+
+###> phpunit/phpunit ###
+/phpunit.xml
+###< phpunit/phpunit ###

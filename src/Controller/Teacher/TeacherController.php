@@ -8,7 +8,9 @@
 namespace App\Controller\Teacher;
 
 
+use App\Utils\MessageDomain;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * This is the base Teacher controller from which each Teacher controller inherits. Use this to define generic Teacher
@@ -17,7 +19,31 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
  * Class TeacherController
  * @package App\Controller\Teacher
  */
-class TeacherController extends AbstractController
+abstract class TeacherController extends AbstractController
 {
+    /**
+     * @var object|\Symfony\Component\Translation\DataCollectorTranslator|\Symfony\Component\Translation\IdentityTranslator
+     */
+    protected $teacherTranslator;
+
+    /**
+     * TeacherController constructor.
+     *
+     * @param TranslatorInterface $translator
+     */
+    public function __construct( TranslatorInterface $translator )
+    {
+        $this->teacherTranslator = $translator;
+    }
+
+    protected function getMessage( string $translationKey, string $domain = null ): string
+    {
+        return $this->teacherTranslator->trans(
+            $translationKey,
+            [],
+            $domain ? MessageDomain::TEACHER : $domain
+        );
+    }
+
 
 }

@@ -1,0 +1,8 @@
+#
+# This Validator config file contains configuration about Actor.
+#
+# Author: Joris Rietveld <jorisrietveld@gmail.com>
+# Date: 19-12-2018 07:03
+# Licence: GPLv3 - General Public Licence version 3
+#
+App\Entity\Actor:

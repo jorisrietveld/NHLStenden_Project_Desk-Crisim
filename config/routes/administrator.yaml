@@ -4,9 +4,12 @@
 # This file contains all routes to the Administrator accessible pages.
 #
 administrator_index:
-  path: /{_locale}/administrator
-  controller: App\Controller\Administrator\AdministratorController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /Beheerder
+        en: /{_locale}/administrator
+        fy: /{_locale}/bestjoerster
+    controller: App\Controller\Administrator\AdministratorController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'

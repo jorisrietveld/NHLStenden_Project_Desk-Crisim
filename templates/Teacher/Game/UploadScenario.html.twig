@@ -7,7 +7,7 @@
  # ==============================
  # This page allows the Teacher to upload a new playable Game.
  #}
-{% extends 'Teacher/ImpersonateRole.html.twig' %}
+{% extends 'Teacher/TeacherBase.html.twig' %}
 
 {# Set the translation domain for this template, you can place the text on this page in ./translations/teacher #}
 {% trans_default_domain 'teacher' %}
@@ -20,12 +20,9 @@
                     <span class="card-title">Scenario uploaden</span>
                     <form action="#">
                         <div class="row">
-
-                            <form action="{{ path('teacher_uploadSenario') }}" method="post">
-                                {{ form_start(form) }}
-                                {{ form_row(form.scenario) }}
-                                {{ form_end(form) }}
-                            </form>
+                            {{ form_start(post_form) }}
+                            {{ form_row(form.scenario) }}
+                            {{ form_end(form) }}
                         </div>
                     </form>
                 </div>
@@ -49,12 +46,11 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-
+    {# TODO Remove inline javascript! #}
+    {#<script type="text/javascript" src="js/materialize.min.js"></script>
     <script>
         $(document).ready(function () {
             $('select').formSelect();
         });
-    </script>
+    </script>#}
 {% endblock %} {# TeacherContent #}

@@ -8,16 +8,14 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
+ * This class implements the UserInterface so it can be used with symfony's default authentication system.
+ * See the file: `$PROJECT_ROOT:config/validator/user.yaml` for the validation constraints of this entity.
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity(fields="username", message="Email already taken")
- * @UniqueEntity(fields="username", message="Username already taken")
  */
-class User implements UserInterface
+class User implements UserInterface, \Serializable
 {
     /**
      * @ORM\Id()
@@ -27,12 +25,13 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @var int The natural unique identifier.
      * @ORM\Column(type="string", length=180, unique=true)
-     * @Assert\NotBlank()
      */
     private $username;
 
     /**
+     * @var array An array that defines the roles the user is allowed to perform.
      * @ORM\Column(type="json")
      */
     private $roles = [];
@@ -44,10 +43,46 @@ class User implements UserInterface
     private $password;
 
     /**
+     * @var
      * @ORM\Column(type="datetime")
      */
     private $addedOn;
 
+    /**
+     * @var string The plain text password of the user. This should be cleared as quickly as possible with the erase
+     *      credentials method! Notice that this property does not have a ORM Column anotation because this should
+     *      never be saved in the database.
+     * @see config/validator/user.yaml for the validation constraints.
+     */
+    private $plainPassword;
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->roles = [ 'ROLE_USER' ];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param $password
+     */
+    public function setPlainPassword( $password )
+    {
+        $this->plainPassword = $password;
+    }
+
+    /**
+     * @return int|null
+     */
     public function getId(): ?int
     {
         return $this->id;
@@ -60,10 +95,15 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->username;
+        return (string)$this->username;
     }
 
-    public function setUsername(string $username): self
+    /**
+     * @param string $username
+     *
+     * @return User
+     */
+    public function setUsername( string $username ): self
     {
         $this->username = $username;
 
@@ -71,6 +111,8 @@ class User implements UserInterface
     }
 
     /**
+     * Gets the roles of the user.
+     *
      * @see UserInterface
      */
     public function getRoles(): array
@@ -79,10 +121,15 @@ class User implements UserInterface
         // guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
 
-        return array_unique($roles);
+        return array_unique( $roles );
     }
 
-    public function setRoles(array $roles): self
+    /**
+     * @param array $roles
+     *
+     * @return User
+     */
+    public function setRoles( array $roles ): self
     {
         $this->roles = $roles;
 
@@ -94,10 +141,15 @@ class User implements UserInterface
      */
     public function getPassword(): string
     {
-        return (string) $this->password;
+        return $this->password;
     }
 
-    public function setPassword(string $password): self
+    /**
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword( string $password ): self
     {
         $this->password = $password;
         return $this;
@@ -105,12 +157,11 @@ class User implements UserInterface
 
     /**
      * Returns the salt that was originally used to encode the password.
-     *
      * This can return null if the password was not encoded using a salt.
      *
      * @return string|null The salt
      */
-    public function getSalt()
+    public function getSalt(): ?string
     {
         // TODO: Implement getSalt() method.
         return null;
@@ -118,12 +169,29 @@ class User implements UserInterface
 
     /**
      * Removes sensitive data from the user.
-     *
      * This is important if, at any given point, sensitive information like
      * the plain-text password is stored on this object.
      */
-    public function eraseCredentials()
+    public function eraseCredentials(): void
     {
-        // TODO: Implement eraseCredentials() method.
+        // Nothing to remove.
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function serialize(): string
+    {
+        // add $this->salt too if you don't use Bcrypt or Argon2i
+        return serialize( [ $this->id, $this->username, $this->password ] );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function unserialize( $serialized ): void
+    {
+        // add $this->salt too if you don't use Bcrypt or Argon2i
+        [ $this->id, $this->username, $this->password ] = unserialize( $serialized, [ 'allowed_classes' => false ] );
     }
 }

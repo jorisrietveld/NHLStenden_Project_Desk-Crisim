@@ -1,27 +1,50 @@
-<?xml version="1.0"?>
-<xliff version="1.2" xmlns='urn:oasis:names:tc:xliff:document:1.2' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
-    <file source-language="nl" target-language="nl" original="index.html" datatype="html" date="2018-12-08T16:47:46Z">
-        <header>
-            <note from="Joris Rietveld">Translation file for the desk-crisim project.</note>
-        </header>
-        <body>
-            <trans-unit id="login.form.title">
-                <source>login.form.title</source>
-                <target>Aanmelden</target>
-            </trans-unit>
-            <trans-unit id="login.form.label.username">
-                <source>login.form.label.username</source>
-                <target>Gebruikers Naam</target>
-            </trans-unit>
-            <trans-unit id="login.form.label.password">
-                <source>login.form.label.password</source>
-                <target>Wachtwoord</target>
-            </trans-unit>
-            <trans-unit id="login.form.submit">
-                <source>login.form.submit</source>
-                <target>Meld me aan</target>
-            </trans-unit>
-        </body>
-    </file>
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
+  <file id="authentication.nl">
+    <unit id="20eTU.D" name="login.form.title">
+        <notes>
+            <note category="file-source" priority="1">templates/Authentication/Login.html.twig:23</note>
+        </notes>
+      <segment>
+        <source>login.form.title</source>
+        <target>Aanmelden</target>
+      </segment>
+    </unit>
+    <unit id="XQO2m1T" name="login.form.label.username">
+        <notes>
+            <note category="file-source" priority="1">templates/Authentication/Login.html.twig:34</note>
+        </notes>
+      <segment>
+        <source>login.form.label.username</source>
+        <target>Gebruikers Naam</target>
+      </segment>
+    </unit>
+    <unit id="_nakZxD" name="login.form.label.password">
+        <notes>
+            <note category="file-source" priority="1">templates/Authentication/Login.html.twig:41</note>
+        </notes>
+      <segment>
+        <source>login.form.label.password</source>
+        <target>Wachtwoord</target>
+      </segment>
+    </unit>
+    <unit id="KXSzZJt" name="login.form.submit">
+        <notes>
+            <note category="file-source" priority="1">templates/Authentication/Login.html.twig:56</note>
+        </notes>
+      <segment>
+        <source>login.form.submit</source>
+        <target>Meld me aan</target>
+      </segment>
+    </unit>
+    <unit id="uhxtGc1" name="login.feedback.error.csrf">
+        <notes>
+            <note category="state" priority="1">obsolete</note>
+        </notes>
+      <segment>
+        <source>login.feedback.error.csrf</source>
+        <target>Er is iets fout gegaan bij het valideren van de csrf token.</target>
+      </segment>
+    </unit>
+  </file>
 </xliff>

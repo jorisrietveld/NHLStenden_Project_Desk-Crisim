@@ -8,17 +8,14 @@
 #
 # All unauthorized index (homepage) routes.
 #
-homepage_unlocalized:
-  path: /
-  controller: App\Controller\Welcome\WelcomeController::index
-
 homepage:
-  path: /{_locale}
-  controller: App\Controller\Welcome\WelcomeController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /
+        en: /home
+        fy: /thús
+    options:
+        utf8: true
+    controller: App\Controller\Welcome\WelcomeController::index
 
 #
 # All administrator related routes.

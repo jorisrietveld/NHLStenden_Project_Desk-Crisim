@@ -1,7 +1,6 @@
 # Desk Crisim #
-[![Build Status](https://travis-ci.com/jorisrietveld/DeskCrism-Backend.svg?token=8VeUSD3hMgXK4qZXKocS&branch=master&label=Master)](https://travis-ci.com/jorisrietveld/DeskCrism-Backend)
-[![CodeFactor](https://www.codefactor.io/repository/github/jorisrietveld/deskcrisim-backend/badge)](https://www.codefactor.io/repository/github/jorisrietveld/deskcrisim-backend)
-[![Depfu](https://badges.depfu.com/badges/76bb5f76bf177bf75052ab34d4157bb9/status.svg)](https://depfu.com)
+[![Build Status](https://travis-ci.com/jorisrietveld/Desk-Crisim.svg?token=8VeUSD3hMgXK4qZXKocS&branch=master)](https://travis-ci.com/jorisrietveld/Desk-Crisim)
+[![CodeFactor](https://www.codefactor.io/repository/github/jorisrietveld/desk-crisim/badge)](https://www.codefactor.io/repository/github/jorisrietveld/desk-crisim)[![Depfu](https://badges.depfu.com/badges/76bb5f76bf177bf75052ab34d4157bb9/status.svg)](https://depfu.com)
 [![Depfu](https://badges.depfu.com/badges/76bb5f76bf177bf75052ab34d4157bb9/overview.svg)](https://depfu.com/repos/jorisrietveld/DeskCriSim-Backend?project_id=6433)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](LICENCE)
 [![PHP 7.2](https://img.shields.io/badge/PHP-%3E%3D7.2-blue.svg)](http://php.net/manual/en/migration70.new-features.php)

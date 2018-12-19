@@ -17,18 +17,30 @@ use Symfony\Component\HttpFoundation\Response;
 final class ChatMonitorController extends TeacherController
 {
     private const DUMMY_CHAT_MESSAGES = [
-        'message' => [
-            'actor' => 'police',
-            'text' => 'Hey!',
-            'image' => 'police.png',
-            'time' => '',
+        "msg1" => [
+            'text' => 'Hey Actor!',
+            'time' => '13:21',
+            'actor' => 'Ambulance',
+            'image' => 'ambulance',
+        ],
+        "msg2" => [
+            'text' => 'Hey Arnold!',
+            'time' => '15:21',
+            'actor' => 'Ambulance',
+            'image' => 'ambulance',
+        ],
+        "msg3" => [
+            'text' => 'Hey Test!',
+            'time' => '17:33',
+            'actor' => 'Ambulance',
+            'image' => 'ambulance',
         ],
     ];
 
     public function index(): Response
     {
-        return $this->render('Teacher/Chat/ChatMonitor.html.twig', [
-            'messages' => self::DUMMY_CHAT_MESSAGES
-        ]);
+        return $this->render( 'Teacher/Chat/ChatMonitor.html.twig', [
+            'messages' => self::DUMMY_CHAT_MESSAGES,
+        ] );
     }
 }

@@ -1,34 +1,32 @@
-<?xml version="1.0"?>
-<xliff version="1.2"
-       xmlns='urn:oasis:names:tc:xliff:document:1.2'
-       xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
-       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
-    <file
-            source-language="nl"
-            target-language="nl"
-            original="index.html"
-            datatype="html"
-            date="2018-12-08T16:52:28Z">
-        <header>
-            <note from="Joris Rietveld">Translation file for the desk-crisim project.</note>
-        </header>
-        <body>
-            <!--  -->
-            <trans-unit id="tooltip.home">
-                <source>tooltip.home</source>
-                <target>Ga naar de home pagina.</target>
-            </trans-unit>
-
-            <trans-unit id="tooltip.notifications">
-                <source>tooltip.notifications</source>
-                <target>Er zijn geen notificaties.</target>
-            </trans-unit>
-
-            <trans-unit id="tooltip.logout">
-                <source>tooltip.logout</source>
-                <target>Klik hier om uit af te melden.</target>
-            </trans-unit>
-
-        </body>
-    </file>
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
+  <file id="navigation.nl">
+    <unit id="rWQR1od" name="tooltip.home">
+        <notes>
+            <note category="file-source" priority="1">templates/Navigation.html.twig:14</note>
+        </notes>
+      <segment>
+        <source>tooltip.home</source>
+        <target>Ga naar de home pagina.</target>
+      </segment>
+    </unit>
+    <unit id="d6d.bdu" name="tooltip.notifications">
+        <notes>
+            <note category="state" priority="1">obsolete</note>
+        </notes>
+      <segment>
+        <source>tooltip.notifications</source>
+        <target>Er zijn geen notificaties.</target>
+      </segment>
+    </unit>
+    <unit id="7I2GVRs" name="tooltip.logout">
+        <notes>
+            <note category="state" priority="1">obsolete</note>
+        </notes>
+      <segment>
+        <source>tooltip.logout</source>
+        <target>Klik hier om uit af te melden.</target>
+      </segment>
+    </unit>
+  </file>
 </xliff>

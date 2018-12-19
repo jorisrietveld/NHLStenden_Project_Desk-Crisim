@@ -1,0 +1,37 @@
+#
+# This validators configuration file contains the validation constraints for a user entity.
+#
+# Author: Joris Rietveld <jorisrietveld@gmail.com>
+# Date: 18-12-2018 15:00
+# Licence: GPLv3 - General Public Licence version 3
+#
+App\Entity\User:
+
+    # Define the sequence of validation with the group sequence property. First check if all the User entities
+    # properties are valid then
+    group_sequence:
+        - User
+        - registration
+
+    # Set constraint for the entire entity class, make sure that user entities always have a unique username.
+    constraints   :
+        -   Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: username
+
+    # Set constraints for all of the entities properties.
+    properties    :
+        # The username property constraints.
+        username:
+            -   NotBlank:
+                    groups : [registration]
+                    payload:
+                        severity: error
+
+            -   Length:
+                    groups    : [registration]
+                    min       : 2
+                    max       : 255
+                    minMessage: "username.to_short"
+                    maxMessage: "username.to_long"
+                    payload   :
+                        servity: error
+

@@ -4,76 +4,116 @@
 # This file contains all routes to the Teacher accessible pages.
 #
 teacher_index:
-  path: /{_locale}/teacher
-  controller: App\Controller\Teacher\HomeController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /docent
+        en: /{_locale}/teacher
+        fy: /{_locale}/leeraar
+    controller: App\Controller\Teacher\HomeController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
 
-teacher_participators:
-  path: /{_locale}/teacher/participators
-  controller: App\Controller\Teacher\Game\AddParticipatorsController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
-
+#
+# Teacher::chat routes.
+#
 teacher_chatMonitor:
-  path: /{_locale}/teacher/chatmonitor
-  controller: App\Controller\Teacher\Chat\ChatMonitorController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /docent/chat monitor
+        en: /{_locale}/teacher/chat monitor
+        fy: /{_locale}/leeraar/chat monitor
+    controller: App\Controller\Teacher\Chat\ChatMonitorController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
+
+#
+# Teacher::game routes.
+#
+teacher_participators:
+    path:
+        nl: /docent/participant
+        en: /{_locale}/teacher/participant
+        fy: /{_locale}/leeraar/dielnimmer
+    controller: App\Controller\Teacher\Game\AddParticipatorsController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
 
 teacher_create_event:
-  path: /{_locale}/teacher/create-event
-  controller: App\Controller\Teacher\Game\CreateEventController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /docent/creëer evenement
+        en: /{_locale}/teacher/create event
+        fy: /{_locale}/leeraar/In event meitsje
+    options:
+        utf8: true
+    controller: App\Controller\Teacher\Game\CreateEventController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
 
 teacher_create_session:
-  path: /{_locale}/teacher/create-session
-  controller: App\Controller\Teacher\Game\CreateSessionController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /docent/Sessie creëren
+        en: /{_locale}/teacher/Create a session
+        fy: /{_locale}/leeraar/In sesje meitsje
+    options:
+        utf8: true
+    controller: App\Controller\Teacher\Game\CreateSessionController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
 
 teacher_show_statistics:
-  path: /{_locale}/teacher/showStatistics
-  controller: App\Controller\Teacher\Game\ShowStatisticsController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /docent/Statistieken weergeven
+        en: /{_locale}/teacher/View statistics
+        fy: /{_locale}/leeraar/Besjoch statistyk
+    controller: App\Controller\Teacher\Game\ShowStatisticsController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
 
-teacher_upload_scenario:
-  path: /{_locale}/teacher/upload-scenario
-  controller: App\Controller\Teacher\Game\UploadGameScenarioController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+#
+# Teacher::game - Scenario routes.
+#
+upload_scenario:
+    path:
+        nl: /docent/Scenario Uploaden
+        en: /{_locale}/teacher/Upload Scenario
+        fy: /{_locale}/leeraar/Upload Szenario
+    controller: App\Controller\Teacher\Game\UploadGameScenarioController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
 
 teacher_assign_points:
-  path: /{_locale}/teacher/assign-points
-  controller: App\Controller\Teacher\Game\AssignPointsController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /docent/Punten toekennen
+        en: /{_locale}/teacher/Award points
+        fy: /{_locale}/leeraar/Awardpunten
+    controller: App\Controller\Teacher\Game\AssignPointsController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
 
 teacher_start_scenario:
-  path: /{_locale}/teacher/start-scenario
-  controller: App\Controller\Teacher\Game\StartGameController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /docent/Scenario Starten
+        en: /{_locale}/teacher/Start scenario
+        fy: /{_locale}/leeraar/Begjin senario
+    controller: App\Controller\Teacher\Game\StartGameController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
 
 #
 # Observer (Teacher) routes.
@@ -83,9 +123,12 @@ teacher_start_scenario:
 # information to the students behaviour during the Game.
 #
 logger_index:
-  path: /{_locale}/logger
-  controller: App\Controller\AdminController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /docent/Toezichthouder
+        en: /{_locale}/teacher/Supervisor
+        fy: /{_locale}/leeraar/Supervisor
+    controller: App\Controller\AdminController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'
