@@ -7,7 +7,6 @@
 #
 App\Entity\User:
 
-
     # Define the sequence of validation with the group sequence property. First check if all the User entities
     # properties are valid then
     group_sequence:

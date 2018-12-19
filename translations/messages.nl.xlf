@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl" trgLang="nl">
+    <file id="messages.nl">
+        <unit id="P3sJIQQ" name="addedOn">
+            <notes>
+                <note category="file-source" priority="1">src/Form/UserType.php:14</note>
+            </notes>
+            <segment>
+                <source>addedOn</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="XohImNo" name="password">
+            <notes>
+                <note category="file-source" priority="1">src/Form/UserType.php:14</note>
+            </notes>
+            <segment>
+                <source>password</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="Zs9VE7N" name="roles">
+            <notes>
+                <note category="file-source" priority="1">src/Form/UserType.php:14</note>
+            </notes>
+            <segment>
+                <source>roles</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="FveKfWM" name="username">
+            <notes>
+                <note category="file-source" priority="1">src/Form/UserType.php:14</note>
+            </notes>
+            <segment>
+                <source>username</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="CJY9wHl" name="game.scenario.upload.form.name">
+            <notes>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:19</note>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:28</note>
+            </notes>
+            <segment>
+                <source>game.scenario.upload.form.name</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="dUkL17k" name="submit">
+            <notes>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:17</note>
+            </notes>
+            <segment>
+                <source>submit</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="6VAh8NV" name="updatedAt">
+            <notes>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:17</note>
+            </notes>
+            <segment>
+                <source>updatedAt</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="tHfy.wj" name="fileSize">
+            <notes>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:17</note>
+            </notes>
+            <segment>
+                <source>fileSize</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="FjrlYVF" name="fileName">
+            <notes>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:17</note>
+            </notes>
+            <segment>
+                <source>fileName</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="9oalQEx" name="genericFile">
+            <notes>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:17</note>
+            </notes>
+            <segment>
+                <source>genericFile</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="bMshIU." name="userId">
+            <notes>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:17</note>
+            </notes>
+            <segment>
+                <source>userId</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="K5_nbmL" name="game.scenario.upload.form.scenario-name">
+            <notes>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:21</note>
+                <note category="file-source" priority="1">src/Form/ScenarioType.php:30</note>
+            </notes>
+            <segment>
+                <source>game.scenario.upload.form.scenario-name</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="47DEQpj" name="">
+            <segment>
+                <source></source>
+                <target></target>
+            </segment>
+        </unit>
+    </file>
+</xliff>

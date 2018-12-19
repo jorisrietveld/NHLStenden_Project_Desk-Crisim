@@ -4,9 +4,12 @@
 # This file contains all routes to the Spectator accessible pages.
 #
 spectator_index:
-  path: /{_locale}/spectator
-  controller: App\Controller\Spectator\SpectatorController::index
-  requirements:
-    _locale: '%app.locales%'
-  defaults:
-    _locale: '%locale%'
+    path:
+        nl: /toeschouwer
+        en: /{_locale}/spectator
+        fy: /{_locale}/spectator
+    controller: App\Controller\Spectator\SpectatorController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'

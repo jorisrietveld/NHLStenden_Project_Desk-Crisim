@@ -41,6 +41,16 @@ class Actor
      */
     private $avatarPath;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imageName;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imagePath;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +112,30 @@ class Actor
     public function setAvatarPath(?string $avatarPath): self
     {
         $this->avatarPath = $avatarPath;
+
+        return $this;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+
+    public function setImageName( ?string $imageName ): self
+    {
+        $this->imageName = $imageName;
+
+        return $this;
+    }
+
+    public function getImagePath(): ?string
+    {
+        return $this->imagePath;
+    }
+
+    public function setImagePath( ?string $imagePath ): self
+    {
+        $this->imagePath = $imagePath;
 
         return $this;
     }

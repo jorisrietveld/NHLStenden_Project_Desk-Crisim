@@ -44,3 +44,7 @@ docs/warnings.log
 docs/xml/
 docs/html/
 
+
+###> phpunit/phpunit ###
+/phpunit.xml
+###< phpunit/phpunit ###
