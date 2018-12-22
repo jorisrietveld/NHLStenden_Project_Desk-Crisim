@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xliff xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+       version="1.2"
+       xmlns='urn:oasis:names:tc:xliff:document:1.2'
+       xsi:schemaLocation='urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2.xsd'>
+    <file
+            source-language="nl"
+            target-language="nl"
+            original="index.html"
+            datatype="html"
+            date="2018-12-21T01:17:24Z">
+        <header>
+            <note from="Joris Rietveld">Translation file for the Desk-Crisim
+                project.
+            </note>
+        </header>
+        <body>
+
+
+        </body>
+    </file>
+</xliff>

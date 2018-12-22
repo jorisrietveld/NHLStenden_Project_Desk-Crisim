@@ -8,10 +8,21 @@
 namespace App\Controller\Welcome;
 
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+/**
+ * Class WelcomeController
+ * @Route("/")
+ *
+ * @package App\Controller\Welcome
+ */
 class WelcomeController extends AbstractController
 {
+    /**
+     * @Route("/")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function index()
     {
         return $this->render('Welcome/Welcome.html.twig');

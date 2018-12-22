@@ -35,7 +35,7 @@ to a database but the symfony book talks about ORM mapping with doctrine that
 sounds way more complicated than `mysqli_connect()` and just write SQL... I just
 need to include a `Javascript`/`Css` library so I place it in a css directory
 and push it to git so everybody has it, but now I have to install it with
-`yarn add <some-library` and place an `import 'some-library'` in the
+`yarn add <some-library>` and place an `import 'some-library'` in the
 `assets/js/app.js' file, even for CSS, wait why is there a folder scss?
 
 I didn't see the use of all of this, I thought it was way more complicated to
@@ -94,8 +94,6 @@ What is wrong with javascript and why write EMC6 and compiling it back with babe
 ### Travis CI ###
 ### PHP Unit ###
 ### Code Climate ###
-
-
 
 <hr>
 

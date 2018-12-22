@@ -21,7 +21,9 @@
                     <form action="#">
                         <div class="row">
                             {{ form_start(post_form) }}
-                            {{ form_row(form.scenario) }}
+                            {{ form_row(form.name) }}
+                            {{ form_row(form.description) }}
+                            {{ form_row(form.fileName) }}
                             {{ form_end(form) }}
                         </div>
                     </form>

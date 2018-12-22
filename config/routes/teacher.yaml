@@ -87,7 +87,7 @@ upload_scenario:
         nl: /docent/Scenario Uploaden
         en: /{_locale}/teacher/Upload Scenario
         fy: /{_locale}/leeraar/Upload Szenario
-    controller: App\Controller\Teacher\Game\UploadGameScenarioController::index
+    controller: App\Controller\Teacher\GameScenario\GameScenarioController::upload
     requirements:
         _locale: '%app.locales%'
     defaults:

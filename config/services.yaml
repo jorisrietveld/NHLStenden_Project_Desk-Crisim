@@ -5,8 +5,9 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale           : 'nl'
-    app.locales:       nl|en|fy
+    app.locales:       en|fy
     env(DATABASE_URL): 'mysql://crisim-app:crisim-app-password@localhost:3306/DeskCriSim'
+    scenario_file_directory: '%kernel.project_dir%/public/uploads/game_scenarios'
 
 services:
     # default configuration for services in *this* file
@@ -35,3 +36,14 @@ services:
     App\EventSubscriber\LocaleSubscriber:
         arguments: ['%kernel.default_locale%']
 
+
+    App\Service\GameScenario\UploadService:
+        arguments:
+            $storageDirectory: '%scenario_file_directory%'
+
+
+    App\EventListener\ScenarioUploadListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+            - { name: doctrine.event_listener, event: postLoad }

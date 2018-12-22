@@ -1,14 +1,14 @@
 <?php
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
- * Date: 19-12-2018 00:03
+ * Date: 18-12-2018 23:57
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\services\Chat;
+namespace App\services\UserCRUD;
 
 
-class AvailabilityProvider
+class RolesService extends UserManager
 {
 
 }

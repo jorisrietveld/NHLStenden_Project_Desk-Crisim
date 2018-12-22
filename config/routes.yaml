@@ -8,14 +8,7 @@
 #
 # All unauthorized index (homepage) routes.
 #
-homepage:
-    path:
-        nl: /
-        en: /home
-        fy: /thús
-    options:
-        utf8: true
-    controller: App\Controller\Welcome\WelcomeController::index
+
 
 #
 # All administrator related routes.
@@ -46,3 +39,8 @@ student:
 #
 authentication:
   resource: 'routes/authentication.yml'
+
+controllers:
+    resource: '../src/Controller/'
+    type: annotation
+

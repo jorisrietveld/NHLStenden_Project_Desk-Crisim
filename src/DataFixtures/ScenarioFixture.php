@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Scenario;
+use App\Entity\GameScenario;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -11,7 +11,7 @@ class ScenarioFixture extends Fixture
     public function load(ObjectManager $manager)
     {
         foreach ( $this->getScenarioData() as [ $name, $description, $scenarioFile, $fileName, $fileSize ] ) {
-            $scenario = new Scenario();
+            $scenario = new GameScenario();
             $scenario->setName( $name );
             $scenario->setDescription( $description );
             $scenario->setUserId( 1 );

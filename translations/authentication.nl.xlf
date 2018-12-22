@@ -46,5 +46,16 @@
         <target>Er is iets fout gegaan bij het valideren van de csrf token.</target>
       </segment>
     </unit>
+      <unit id="uhxtGc1" name="login.feedback.error.not_found">
+          <notes>
+              <note category="state" priority="1">obsolete</note>
+          </notes>
+          <segment>
+              <source>login.feedback.error.not_found</source>
+              <target>De gebruiker is niet gevonder, constroleer uw gegevens en
+                  probeer opnieuw.
+              </target>
+          </segment>
+      </unit>
   </file>
 </xliff>

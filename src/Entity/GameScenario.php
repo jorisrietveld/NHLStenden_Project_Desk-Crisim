@@ -1,56 +1,69 @@
 <?php
-/**
- * Author: Joris Rietveld <jorisrietveld@gmail.com>
- * Date: 27-11-2018 03:56
- * Licence: GPLv3 - General Public Licence version 3
- */
 
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\GameScenarioRepository")
+ * The game scenario is a file created with the open-source tool Twinery.
+ * It is used to plot all the events and paths in a game scenario.
+ *
+ * @see https://twinery.org/ The tool used to generate game scenario files.
+ * @ORM\Entity(repositoryClass="App\Repository\ScenarioRepository")
  */
 class GameScenario
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * The automatic generated database record identifier. AKA the primary key.
+     *
+     * @ORM\Id
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * The display name of the game scenario.
+     * @ORM\Column(type="string", length=100)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $fileName;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $authorId;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $file;
 
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $fileSize;
+
+    /**
+     * Get the name of the game scenario.
+     *
+     * @return string|null
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     *
+     * @return GameScenario
+     */
     public function setName( string $name ): self
     {
         $this->name = $name;
@@ -58,11 +71,19 @@ class GameScenario
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getDescription(): ?string
     {
         return $this->description;
     }
 
+    /**
+     * @param string|null $description
+     *
+     * @return GameScenario
+     */
     public function setDescription( ?string $description ): self
     {
         $this->description = $description;
@@ -70,26 +91,43 @@ class GameScenario
         return $this;
     }
 
-    public function getFileName(): ?string
+    public function getId(): ?int
     {
-        return $this->fileName;
+        return $this->id;
     }
 
-    public function setFileName( string $fileName ): self
+    public function getFileSize(): ?string
     {
-        $this->fileName = $fileName;
+        return $this->fileSize;
+    }
+
+    public function setFileSize( string $fileSize ): self
+    {
+        $this->fileSize = $fileSize;
 
         return $this;
     }
 
-    public function getAuthorId(): ?int
+    public function getAuthorId(): ?User
     {
         return $this->authorId;
     }
 
-    public function setAuthorId( ?int $authorId ): self
+    public function setAuthorId( ?User $authorId ): self
     {
         $this->authorId = $authorId;
+
+        return $this;
+    }
+
+    public function getFile(): ?string
+    {
+        return $this->file;
+    }
+
+    public function setFile( string $file ): self
+    {
+        $this->file = $file;
 
         return $this;
     }
