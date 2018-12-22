@@ -5,7 +5,7 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Teacher\GameScenario;
+namespace App\Controller\GameScenario;
 
 
 use App\Controller\Teacher\TeacherController;

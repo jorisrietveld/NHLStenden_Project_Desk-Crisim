@@ -5,7 +5,7 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Spectator;
+namespace App\Controller\GameSession;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

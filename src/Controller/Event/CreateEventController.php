@@ -5,7 +5,7 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Teacher\Game;
+namespace App\Controller\Event;
 
 
 use App\Controller\Teacher\TeacherController;

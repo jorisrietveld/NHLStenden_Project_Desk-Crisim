@@ -5,24 +5,41 @@
  #}
 
 {# Set the translation domain for this template, you can place the text on this page in ./translations/navigation #}
-{% trans_default_domain 'navigation' %}
+{% trans_default_domain 'base' %}
 
 {% block navigation %}
     <nav class="black" role="navigation">
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="left hide-on-med-and-down">
+
+                {# The home button. #}
                 <a href="{{ path('homepage') }}" class="btn tooltipped black" data-position="bottom" data-tooltip="{{ 'tooltip.home'|trans }}">
                     <i class="material-icons">home</i>
                 </a>
-                <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ user.name|default('no username') }}">
-                    <i class="material-icons">person</i>
-                </a>
-                <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ 'tooltip.notifications' }}">
-                    <i class="material-icons">av_timer</i>
-                </a>
-                {% if not "unauthenticated" %}{# TODO replace with real Authentication check #}
+
+                {# If the user is authenticated add extra bottons to the menu#}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                    {# Display link to the profile page. #}
+                    <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ user.name|default('no username') }}">
+                        <i class="material-icons">person</i>
+                    </a>
+
+                    {# Display a logout button. #}
                     <a class='btn tooltipped black' data-position='bottom' data-tooltip='{{ 'tooltip.logout' }}' href='?logout=true'>
-                        <i class="material-icons">directions_run</i></a>
+                        <i class="material-icons">directions_run</i>
+                    </a>
+
+                    {# Display the notifications dropdown. #}
+                    <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ 'tooltip.notifications' }}">
+                        <i class="material-icons">av_timer</i>
+                    </a>
+                {% else %}
+
+                    {# The user is un authenticated so only show a login button. #}
+                    <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ user.name|default('no username') }}">
+                        <i class="material-icons">input</i>
+                    </a>
                 {% endif %}
 
             </ul>

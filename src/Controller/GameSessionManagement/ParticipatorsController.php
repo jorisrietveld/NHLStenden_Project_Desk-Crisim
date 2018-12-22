@@ -5,7 +5,7 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Teacher\Game;
+namespace App\Controller\GameSessionManagement;
 
 
 use App\Controller\Teacher\TeacherController;
@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
  * Class AddParticipatorsController
  * @package App\Controller\Teacher\Game
  */
-final class AddParticipatorsController extends TeacherController
+final class ParticipatorsController extends TeacherController
 {
     private const DUMMY_PARTICIPATORS = ['students' => [
         '325' => [

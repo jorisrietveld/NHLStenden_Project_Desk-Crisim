@@ -5,7 +5,7 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Teacher\Game;
+namespace App\Controller\Feedback;
 
 
 use App\Controller\Teacher\TeacherController;

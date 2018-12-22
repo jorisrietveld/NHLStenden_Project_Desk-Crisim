@@ -5,12 +5,14 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Teacher\Chat;
+namespace App\Controller\Chat;
 
 use App\Controller\Teacher\TeacherController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * @Route("/chat monitor")
  * Class ChatMonitorController
  * @package App\Controller\Teacher\Chat
  */

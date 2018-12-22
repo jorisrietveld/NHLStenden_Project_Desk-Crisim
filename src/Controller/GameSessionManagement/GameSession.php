@@ -5,7 +5,7 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Teacher\Game;
+namespace App\Controller\GameSessionManagement;
 
 use App\Controller\Teacher\TeacherController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,10 +14,15 @@ use Symfony\Component\HttpFoundation\Response;
  * Class StartGameController
  * @package App\Controller\Teacher\Game\
  */
-final class StartGameController extends TeacherController
+final class GameSession extends TeacherController
 {
-    public function index(): Response
+    public function startGameAction(): Response
     {
         return $this->render('Teacher/Game/StartNew.html.twig');
+    }
+
+    public function createGameAction(): Response
+    {
+        return $this->render( 'Teacher/Game/CreateSession.html.twig' );
     }
 }

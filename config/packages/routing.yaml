@@ -1,6 +1,5 @@
 framework:
     router:
-        #utf8: true
         # Set the routing generator behaviour see this:
         # https://symfony.com/doc/current/reference/configuration/framework.html#strict-requirements
         strict_requirements: ~
@@ -8,3 +7,4 @@ framework:
 
         # Enable utf8 support in routes see this:
         # https://symfony.com/blog/new-in-symfony-3-2-unicode-routing-support
+        #utf8: true

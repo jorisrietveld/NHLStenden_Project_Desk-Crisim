@@ -1,14 +1,14 @@
 <?php
 /**
  * Author: Joris Rietveld <jorisrietveld@gmail.com>
- * Date: 18-12-2018 23:57
+ * Date: 22-12-2018 02:09
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\services\UserCRUD;
+namespace App\Controller\Teacher;
 
 
-class RolesService extends UserManager
+class ProfileController
 {
 
 }

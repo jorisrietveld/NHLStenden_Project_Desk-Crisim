@@ -23,8 +23,7 @@ use Symfony\Component\Routing\Annotation\Route;
  *     "_locale": "%app.locales%"
  *     })
  * todo remove this later ^
- * @Route(/roles)
- *
+ * @Route("/roles")
  * @package App\Controller\User
  */
 class RolesController extends AbstractController

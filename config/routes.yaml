@@ -13,34 +13,42 @@
 #
 # All administrator related routes.
 #
-admin_index:
-  resource: 'routes/administrator.yaml'
+#admin_index:
+#  resource: 'routes/administrator.yaml'
 
 #
 # All Spectator related routes.
 #
-spectator:
-  resource: 'routes/spectator.yaml'
+#spectator:
+#  resource: 'routes/spectator.yaml'
 
 #
 # All Teacher related routes.
 #
-teacher:
-  resource: 'routes/teacher.yaml'
+#teacher:
+#  resource: 'routes/teacher.yaml'
 
 #
 # All Student related routes.
 #
-student:
-  resource: 'routes/student.yml'
+#student:
+#  resource: 'routes/student.yml'
 
 #
-# All routs related to Authentication and authorization.
+# Authentication and Authorization routes.
 #
-authentication:
-  resource: 'routes/authentication.yml'
-
-controllers:
-    resource: '../src/Controller/'
-    type: annotation
-
+# This file contains all routes for authenticating users.
+#
+#authentication_login:
+#  path:
+#    nl: /inloggen
+#    en: /{_locale}/login
+#    fy: /{_locale}/
+#  controller: App\Controller\Authentication\LoginController::index
+homepage:
+    path: /{_locale}
+    controller: App\Controller\WelcomeController::index
+    requirements:
+        _locale: '%app.locales%'
+    defaults:
+        _locale: '%locale%'

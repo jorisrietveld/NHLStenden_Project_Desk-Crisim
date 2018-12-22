@@ -1,0 +1,74 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 21-11-2018 00:02
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The login page
+ # ==============
+ # This is page enables users to authenticate.
+ #}
+
+{% extends 'Base.html.twig' %}
+
+{# Set the translation domain for this template, you can place the text on this page in ./translations/Authentication #}
+{% trans_default_domain 'authentication' %}
+
+{% form_theme 'form/materialize_layout.html.twig' %}
+
+{% block body %}
+    <div class="container main">
+        <div class="row">
+            <div class="col s12 m6 center offset-m3">
+                <div class="card">
+                    <div class="card-content">
+                        {{ form_start() }}
+                        <span class="card-title">{{ 'login.form.title'|trans }}</span>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <img src="{{ asset('build/static/lock_black.png') }}" width="50%">
+                        </div>
+                        <br>
+                        <br>
+
+                        {{ form_row() }}
+                        {{ form_row() }}
+                        {{ form_row() }}
+
+                        {# log in input field#}
+                        <div class="input-field col s12">
+                            <input id="username" type="text" class="validate" name="username" value="{{ last_username|default }}">
+                            <label for="username">{{ 'login.form.label.username'|trans }}</label>
+                            <span class="helper-text" data-error="Dit is geen correct emailadres" data-success=""></span>
+                        </div>
+
+                        {# The Password input field -#}
+                        <div class="input-field col s12">
+                            <input id="password" type="password" name="password">
+                            <label for="password">{{ 'login.form.label.password'|trans }}</label>
+                        </div>
+
+                        {# This field generates a Cross site request forgery token for form submit. #}
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        {# TODO! add a styled remember me checkbox here #}
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" name="_remember_me">
+                                Remember me
+                            </label>
+                        </div>
+                        {# TODO END #}
+                        <!-- submit button-->
+                        <button class="btn waves-effect waves-light orange" type="submit" name="action">
+                            {{ 'login.form.submit'|trans }}
+                            <i class="material-icons right">send</i>
+                        </button>
+                        {{ form_errors() }}
+                        {{ form_end() }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

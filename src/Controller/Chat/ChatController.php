@@ -5,20 +5,26 @@
  * Licence: GPLv3 - General Public Licence version 3
  */
 
-namespace App\Controller\Student\Chat;
+namespace App\Controller\Chat;
 
 use App\Controller\Student\StudentController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * This class handles the students Chat  actions.
- * Class ChatController
+ * Class ChatController - Actions for sending & receiving chat messages.
+ * @Route("/chat")
  * @package App\Controller\Student
  */
 class ChatController extends StudentController
 {
-    final public function index(Request $request): Response
+
+    /**
+     * @Route("/panel", name="chat_panel", methods={"GET"})
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    final public function showPanel(): Response
     {
         $this->render('Student/Chat/ChatPanel.html.twig');
     }

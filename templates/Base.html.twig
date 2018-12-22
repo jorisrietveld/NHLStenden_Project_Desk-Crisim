@@ -24,7 +24,7 @@
     {% endblock %}
 
     {# This will render the title of the webpage #}
-    <title>{{ 'meta.title.base'|trans }}</title>
+    <title>{% block title %}Crisim{% endblock %}</title>
 
     {# This block stores all style for the website. #}
     {% block stylesheets %}
