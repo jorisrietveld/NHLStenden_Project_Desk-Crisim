@@ -1,0 +1,18 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 22-12-2018 21:32
+ # Licence: GPLv3 - General Public Licence version 3
+ #}
+{% extends 'Theme/main-skeleton.html.twig' %}
+
+{% block content %}
+    {% embed 'Theme/large-card.html.twig' %}
+        {% block card_title %}
+            {{ 'my_profile.title'|trans({'%user_name%': user.name|default('Annonymous')}) }}
+        {% endblock %}
+
+        {% block card_body %}
+            {{ dump() }}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

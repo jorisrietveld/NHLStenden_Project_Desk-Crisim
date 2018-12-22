@@ -1,0 +1,22 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 22-12-2018 20:09
+ # Licence: GPLv3 - General Public Licence version 3
+ #}
+
+{% if app.user is defined %}
+    <div class="row">
+        <ul class="pagination center">
+            {# Get all paginations and reduce to the current user accessable paginations. #}
+            {% for role, pages in role_paginations if role in app.user|getRoles %}
+
+                {# Create a link for all paginations, add active class if it matches the _route #}
+                {% for page in pages %}
+                    <li class="waves-effect {{ app.request.get('_route') in route ? 'active' }}">
+                        <a href="{{ path( page ) }}">{{ 'link_title.%s'|format(page)|trans }}</a>
+                    </li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

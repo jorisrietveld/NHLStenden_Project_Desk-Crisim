@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="nl"
+       trgLang="nl">
+    <file id="messages.nl">
+        <unit id="rWQR1od" name="tooltip.home">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Navigation.html.twig:14
+                </note>
+            </notes>
+            <segment>
+                <source>tooltip.home</source>
+                <target>Ga naar de home pagina.</target>
+            </segment>
+        </unit>
+        <unit id="d6d.bdu" name="tooltip.notifications">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>tooltip.notifications</source>
+                <target>Er zijn geen notificaties.</target>
+            </segment>
+        </unit>
+        <unit id="7I2GVRs" name="tooltip.logout">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>tooltip.logout</source>
+                <target>Klik hier om uit af te melden.</target>
+            </segment>
+        </unit>
+        <unit id="NLn7ink" name="link.help">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Footer.html.twig:16
+                </note>
+            </notes>
+            <segment>
+                <source>link.help</source>
+                <target>Help</target>
+            </segment>
+        </unit>
+        <unit id="5PReC9h" name="link.dummy">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Footer.html.twig:28
+                </note>
+                <note category="file-source" priority="1">
+                    templates/Footer.html.twig:35
+                </note>
+            </notes>
+            <segment>
+                <source>link.dummy</source>
+                <target>Dummy link</target>
+            </segment>
+        </unit>
+        <unit id="hG1UarO" name="link.sourcecode">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Footer.html.twig:21
+                </note>
+            </notes>
+            <segment>
+                <source>link.sourcecode</source>
+                <target>Bekijk de broncode</target>
+            </segment>
+        </unit>
+        <unit id="8IepFh9" name="copyright.notification">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Footer.html.twig:44
+                </note>
+            </notes>
+            <segment>
+                <source>copyright.notification</source>
+                <target>Desk CriSim</target>
+            </segment>
+        </unit>
+        <unit id="I8AWAme" name="meta.description.default">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Base.html.twig:20
+                </note>
+            </notes>
+            <segment>
+                <source>meta.description.default</source>
+                <target>A Crisis simulation serious-game</target>
+            </segment>
+        </unit>
+        <unit id="PIHXksh" name="meta.keywords.default">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Base.html.twig:21
+                </note>
+            </notes>
+            <segment>
+                <source>meta.keywords.default</source>
+                <target>Stenden, serious-game, CriSim, Desk-CriSim</target>
+            </segment>
+        </unit>
+        <unit id="xiz8_Nx" name="meta.author.default">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Base.html.twig:22
+                </note>
+            </notes>
+            <segment>
+                <source>meta.author.default</source>
+                <target>INF2H - Stenden</target>
+            </segment>
+        </unit>
+        <unit id="iccWaG8" name="meta.title.base">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Base.html.twig:27
+                </note>
+            </notes>
+            <segment>
+                <source>meta.title.base</source>
+                <target>Desk Crisim</target>
+            </segment>
+        </unit>
+        <unit id="levIQSL" name="index.page.title">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Welcome/Welcome.html.twig:20
+                </note>
+            </notes>
+            <segment>
+                <source>index.page.title</source>
+                <target>Publieke Welkoms Pagina</target>
+            </segment>
+        </unit>
+        <unit id="jqOQafq" name="index.link.student">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Welcome/Welcome.html.twig:49
+                </note>
+            </notes>
+            <segment>
+                <source>index.link.student</source>
+                <target>Ga naar het studenten paneel.</target>
+            </segment>
+        </unit>
+        <unit id="o2D7dIa" name="index.link.teacher">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Welcome/Welcome.html.twig:38
+                </note>
+            </notes>
+            <segment>
+                <source>index.link.teacher</source>
+                <target>Ga naar het docenten paneel.</target>
+            </segment>
+        </unit>
+        <unit id="02AnMbn" name="index.link.login">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Welcome/Welcome.html.twig:28
+                </note>
+            </notes>
+            <segment>
+                <source>index.link.login</source>
+                <target>Ga naar de login pagina.</target>
+            </segment>
+        </unit>
+        <unit id="20eTU.D" name="login.form.title">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Authentication/Login.html.twig:23
+                </note>
+            </notes>
+            <segment>
+                <source>login.form.title</source>
+                <target>Aanmelden</target>
+            </segment>
+        </unit>
+        <unit id="XQO2m1T" name="login.form.label.username">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Authentication/Login.html.twig:34
+                </note>
+            </notes>
+            <segment>
+                <source>login.form.label.username</source>
+                <target>Gebruikers Naam</target>
+            </segment>
+        </unit>
+        <unit id="_nakZxD" name="login.form.label.password">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Authentication/Login.html.twig:41
+                </note>
+            </notes>
+            <segment>
+                <source>login.form.label.password</source>
+                <target>Wachtwoord</target>
+            </segment>
+        </unit>
+        <unit id="KXSzZJt" name="login.form.submit">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Authentication/Login.html.twig:56
+                </note>
+            </notes>
+            <segment>
+                <source>login.form.submit</source>
+                <target>Meld me aan</target>
+            </segment>
+        </unit>
+        <unit id="uhxtGc1" name="login.feedback.error.csrf">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>login.feedback.error.csrf</source>
+                <target>Er is iets fout gegaan bij het valideren van de csrf
+                    token.
+                </target>
+            </segment>
+        </unit>
+        <unit id="uhxtGc1" name="login.feedback.error.not_found">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>login.feedback.error.not_found</source>
+                <target>De gebruiker is niet gevonder, constroleer uw gegevens
+                    en
+                    probeer opnieuw.
+                </target>
+            </segment>
+        </unit>
+        <unit id="6AT_bkq" name="my_profile.title">
+            <segment>
+                <source>my_profile.title</source>
+                <target>Welkom %user_name%!</target>
+            </segment>
+        </unit>
+        <unit id="555qC5_" name="index.pagination.actions">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Student/StudentBase.html.twig:24
+                </note>
+            </notes>
+            <segment>
+                <source>index.pagination.actions</source>
+                <target>Acties</target>
+            </segment>
+        </unit>
+        <unit id="Dlg76vV" name="index.pagination.infofeed">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Student/StudentBase.html.twig:27
+                </note>
+            </notes>
+            <segment>
+                <source>index.pagination.infofeed</source>
+                <target>Info feed</target>
+            </segment>
+        </unit>
+        <unit id="DhSCnIw" name="index.pagination.chat">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Student/StudentBase.html.twig:31
+                </note>
+            </notes>
+            <segment>
+                <source>index.pagination.chat</source>
+                <target>Chat</target>
+            </segment>
+        </unit>
+        <unit id="W9k.JD." name="index.pagination.chatMonitor">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>index.pagination.chatMonitor</source>
+                <target>Chat Monitor</target>
+            </segment>
+        </unit>
+        <unit id="dMZg3As" name="index.pagination.participators">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>index.pagination.participators</source>
+                <target>Deelnemers</target>
+            </segment>
+        </unit>
+        <unit id="CJY9wHl" name="game.scenario.upload.form.name">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>game.scenario.upload.form.name</source>
+                <target>Scenario Naam</target>
+            </segment>
+        </unit>
+        <unit id="2xGEx2q" name="scenario.upload.form.success">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>scenario.upload.form.success</source>
+                <target>Het scenario is successvol toegevoegd.</target>
+            </segment>
+        </unit>
+        <unit id="prvrllM" name="teacher_participators">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>teacher_participators</source>
+                <target>Deelnemers</target>
+            </segment>
+        </unit>
+        <unit id="j3V5zNS" name="teacher_chatMonitor">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>teacher_chatMonitor</source>
+                <target>Chat Monitor</target>
+            </segment>
+        </unit>
+        <unit id="LAYoNQh" name="teacher_create_event">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>teacher_create_event</source>
+                <target>Nieuw Event Aanmaken</target>
+            </segment>
+        </unit>
+        <unit id="BDhN6eL" name="teacher_create_session">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>teacher_create_session</source>
+                <target>Nieuwe Sessie Aanmaken
+                </target>
+            </segment>
+        </unit>
+        <unit id="TFmQTI." name="teacher_show_statistics">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>teacher_show_statistics</source>
+                <target>Statistieken</target>
+            </segment>
+        </unit>
+        <unit id="hGf8UwL" name="upload_scenario">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>upload_scenario</source>
+                <target>Scenario Uploaden</target>
+            </segment>
+        </unit>
+        <unit id="6bTJQR7" name="teacher_assign_points">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>teacher_assign_points</source>
+                <target>Punten Toekennen</target>
+            </segment>
+        </unit>
+        <unit id="uji18Sg" name="teacher_start_scenario">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>teacher_start_scenario</source>
+                <target>Start Scenario</target>
+            </segment>
+        </unit>
+        <unit id="csOxb_t" name="base.pagination.teacher_participators">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>base.pagination.teacher_participators</source>
+                <target>Deelnemers Toevoegen</target>
+            </segment>
+        </unit>
+        <unit id="Sfe4l84" name="base.pagination.teacher_chatMonitor">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>base.pagination.teacher_chatMonitor</source>
+                <target>Chat Monitor</target>
+            </segment>
+        </unit>
+        <unit id="JIDj7l9" name="base.pagination.teacher_create_event">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>base.pagination.teacher_create_event</source>
+                <target>Event Aanmaken</target>
+            </segment>
+        </unit>
+        <unit id="YEUnnyN" name="base.pagination.teacher_create_session">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>base.pagination.teacher_create_session</source>
+                <target>Sessie aanmaken</target>
+            </segment>
+        </unit>
+        <unit id="gbLiyTo" name="base.pagination.teacher_show_statistics">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>base.pagination.teacher_show_statistics</source>
+                <target>Statistieken</target>
+            </segment>
+        </unit>
+        <unit id="iyrCtxJ" name="base.pagination.upload_scenario">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>base.pagination.upload_scenario</source>
+                <target>Scenario Uploaden</target>
+            </segment>
+        </unit>
+        <unit id="eP3ba2M" name="base.pagination.teacher_assign_points">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>base.pagination.teacher_assign_points</source>
+                <target>Punten toekennen</target>
+            </segment>
+        </unit>
+        <unit id="O0Osu6o" name="base.pagination.teacher_start_scenario">
+            <notes>
+                <note category="state" priority="1">obsolete</note>
+            </notes>
+            <segment>
+                <source>base.pagination.teacher_start_scenario</source>
+                <target>Scenario Starten</target>
+            </segment>
+        </unit>
+        <unit id="RxBzTPU" name="chatmonitor.page.title">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Teacher/Chat/ChatMonitor.html.twig:21
+                </note>
+            </notes>
+            <segment>
+                <source>chatmonitor.page.title</source>
+                <target></target>
+            </segment>
+        </unit>
+        <unit id="MoMJAvM" name="chatmonitor.message_section.title">
+            <notes>
+                <note category="file-source" priority="1">
+                    templates/Teacher/Chat/ChatMonitor.html.twig:69
+                </note>
+            </notes>
+            <segment>
+                <source>chatmonitor.message_section.title</source>
+                <target></target>
+            </segment>
+        </unit>
+    </file>
+</xliff>

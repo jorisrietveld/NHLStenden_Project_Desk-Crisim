@@ -3,4 +3,6 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     form_themes:
-        - 'form/fields.html.twig'
+        - 'Theme/materialize_form_layout.twig'
+    globals:
+        role_paginations: '%route_list%'

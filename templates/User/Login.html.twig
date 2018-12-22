@@ -1,0 +1,38 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 21-11-2018 00:02
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The login page
+ # ==============
+ # This is page enables users to authenticate.
+ #}
+
+{% extends 'Theme/main-skeleton.html.twig' %}
+
+{% block content %}
+    {% embed 'Theme/small-card.html.twig' with {'title':'login.form.title', 'grid':'s12 m6 center offset-m3'} %}
+
+        {% block card_body %}
+            {{ form_start(form) }}
+            <div class="row">
+                <img src="{{ asset('build/static/lock_black.png') }}" width="50%">
+            </div>
+            {{ form_row(form._username) }}
+            {{ form_row(form._password) }}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <button class="btn waves-effect waves-light orange" type="submit" name="action">
+                {{ 'login.form.submit'|trans }}
+                <i class="material-icons right">send</i>
+            </button>
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
+
+            {{ form_end(form) }}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 22-12-2018 18:19
+ # Licence: GPLv3 - General Public Licence version 3
+ #}
+{% extends 'Base.html.twig' %}
+
+{% block body %}
+
+    {# Include the template that contains the navigation section of the theme. #}
+    {% include 'Theme/Navigation.html.twig' %}
+
+    <div class="container main">
+        {#
+                {% include('Theme/pagination.html.twig') %}
+        #}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {# Include the template that contains the footer section of the theme. #}
+    {% include 'Theme/Footer.html.twig' %}
+
+{% endblock %}

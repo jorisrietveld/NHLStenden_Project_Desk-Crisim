@@ -23,7 +23,7 @@ class WelcomeController extends AbstractController
      */
     public function index()
     {
-        return $this->render( 'Welcome/Welcome.html.twig' );
+        return $this->render( 'Welcome.html.twig' );
     }
 
 

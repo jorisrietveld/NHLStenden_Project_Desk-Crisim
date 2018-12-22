@@ -53,11 +53,12 @@ class UserFixtures extends Fixture
     {
         foreach ( self::USER_ROLES as $ROLE ) {
             for ( $i = 0; $i < $this->fixtureAmountOfEachType; $i++ ) {
-
+                $password = uniqid( '', false );
+                $userName = $password;
                 $manager->persist(
                     $this->createUser(
-                        "User_${ROLE}_$i",
-                        md5( $i ),
+                        $userName,
+                        $password,
                         $ROLE )
                 );
             }
@@ -77,7 +78,7 @@ class UserFixtures extends Fixture
     private function createUser( string $username, string $password, array $roles ): User
     {
         $user = new User();
-        $user->setUsername( username );
+        $user->setUsername( $username );
         $user->setRoles( $roles );
 
         // Set the plain password only for development and testing.
@@ -87,5 +88,6 @@ class UserFixtures extends Fixture
         $user->setPassword(
             $this->passwordEncoder->encodePassword( $user, $password )
         );
+        return $user;
     }
 }

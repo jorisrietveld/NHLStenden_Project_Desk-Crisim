@@ -9,6 +9,22 @@ parameters:
     env(DATABASE_URL): 'mysql://crisim-app:crisim-app-password@localhost:3306/DeskCriSim'
     scenario_file_directory: '%kernel.project_dir%/public/uploads/game_scenarios'
     app.notifications.email_sender: info@crisim.nl
+    route_list:
+        ROLE_ADMIN:
+        ROLE_TEACHER:
+            - 'teacher_participators'
+            - 'teacher_chatMonitor'
+            - 'teacher_create_event'
+            - 'teacher_create_session'
+            - 'teacher_show_statistics'
+            - 'upload_scenario'
+            - 'teacher_assign_points'
+            - 'teacher_start_scenario'
+        ROLE_STUDENT:
+            - 'info_feed'
+            - 'chat'
+        ROLE_USER:
+            - 'profile'
 
 services:
     # default configuration for services in *this* file

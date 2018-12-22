@@ -18,7 +18,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class LoginController extends AbstractController
 {
     /**
-     * @Route("/login", name="login_page", methods={"GET"})
+     * @Route("/login", name="login_page", methods={"GET","POST"})
      * -
      * @param \Symfony\Component\Security\Http\Authentication\AuthenticationUtils $authenticationUtils
      * @return \Symfony\Component\HttpFoundation\Response
@@ -31,24 +31,18 @@ class LoginController extends AbstractController
         $form = $this->createForm(
             LoginType::class,
             [
-
+                '_username' => $lastUserName,
             ]
         );
 
         return $this->render(
-            'Authentication/Login.html.twig',
+            'User/Login.html.twig',
             [
-                'last_username' => $lastUserName,
-                'error'         => $error,
+                'form'  => $form->createView(),
+                'error' => $error,
             ]
         );
     }
-
-    public function authenticate()
-    {
-
-    }
-
 
     private function fetchUser( string $userName ): UserInterface
     {

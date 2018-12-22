@@ -8,6 +8,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -43,7 +44,8 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
-     * @var
+     * @var \DateTime $addedOn
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     private $addedOn;

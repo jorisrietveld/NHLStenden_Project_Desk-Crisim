@@ -8,7 +8,18 @@
 namespace App\Controller\User;
 
 
-class ProfileController
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class ProfileController extends AbstractController
 {
 
+    /**
+     * @Route("/my profile", name="my_profile")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showMyProfile()
+    {
+        return $this->render( 'User/MyProfile.html.twig' );
+    }
 }
