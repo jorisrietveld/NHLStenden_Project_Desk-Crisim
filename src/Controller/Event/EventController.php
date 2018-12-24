@@ -7,18 +7,17 @@
 
 namespace App\Controller\Event;
 
-
-use App\Controller\Teacher\TeacherController;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class CreateGameEventController
  * @package App\Controller\Teacher\Game
  */
-final class CreateEventController extends TeacherController
+final class EventController extends AbstractController
 {
-    public function index(): Response
+    public function createEven(): Response
     {
-        return $this->render('Teacher/Game/CreateEvent.html.twig');
+        return $this->render( 'GameSession/CreateEvent.html.twig' );
     }
 }

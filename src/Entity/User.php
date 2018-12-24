@@ -59,6 +59,11 @@ class User implements UserInterface, \Serializable
     private $plainPassword;
 
     /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $locale;
+
+    /**
      * User constructor.
      */
     public function __construct()
@@ -205,6 +210,18 @@ class User implements UserInterface, \Serializable
     public function setAddedOn(\DateTimeInterface $addedOn): self
     {
         $this->addedOn = $addedOn;
+
+        return $this;
+    }
+
+    public function getLocale(): ?string
+    {
+        return $this->locale ?: 'nl';
+    }
+
+    public function setLocale( ?string $locale ): self
+    {
+        $this->locale = $locale;
 
         return $this;
     }

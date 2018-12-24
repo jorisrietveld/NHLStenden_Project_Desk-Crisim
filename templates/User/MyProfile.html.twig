@@ -8,7 +8,7 @@
 {% block content %}
     {% embed 'Theme/large-card.html.twig' %}
         {% block card_title %}
-            {{ 'my_profile.title'|trans({'%user_name%': user.name|default('Annonymous')}) }}
+            {{ 'my_profile.title'|trans({'%user_name%': app.user.username|default('Annonymous')}) }}
         {% endblock %}
 
         {% block card_body %}

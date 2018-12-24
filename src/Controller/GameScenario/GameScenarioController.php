@@ -7,10 +7,9 @@
 
 namespace App\Controller\GameScenario;
 
-
-use App\Controller\Teacher\TeacherController;
 use App\Entity\GameScenario;
 use App\Form\GameScenarioType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,7 +21,7 @@ use Symfony\Component\Intl\Exception\NotImplementedException;
  *
  * @package App\Controller\Teacher\Game
  */
-final class GameScenarioController extends TeacherController
+final class GameScenarioController extends AbstractController
 {
     /**
      * Serves the upload game scenario page. On this page the user can upload
@@ -93,7 +92,7 @@ final class GameScenarioController extends TeacherController
 
         }
         return $this->render(
-            'Teacher/GameScenario/UploadScenario.html.twig',
+            'GameScenario/UploadScenario.html.twig',
             [
             'form' => $form->createView(),
             ]

@@ -8,15 +8,17 @@
 namespace App\Controller\Game;
 
 
-class StudentController
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+class GameController extends AbstractController
 {
     public function showInfoFeed()
     {
-        return $this->render( ':Student/Game:InfoFeed.twig' );
+        return $this->render( 'Game/InfoFeed.twig' );
     }
 
     public function showActions()
     {
-        return $this->render( 'Student/Game/StudentActions.html.twig' );
+        return $this->render( 'Game/StudentActions.html.twig' );
     }
 }

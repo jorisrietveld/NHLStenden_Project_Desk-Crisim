@@ -8,14 +8,14 @@
 namespace App\Controller\GameSession;
 
 
-use App\Controller\Teacher\TeacherController;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class AddParticipatorsController
  * @package App\Controller\Teacher\Game
  */
-final class ParticipatorsController extends TeacherController
+final class ParticipatorsController extends AbstractController
 {
     private const DUMMY_PARTICIPATORS = ['students' => [
         '325' => [
@@ -53,7 +53,8 @@ final class ParticipatorsController extends TeacherController
 
     public function index(): Response
     {
-        return $this->render('Teacher/Game/AddParticipators.html.twig',
+        return $this->render(
+            'GameSession/Participators.html.twig',
             $this->fetchParticipators()
         );
     }

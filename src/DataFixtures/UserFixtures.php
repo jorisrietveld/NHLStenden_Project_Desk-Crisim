@@ -51,7 +51,7 @@ class UserFixtures extends Fixture
      */
     public function load( ObjectManager $manager )
     {
-        foreach ( self::USER_ROLES as $ROLE ) {
+        /*foreach ( self::USER_ROLES as $ROLE ) {
             for ( $i = 0; $i < $this->fixtureAmountOfEachType; $i++ ) {
                 $password = uniqid( '', false );
                 $userName = $password;
@@ -61,8 +61,17 @@ class UserFixtures extends Fixture
                         $password,
                         $ROLE )
                 );
-            }
         }
+            }*/
+        $user = $this->createUser(
+            'admin',
+            'admin',
+            [
+                'ROLE_USER',
+                'ROLE_ADMIN',
+            ]
+        );
+        $manager->persist( $user );
 
         // Save all created users in 1 go to the database.
         $manager->flush();

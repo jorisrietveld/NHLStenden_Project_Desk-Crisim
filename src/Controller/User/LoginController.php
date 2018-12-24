@@ -18,7 +18,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class LoginController extends AbstractController
 {
     /**
-     * @Route("/login", name="login_page", methods={"GET","POST"})
+     * @Route("/login", name="user_login")
      * -
      * @param \Symfony\Component\Security\Http\Authentication\AuthenticationUtils $authenticationUtils
      * @return \Symfony\Component\HttpFoundation\Response
@@ -28,20 +28,25 @@ class LoginController extends AbstractController
         $error        = $authenticationUtils->getLastAuthenticationError();
         $lastUserName = $authenticationUtils->getLastUsername();
 
-        $form = $this->createForm(
-            LoginType::class,
-            [
-                '_username' => $lastUserName,
-            ]
-        );
-
         return $this->render(
             'User/Login.html.twig',
             [
-                'form'  => $form->createView(),
-                'error' => $error,
+                'last_username' => $lastUserName,
+                'error'         => $error,
             ]
         );
+    }
+
+    /**
+     * This is the route the user can use to logout.
+     * But, this will never be executed. Symfony will intercept this first
+     * and handle the logout automatically. See logout in
+     * config/packages/security.yaml
+     * @Route("/logout", name="security_logout")
+     */
+    public function logout(): void
+    {
+        throw new \Exception( 'This should never be reached!' );
     }
 
     private function fetchUser( string $userName ): UserInterface

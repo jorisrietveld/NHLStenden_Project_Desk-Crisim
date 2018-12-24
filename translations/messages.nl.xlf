@@ -221,7 +221,7 @@
                 </target>
             </segment>
         </unit>
-        <unit id="uhxtGc1" name="login.feedback.error.not_found">
+        <unit id="vow1qNl" name="login.feedback.error.not_found">
             <notes>
                 <note category="state" priority="1">obsolete</note>
             </notes>
@@ -473,6 +473,24 @@
             <segment>
                 <source>chatmonitor.message_section.title</source>
                 <target></target>
+            </segment>
+        </unit>
+        <unit id="47ienTP" name="Username">
+            <segment>
+                <source>Username</source>
+                <target>Gebruikersnaam</target>
+            </segment>
+        </unit>
+        <unit id="kYE_GuG" name="Aanmelden">
+            <segment>
+                <source>Aanmelden</source>
+                <target>Aanmelden</target>
+            </segment>
+        </unit>
+        <unit id="588_9PF" name="Password">
+            <segment>
+                <source>Password</source>
+                <target>Wachtwoord</target>
             </segment>
         </unit>
     </file>

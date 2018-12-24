@@ -4,47 +4,6 @@
 # This file contains all routes for the application. It also includes route configuration resources in from the
 # routes/ directory. These files bundle routes that are related to each other.
 #
-
-#
-# All unauthorized index (homepage) routes.
-#
-
-
-#
-# All administrator related routes.
-#
-#admin_index:
-#  resource: 'routes/administrator.yaml'
-
-#
-# All Spectator related routes.
-#
-#spectator:
-#  resource: 'routes/spectator.yaml'
-
-#
-# All Teacher related routes.
-#
-#teacher:
-#  resource: 'routes/teacher.yaml'
-
-#
-# All Student related routes.
-#
-#student:
-#  resource: 'routes/student.yml'
-
-#
-# Authentication and Authorization routes.
-#
-# This file contains all routes for authenticating users.
-#
-#authentication_login:
-#  path:
-#    nl: /inloggen
-#    en: /{_locale}/login
-#    fy: /{_locale}/
-#  controller: App\Controller\Authentication\LoginController::index
 homepage:
     path: /{_locale}
     controller: App\Controller\WelcomeController::index

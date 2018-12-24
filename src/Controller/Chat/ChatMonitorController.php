@@ -7,7 +7,7 @@
 
 namespace App\Controller\Chat;
 
-use App\Controller\Teacher\TeacherController;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * Class ChatMonitorController
  * @package App\Controller\Teacher\Chat
  */
-final class ChatMonitorController extends TeacherController
+final class ChatMonitorController extends AbstractController
 {
     private const DUMMY_CHAT_MESSAGES = [
         "msg1" => [
@@ -41,7 +41,9 @@ final class ChatMonitorController extends TeacherController
 
     public function index(): Response
     {
-        return $this->render( 'Teacher/Chat/ChatMonitor.html.twig', [
+        return $this->render(
+            'Chat/ChatMonitor.html.twig',
+            [
             'messages' => self::DUMMY_CHAT_MESSAGES,
         ] );
     }

@@ -7,7 +7,7 @@
 
 namespace App\Controller\Chat;
 
-use App\Controller\Student\StudentController;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -16,7 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @Route("/chat")
  * @package App\Controller\Student
  */
-class ChatController extends StudentController
+class ChatController extends AbstractController
 {
 
     /**
@@ -26,6 +26,6 @@ class ChatController extends StudentController
      */
     final public function showPanel(): Response
     {
-        $this->render('Student/Chat/ChatPanel.html.twig');
+        $this->render( 'Chat/ChatPanel.html.twig' );
     }
 }

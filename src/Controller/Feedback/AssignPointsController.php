@@ -8,14 +8,14 @@
 namespace App\Controller\Feedback;
 
 
-use App\Controller\Teacher\TeacherController;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-final class AssignPointsController extends TeacherController
+final class AssignPointsController extends AbstractController
 {
     public function index(): Response
     {
-        return $this->render('Teacher/Game/AssignPoints.html.twig');
+        return $this->render( 'Feedback/AssignPoints.html.twig' );
     }
 
 }

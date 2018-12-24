@@ -14,25 +14,35 @@
     {% embed 'Theme/small-card.html.twig' with {'title':'login.form.title', 'grid':'s12 m6 center offset-m3'} %}
 
         {% block card_body %}
-            {{ form_start(form) }}
-            <div class="row">
-                <img src="{{ asset('build/static/lock_black.png') }}" width="50%">
-            </div>
-            {{ form_row(form._username) }}
-            {{ form_row(form._password) }}
-            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-            <button class="btn waves-effect waves-light orange" type="submit" name="action">
-                {{ 'login.form.submit'|trans }}
-                <i class="material-icons right">send</i>
-            </button>
-            {% if error %}
-                <div class="alert alert-danger">
-                    {{ error.messageKey|trans(error.messageData, 'security') }}
+            <form action="{{ path('user_login') }}" method="post">
+                <div class="row">
+                    <img src="{{ asset('build/static/lock_black.png') }}" width="50%">
                 </div>
-            {% endif %}
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error.messageKey }}
+                    </div>
+                {% endif %}
 
-            {{ form_end(form) }}
+                <div class="input-field col s12">
+                    <input id="username" type="text" class="validate" name="username" value="{{ last_username|default }}">
+                    <label for="username">{{ 'login.form.label.username'|trans }}</label>
+                    <span class="helper-text" data-error="Dit is geen correct emailadres" data-success=""></span>
+                </div>
+
+                {# The Password input field -#}
+                <div class="input-field col s12">
+                    <input id="password" type="password" name="password">
+                    <label for="password">{{ 'login.form.label.password'|trans }}</label>
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <button class="btn waves-effect waves-light orange" type="submit" name="action">
+                    {{ 'login.form.submit'|trans }}
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
         {% endblock %}
     {% endembed %}
 {% endblock %}

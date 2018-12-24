@@ -7,22 +7,22 @@
 
 namespace App\Controller\GameSession;
 
-use App\Controller\Teacher\TeacherController;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class StartGameController
  * @package App\Controller\Teacher\Game\
  */
-final class GameSession extends TeacherController
+final class GameSession extends AbstractController
 {
-    public function startGameAction(): Response
+    public function startGame(): Response
     {
-        return $this->render('Teacher/Game/StartNew.html.twig');
+        return $this->render( 'GameSession/StartSession.html.twig' );
     }
 
-    public function createGameAction(): Response
+    public function createGame(): Response
     {
-        return $this->render( 'Teacher/Game/CreateSession.html.twig' );
+        return $this->render( 'GameSession/CreateSession.html.twig' );
     }
 }
