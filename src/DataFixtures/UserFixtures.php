@@ -9,7 +9,6 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * Class UserFixtures
- *
  * @package App\DataFixtures
  */
 class UserFixtures extends Fixture
@@ -17,14 +16,15 @@ class UserFixtures extends Fixture
     /**
      * @var string The available roles.
      */
-    private const USER_ROLES = [
-        [ 'ROLE_USER' ],
-        [ 'ROLE_USER', 'ROLE_STUDENT' ],
-        [ 'ROLE_USER', 'ROLE_SPECTATOR' ],
-        [ 'ROLE_USER', 'ROLE_TEACHER' ],
-        [ 'ROLE_USER', 'ROLE_LOGGER' ],
-        [ 'ROLE_USER', 'ROLE_ADMIN' ],
-    ];
+    private const USER_ROLES
+        = [
+            [ 'ROLE_USER' ],
+            [ 'ROLE_USER', 'ROLE_STUDENT' ],
+            [ 'ROLE_USER', 'ROLE_SPECTATOR' ],
+            [ 'ROLE_USER', 'ROLE_TEACHER' ],
+            [ 'ROLE_USER', 'ROLE_LOGGER' ],
+            [ 'ROLE_USER', 'ROLE_ADMIN' ],
+        ];
 
     /**
      * @var int The amount of dummy records to generate for each user role
@@ -32,13 +32,13 @@ class UserFixtures extends Fixture
     private $fixtureAmountOfEachType = 2;
 
     /**
-     * @var UserPasswordEncoderInterface The password encoder for password hashing.
+     * @var UserPasswordEncoderInterface The password encoder for password
+     *      hashing.
      */
     private $passwordEncoder;
 
     /**
      * UserFixtures constructor.
-     *
      * @param \Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface $passwordEncoder
      */
     public function __construct( UserPasswordEncoderInterface $passwordEncoder )
@@ -51,27 +51,36 @@ class UserFixtures extends Fixture
      */
     public function load( ObjectManager $manager )
     {
-        /*foreach ( self::USER_ROLES as $ROLE ) {
-            for ( $i = 0; $i < $this->fixtureAmountOfEachType; $i++ ) {
-                $password = uniqid( '', false );
-                $userName = $password;
-                $manager->persist(
-                    $this->createUser(
-                        $userName,
-                        $password,
-                        $ROLE )
-                );
-        }
-            }*/
-        $user = $this->createUser(
-            'admin',
-            'admin',
-            [
-                'ROLE_USER',
-                'ROLE_ADMIN',
-            ]
+        $manager->persist(
+            $this->createUser(
+                'admin',
+                'password',
+                [
+                    'ROLE_USER',
+                    'ROLE_ADMIN',
+                ]
+            )
         );
-        $manager->persist( $user );
+        $manager->persist(
+            $this->createUser(
+                'student',
+                'password',
+                [
+                    'ROLE_USER',
+                    'ROLE_STUDENT',
+                ]
+            )
+        );
+        $manager->persist(
+            $this->createUser(
+                'teacher',
+                'password',
+                [
+                    'ROLE_USER',
+                    'ROLE_TEACHER',
+                ]
+            )
+        );
 
         // Save all created users in 1 go to the database.
         $manager->flush();
@@ -81,11 +90,13 @@ class UserFixtures extends Fixture
      * @param string $username
      * @param string $password
      * @param array  $roles
-     *
      * @return \App\Entity\User
      */
-    private function createUser( string $username, string $password, array $roles ): User
-    {
+    private function createUser(
+        string $username,
+        string $password,
+        array $roles
+    ): User {
         $user = new User();
         $user->setUsername( $username );
         $user->setRoles( $roles );

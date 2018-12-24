@@ -23,7 +23,7 @@
 
                     {# Display a logout button. #}
                     <a class='btn tooltipped black' data-position='bottom' data-tooltip='{{ 'tooltip.logout' }}' href='?logout=true'>
-                        <i class="material-icons">directions_run</i>
+                        <i class="material-icons">exit_to_app</i>
                     </a>
 
                     {# Display the notifications dropdown. #}
@@ -34,7 +34,7 @@
 
                     {# The user is un authenticated so only show a login button. #}
                     <a class="btn tooltipped black" data-position="bottom" data-tooltip="{{ user.name|default('no username') }}" href="{{ path('user_login') }}">
-                        <i class="material-icons">input</i>
+                        <i class="material-icons">lock_open</i>
                     </a>
                 {% endif %}
 

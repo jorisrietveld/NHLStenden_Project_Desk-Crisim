@@ -7,8 +7,8 @@
 
 namespace App\Controller\Chat;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -20,12 +20,22 @@ class ChatController extends AbstractController
 {
 
     /**
-     * @Route("/panel", name="chat_panel", methods={"GET"})
-     *
+     * @Route("/game/chat", name="student_chat_panel")
+     * @IsGranted("ROLE_TEACHER")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    final public function showPanel(): Response
+    public function showChatPanel()
     {
-        $this->render( 'Chat/ChatPanel.html.twig' );
+        return $this->render( 'Chat/ChatPanel.html.twig' );
+    }
+
+    /**
+     * @Route("/Docent/chat monitor", name="teacher_chat_monitor")
+     * @IsGranted("ROLE_TEACHER")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function showChatMonitor()
+    {
+        return $this->render( 'Chat/ChatPanel.html.twig' );
     }
 }

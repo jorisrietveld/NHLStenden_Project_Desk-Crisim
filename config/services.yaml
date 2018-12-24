@@ -12,8 +12,8 @@ parameters:
     route_list:
         ROLE_ADMIN:
         ROLE_TEACHER:
-            - 'teacher_participators'
-            - 'teacher_chatMonitor'
+            - 'teacher_add_participators'
+            - 'teacher_chat_monitor'
             - 'teacher_create_event'
             - 'teacher_create_session'
             - 'teacher_show_statistics'
@@ -21,10 +21,11 @@ parameters:
             - 'teacher_assign_points'
             - 'teacher_start_scenario'
         ROLE_STUDENT:
-            - 'info_feed'
-            - 'chat'
+            - 'student_info_feed'
+            - 'student_chat_panel'
+            - 'student_actions'
         ROLE_USER:
-            - 'profile'
+            - 'my_profile'
 
 services:
     # default configuration for services in *this* file

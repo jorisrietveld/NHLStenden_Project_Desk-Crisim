@@ -12,7 +12,7 @@
 
                 {# Create a link for all paginations, add active class if it matches the _route #}
                 {% for page in pages %}
-                    <li class="waves-effect {{ app.request.get('_route') in route ? 'active' }}">
+                    <li class="waves-effect {{ app.request.get('_route') in pages ? 'active' }}">
                         <a href="{{ path( page ) }}">{{ 'link_title.%s'|format(page)|trans }}</a>
                     </li>
                 {% endfor %}

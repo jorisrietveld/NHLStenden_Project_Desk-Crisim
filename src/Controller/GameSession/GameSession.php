@@ -7,6 +7,7 @@
 
 namespace App\Controller\GameSession;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -16,13 +17,32 @@ use Symfony\Component\HttpFoundation\Response;
  */
 final class GameSession extends AbstractController
 {
+    /**
+     * @Route("", name="")
+     * @return Response
+     */
     public function startGame(): Response
     {
         return $this->render( 'GameSession/StartSession.html.twig' );
     }
 
+    /**
+     * @Route("/Docent/Game aanmaken", name="")
+     * @return Response
+     */
     public function createGame(): Response
     {
         return $this->render( 'GameSession/CreateSession.html.twig' );
+    }
+
+    /**
+     * @Route("/Docent/Sessie Deelnemers", name="teacher_show_participators")
+     * @return Response
+     */
+    public function showParticipators(): Response
+    {
+        return $this->render(
+            'GameSession/Participators.html.twig'
+        );
     }
 }

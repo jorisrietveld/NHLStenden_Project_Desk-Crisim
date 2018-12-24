@@ -493,5 +493,29 @@
                 <target>Wachtwoord</target>
             </segment>
         </unit>
+        <unit id="mTr2ZIt" name="link_title.student_info_feed">
+            <segment>
+                <source>link_title.student_info_feed</source>
+                <target>Info feed</target>
+            </segment>
+        </unit>
+        <unit id="KbnoTat" name="link_title.student_chat_panel">
+            <segment>
+                <source>link_title.student_chat_panel</source>
+                <target>Chat</target>
+            </segment>
+        </unit>
+        <unit id="kfgFgY6" name="link_title.student_actions">
+            <segment>
+                <source>link_title.student_actions</source>
+                <target>Acties</target>
+            </segment>
+        </unit>
+        <unit id="nVP91BO" name="link_title.my_profile">
+            <segment>
+                <source>link_title.my_profile</source>
+                <target>Mijn profiel</target>
+            </segment>
+        </unit>
     </file>
 </xliff>

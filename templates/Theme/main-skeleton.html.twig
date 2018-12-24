@@ -11,10 +11,9 @@
     {% include 'Theme/Navigation.html.twig' %}
 
     <div class="container main">
-        {#
-                {% include('Theme/pagination.html.twig') %}
-        #}
-
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            {% include('Theme/pagination.html.twig') %}
+        {% endif %}
         {% block content %}
         {% endblock %}
     </div>

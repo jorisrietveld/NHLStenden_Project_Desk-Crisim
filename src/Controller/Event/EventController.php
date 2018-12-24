@@ -7,8 +7,10 @@
 
 namespace App\Controller\Event;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class CreateGameEventController
@@ -16,7 +18,12 @@ use Symfony\Component\HttpFoundation\Response;
  */
 final class EventController extends AbstractController
 {
-    public function createEven(): Response
+    /**
+     * @Route("/Docent/Event aanmaken", name="teacher_create_event")
+     * @IsGranted("ROLE_TEACHER")
+     * @return Response
+     */
+    public function createEvent(): Response
     {
         return $this->render( 'GameSession/CreateEvent.html.twig' );
     }
