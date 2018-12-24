@@ -26,8 +26,6 @@ $(document).ready(function () {
     $('select').formSelect();
 });
 
-
-
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',

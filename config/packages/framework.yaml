@@ -1,6 +1,8 @@
 framework:
     secret: '%env(APP_SECRET)%'
+    # The default locale when the locale can't be determined.
     default_locale: nl
+    # Enable CSRF protection tokens in forms.
     csrf_protection: true
     #http_method_override: true
 

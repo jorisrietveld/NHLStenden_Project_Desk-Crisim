@@ -1,0 +1,16 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 22-12-2018 20:18
+ # Licence: GPLv3 - General Public Licence version 3
+ #}
+<div class="row">
+    <div class="col {{ grid|default('s12 m6') }}">
+        <div class="card {{ bg_color|default }}">
+            <div class="card-content {{ color|default }}">
+                <span class="card-title">{{ title|trans|trans }}</span>
+                {% block card_body %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>

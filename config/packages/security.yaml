@@ -11,39 +11,59 @@ security:
             entity:
                 class: App\Entity\User
                 property: username
-        # TODO Remove in-memory users.
-        # #dev_user_provider:
-        #     # Create a in-memory user provider for development.
-        #     memory:
-        #         # Define in-memory users for testing during development.
-        #         users:
-        #             Student:  { password: '%env(STUDENT_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_STUDENT' ] }
-        #             spectator:  { password: '%env(SPECTATOR_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_SPECTATOR' ] }
-        #             Teacher:  { password: '%env(TEACHER_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_TEACHER' ] }
-        #             logger:  { password: '%env(LOGGER_PASSWORD)%', roles: [ 'ROLE_USER', 'ROLE_LOGGER' ] }
-        #             Administrator: { password: '%env(ADMIN_PASSWORD)%', roles: [ 'ROLE_ADMIN' ] }
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
+            # this firewall applies to all URLs
+            pattern: ^/
             anonymous: true
+
+            form_login:
+                # The route name that the login form submits to
+                check_path: user_login
+                # The name of the route where the login form lives
+                # When the user tries to access a protected page, they are redirected here
+                login_path: user_login
+                # Secure the login form against CSRF
+                # Reference: https://symfony.com/doc/current/security/csrf_in_login_form.html
+                csrf_token_generator: security.csrf.token_manager
+                # The page users are redirect to when there is no previous page stored in the
+                # session (for example when the users access directly to the login page).
+                default_target_path: blog_index
+
+            logout:
+                # The route name the user can go to in order to logout
+                path: security_logout
+                # The name of the route to redirect to after logging out
+                target: homepage
+
             guard:
                 authenticators:
                     - App\Security\DefaultAuthenticator
+
+
 
             # activate different ways to authenticate
 
             # http_basic: true
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
 
-            # form_login: true
+            #form_login: true
             # https://symfony.com/doc/current/security/form_login_setup.html
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-    #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    #- { path: ^/_locale/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: '^/(%app.locales%)/admin', roles: ROLE_ADMIN }
+        - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/_locale/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/_locale/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
     # - { path: ^/Administrator, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER

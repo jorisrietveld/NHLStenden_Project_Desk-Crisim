@@ -8,7 +8,6 @@
 namespace App\Security;
 
 use App\Entity\User;
-use App\Utils\MessageDomain;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,7 +24,7 @@ use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class DefaultAuthenticator extends AbstractGuardAuthenticator
 {
@@ -96,11 +95,6 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
         $this->translator = $translator;
     }
 
-    private function getMessage( string $messageKey )
-    {
-        return $this->translator->trans( $messageKey, [], MessageDomain::AUTHENTICATION );
-    }
-
     /**
      * Does the authenticator support the users request?
      * @param Request $request
@@ -108,7 +102,8 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
      */
     public function supports(Request $request): bool
     {
-        return 'authentication_login' === $request->attributes->get('_route') && $request->isMethod('POST');
+        return 'user_login' === $request->attributes->get( '_route' )
+               && $request->isMethod( 'POST' );
     }
 
     /**
@@ -146,7 +141,9 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
         $token = new CsrfToken('authenticate', $credentials['csrf_token']);
         if (!$this->csrfTokenManager->isTokenValid($token)) {
 
-            throw new InvalidCsrfTokenException( $this->getMessage( 'login.feedback.error.csrf' ) );
+            throw new InvalidCsrfTokenException(
+                $this->translator->trans( 'login.feedback.error.csrf' )
+            );
         }
 
         // Get the user repository and search for the username submitted.
@@ -155,8 +152,9 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
 
         if (!$user) {
             // Could not find the user in the database.
-            throw new CustomUserMessageAuthenticationException( $this->getMessage( 'login.feedback.error.not_found' ) );
-            // Todo replace the error message with the Translation component.
+            throw new CustomUserMessageAuthenticationException(
+                $this->translator->trans( 'login.feedback.error.not_found' )
+            );
         }
 
         return $user;
@@ -201,24 +199,15 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
 
         // Determine the user roles to redirect them to the correct route.
         $userRoles = $token->getRoles();
+        /*
+                if (\in_array('ROLE_ADMIN', $userRoles, true)) {
+                    return new RedirectResponse($this->router->generate('easyadmin'));
+                }
 
-        if (\in_array('ROLE_ADMIN', $userRoles, true)) {
-            return new RedirectResponse($this->router->generate('admin_index'));
-        }
-        if (\in_array('ROLE_LOGGER', $userRoles, true)) {
-            return new RedirectResponse($this->router->generate('logger_index'));
-        }
-        if (\in_array('ROLE_TEACHER', $userRoles, true)) {
-            return new RedirectResponse($this->router->generate('teacher_index'));
-        }
-        if (\in_array('ROLE_SPECTATOR', $userRoles, true)) {
-            return new RedirectResponse($this->router->generate('spectator_index'));
-        }
-        if (\in_array('ROLE_STUDENT', $userRoles, true)) {
-            return new RedirectResponse($this->router->generate('student_index'));
-        }
-        // For example : return new RedirectResponse($this->router->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
+                if (\in_array('ROLE_SPECTATOR', $userRoles, true)) {
+                    return new RedirectResponse($this->router->generate('my_profile'));
+                }*/
+        return new RedirectResponse( $this->router->generate( 'my_profile' ) );
     }
 
     /**
@@ -235,7 +224,7 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
 
     /**
      * Returns if the Authentication login supports a remember me functionality.
-     * @return bool|void
+     * @return bool
      */
     public function supportsRememberMe()
     {
@@ -249,6 +238,6 @@ final class DefaultAuthenticator extends AbstractGuardAuthenticator
      */
     protected function getLoginUrl(): string
     {
-        return $this->router->generate('authentication_login');
+        return $this->router->generate( 'user_login' );
     }
 }

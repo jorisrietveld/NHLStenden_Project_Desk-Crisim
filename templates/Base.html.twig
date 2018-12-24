@@ -7,8 +7,7 @@
  # ====================================
  # This shows the Teacher the statistics of a participators for an given Game
  #}
-{# Set the translation domain for this template, you can place the text on this page in ./translations/base #}
-{% trans_default_domain 'base' %}
+
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -24,7 +23,7 @@
     {% endblock %}
 
     {# This will render the title of the webpage #}
-    <title>{{ 'meta.title.base'|trans }}</title>
+    <title>{% block title %}Crisim{% endblock %}</title>
 
     {# This block stores all style for the website. #}
     {% block stylesheets %}
@@ -34,15 +33,8 @@
     {% endblock %}
 </head>
 <body>
-    {# Include the template that contains the navigation section of the theme. #}
-    {% include 'Navigation.html.twig' %}
-
     {# This block will be used to render the page content in #}
     {% block body %}{% endblock %}
-
-    {# Include the template that contains the footer section of the theme. #}
-    {% include 'Footer.html.twig' %}
-
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
 {% endblock %}

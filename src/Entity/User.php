@@ -8,6 +8,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -43,7 +44,8 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
-     * @var
+     * @var \DateTime $addedOn
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     private $addedOn;
@@ -55,6 +57,11 @@ class User implements UserInterface, \Serializable
      * @see config/validator/user.yaml for the validation constraints.
      */
     private $plainPassword;
+
+    /**
+     * @ORM\Column(type="string", length=10, nullable=true)
+     */
+    private $locale;
 
     /**
      * User constructor.
@@ -193,5 +200,29 @@ class User implements UserInterface, \Serializable
     {
         // add $this->salt too if you don't use Bcrypt or Argon2i
         [ $this->id, $this->username, $this->password ] = unserialize( $serialized, [ 'allowed_classes' => false ] );
+    }
+
+    public function getAddedOn(): ?\DateTimeInterface
+    {
+        return $this->addedOn;
+    }
+
+    public function setAddedOn(\DateTimeInterface $addedOn): self
+    {
+        $this->addedOn = $addedOn;
+
+        return $this;
+    }
+
+    public function getLocale(): ?string
+    {
+        return $this->locale ?: 'nl';
+    }
+
+    public function setLocale( ?string $locale ): self
+    {
+        $this->locale = $locale;
+
+        return $this;
     }
 }

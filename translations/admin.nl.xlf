@@ -3,7 +3,9 @@
     <file id="admin.nl">
         <unit id="levIQSL" name="index.page.title">
             <notes>
-                <note category="file-source" priority="1">templates/Admin/Index.html.twig:25</note>
+                <note category="file-source" priority="1">
+                    templates/Admin/Index.html.twig:25
+                </note>
             </notes>
             <segment>
                 <source>index.page.title</source>
@@ -12,7 +14,9 @@
         </unit>
         <unit id="Dn3.AvF" name="index.link.translation_interface">
             <notes>
-                <note category="file-source" priority="1">templates/Admin/Index.html.twig:46</note>
+                <note category="file-source" priority="1">
+                    templates/Admin/Index.html.twig:46
+                </note>
             </notes>
             <segment>
                 <source>index.link.translation_interface</source>
@@ -48,7 +52,9 @@
         </unit>
         <unit id="iVBEqOv" name="index.link.Teacher">
             <notes>
-                <note category="file-source" priority="1">templates/Admin/ImpersonateRole.html.twig:33</note>
+                <note category="file-source" priority="1">
+                    templates/Admin/ImpersonateRole.html.twig:33
+                </note>
             </notes>
             <segment>
                 <source>index.link.Teacher</source>
@@ -57,7 +63,9 @@
         </unit>
         <unit id="nBYr1bS" name="index.link.Student">
             <notes>
-                <note category="file-source" priority="1">templates/Admin/ImpersonateRole.html.twig:44</note>
+                <note category="file-source" priority="1">
+                    templates/Admin/ImpersonateRole.html.twig:44
+                </note>
             </notes>
             <segment>
                 <source>index.link.Student</source>

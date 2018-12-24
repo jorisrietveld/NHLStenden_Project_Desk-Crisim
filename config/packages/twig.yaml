@@ -2,3 +2,7 @@ twig:
     default_path: '%kernel.project_dir%/templates'
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'Theme/materialize_form_layout.twig'
+    globals:
+        role_paginations: '%route_list%'

@@ -1,0 +1,37 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 09-12-2018 02:38
+ # Licence: GPLv3 - General Public Licence version 3
+ #}
+{% extends 'Theme/main-skeleton.html.twig' %}
+
+{% block content %}
+
+    {% embed 'Theme/large-card.html.twig' with {'title':'index.page.title'} %}
+        {% block card_body %}
+            <ul class="collection">
+
+                <li class="collection-item avatar">
+                    <a href="{{ path('user_login' ) }}">
+                        <i class="material-icons circle">insert_link</i>
+                    </a>
+                    <p>{{ 'index.link.login'|trans }}
+                        <a href="{{ path('user_login' ) }}" class="secondary-content">
+                            <i class="material-icons black-text">send</i>
+                        </a>
+                    </p>
+                </li>
+                <li class="collection-item avatar">
+                    <a href='{{ path('my_profile') }}'>
+                        <i class="material-icons circle">insert_link</i>
+                    </a>
+                    <p>{{ 'index.link.teacher'|trans }}
+                        <a href="{{ path('my_profile') }}" class="secondary-content">
+                            <i class="material-icons black-text">send</i>
+                        </a>
+                    </p>
+                </li>
+            </ul>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

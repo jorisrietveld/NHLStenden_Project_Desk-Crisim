@@ -1,0 +1,48 @@
+{#
+ # Author: Joris Rietveld <jorisrietveld@gmail.com>
+ # Date: 21-11-2018 00:02
+ # Licence: GPLv3 - General Public Licence version 3
+ #
+ # The login page
+ # ==============
+ # This is page enables users to authenticate.
+ #}
+
+{% extends 'Theme/main-skeleton.html.twig' %}
+
+{% block content %}
+    {% embed 'Theme/small-card.html.twig' with {'title':'login.form.title', 'grid':'s12 m6 center offset-m3'} %}
+
+        {% block card_body %}
+            <form action="{{ path('user_login') }}" method="post">
+                <div class="row">
+                    <img src="{{ asset('build/static/lock_black.png') }}" width="50%">
+                </div>
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error.messageKey }}
+                    </div>
+                {% endif %}
+
+                <div class="input-field col s12">
+                    <input id="username" type="text" class="validate" name="username" value="{{ last_username|default }}">
+                    <label for="username">{{ 'login.form.label.username'|trans }}</label>
+                    <span class="helper-text" data-error="Dit is geen correct emailadres" data-success=""></span>
+                </div>
+
+                {# The Password input field -#}
+                <div class="input-field col s12">
+                    <input id="password" type="password" name="password">
+                    <label for="password">{{ 'login.form.label.password'|trans }}</label>
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <button class="btn waves-effect waves-light orange" type="submit" name="action">
+                    {{ 'login.form.submit'|trans }}
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

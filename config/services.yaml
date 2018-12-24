@@ -4,9 +4,27 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale           : 'nl'
-    app.locales:       nl|en|fy
+    locale: 'nl'
+    app.locales: nl|en|fy
     env(DATABASE_URL): 'mysql://crisim-app:crisim-app-password@localhost:3306/DeskCriSim'
+    scenario_file_directory: '%kernel.project_dir%/public/uploads/game_scenarios'
+    app.notifications.email_sender: info@crisim.nl
+    route_list:
+        ROLE_ADMIN:
+        ROLE_TEACHER:
+            - 'teacher_participators'
+            - 'teacher_chatMonitor'
+            - 'teacher_create_event'
+            - 'teacher_create_session'
+            - 'teacher_show_statistics'
+            - 'upload_scenario'
+            - 'teacher_assign_points'
+            - 'teacher_start_scenario'
+        ROLE_STUDENT:
+            - 'info_feed'
+            - 'chat'
+        ROLE_USER:
+            - 'profile'
 
 services:
     # default configuration for services in *this* file
@@ -14,8 +32,11 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         public: false       # Allows optimizing the container by removing unused services; this also means
-                            # fetching services directly from the container via $container->get() won't work.
-                            # The best practice is to be explicit about your dependencies anyway.
+        # fetching services directly from the container via $container->get() won't work.
+        # The best practice is to be explicit about your dependencies anyway.
+        bind:               # defines the scalar arguments once and apply them to any service defined/created in this file
+            $locales: '%app.locales%'
+            $defaultLocale: '%locale%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -35,3 +56,14 @@ services:
     App\EventSubscriber\LocaleSubscriber:
         arguments: ['%kernel.default_locale%']
 
+
+    App\Service\GameScenario\UploadService:
+        arguments:
+            $storageDirectory: '%scenario_file_directory%'
+
+
+    App\EventListener\ScenarioUploadListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }
+            - { name: doctrine.event_listener, event: postLoad }
