@@ -43,7 +43,7 @@
     },
     "devDependencies": {
         "@symfony/webpack-encore": "^0.21.0",
-        "autoprefixer": "^9.4.3",
+        "autoprefixer": "^9.4.4",
         "node-sass": "^4.10.0",
         "postcss-loader": "^3.0.0",
         "sass-loader": "^7.1.0",
