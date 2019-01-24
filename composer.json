@@ -8,7 +8,6 @@
     "ext-PDO": "*",
     "ext-ctype": "*",
     "ext-iconv": "*",
-    "ext-intl": "*",
     "ext-json": "*",
     "ext-mbstring": "*",
     "ext-pdo_mysql": "*",
