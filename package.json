@@ -43,7 +43,7 @@
     },
     "devDependencies": {
         "@symfony/webpack-encore": "^0.21.0",
-        "autoprefixer": "^9.4.4",
+        "autoprefixer": "^9.5.1",
         "node-sass": "^4.10.0",
         "postcss-loader": "^3.0.0",
         "sass-loader": "^7.1.0",
@@ -58,7 +58,7 @@
         "jquery.easing": "^1.4.1",
         "material-design-icons": "^3.0.1",
         "materialize-css": "^1.0.0",
-        "popper.js": "^1.14.5"
+        "popper.js": "^1.15.0"
     },
     "private": true,
     "scripts": {
