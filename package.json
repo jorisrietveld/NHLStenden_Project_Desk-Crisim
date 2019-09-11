@@ -50,7 +50,7 @@
         "webpack-notifier": "^1.6.0"
     },
     "dependencies": {
-        "chart.js": "^2.7.3",
+        "chart.js": "^2.8.0",
         "copy-webpack-plugin": "^4.5.2",
         "default-passive-events": "^1.0.10",
         "encore": "^0.0.30-beta",
